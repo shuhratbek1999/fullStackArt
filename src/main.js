@@ -6,8 +6,8 @@ import Provider from './pages/Provider.vue';
 import naive from 'naive-ui';
 import {createPinia} from 'pinia'
 import axios from "axios";
-import 'animate.css'; 
 import { useErrorStore } from "./stores/Error";
+import 'animate.css'
 // import "./plugins/echarts.js";
 const pinia = createPinia();
 const app = createApp(Provider);

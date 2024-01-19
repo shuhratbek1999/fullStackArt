@@ -10,6 +10,7 @@
       <div class="city_info">
         <CityInfo />
       </div>
+      <Footer />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import Navbar from "../../components/Navbar.vue"
 import ProjectLabel from "../../components/Projects.vue"
 import InfoCard from "../../components/infoCard.vue"
 import CityInfo from "../../components/CityInfo.vue"
+import Footer from "../../components/allFooter.vue"
 import {onMounted} from "vue"
 // const handlerScroll = () => {
 //   let project = document.querySelector('.projects'),

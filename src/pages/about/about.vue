@@ -28,12 +28,10 @@ import AboutFooter from "../../components/footer.vue"
 import {useRouter, useRoute} from "vue-router"
 const router = useRouter()
 const route = useRoute()
-</script>
+</script> 
 
 <style scoped>
-.about_footer{
-    background-image: url('../../assets/images/Rectangle3.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/* .about_footer{
+    
+} */
 </style>

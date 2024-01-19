@@ -1,6 +1,7 @@
 <template>
     <div 
-    class="top_menu fixed top-0 w-full xl:h-16 xx:h-12 xs:h-14 bg-greys">
+    class="top_menu fixed top-0 w-full xl:h-16 xx:h-12 xs:h-14 bg-greys z-20">
+        <slot>
            <div class="navbar flex xx:hidden xs:hidden xl:flex xl:items-center xl:justify-center">
                 <ul class="flex w-3/12 justify-center items-center">
                     <li><img src="../assets/images/dom.png" alt="dom png"></li>
@@ -12,35 +13,36 @@
                     </li>
                 </ul>
            </div>
-          <div 
-          class="
-          hidden_navbar xs:h-14 xl:hidden xs:flex xs:justify-between xs:w-full xs:px-10 xs:items-center
-          xx:h-14 xx:flex xx:justify-between xx:w-full xx:px-10 xx:items-center
-          "
-          >
-            <ul class="xs:flex xs:items-center xx:flex xx:items-center">
-                <li class="mr-1"><img class="xs:w-10 xx:w-9" src="../assets/images/Group.png" alt="group img"></li>
-                <li><img class="xs:w-10 xx:w-9" src="../assets/images/dom.png" alt="dom png"></li>
-            </ul>
-            <div class="icons">
-                <n-icon class="menu" @click="Activate">
-                    <Menu />
-                </n-icon>
-            </div>
-            <n-drawer
-                v-model:show="active"
-                :width="200"
-                resizable
-            >
-            <n-drawer-content title="Menu" class="shadow-sm" closable>
-             <ul class="flex flex-col justify-center items-left">
-                <li v-for="item in Menus" :key="item.id" class="px-4 cursor-pointer navbar_list py-2">
-                    <span @click="MenuItem(item.label)" class="text-menuColor xl:text-base xs:text-xs xx:text-xs" :class="{'border-b-gray-400 border-b-2 pb-2': route.name == item.label}">{{item.label}}</span>
-                </li>
+            <div 
+                class="
+                hidden_navbar xs:h-14 xl:hidden xs:flex xs:justify-between xs:w-full xs:px-10 xs:items-center
+                xx:h-14 xx:flex xx:justify-between xx:w-full xx:px-10 xx:items-center
+                "
+                >
+                <ul class="xs:flex xs:items-center xx:flex xx:items-center">
+                    <li class="mr-1"><img class="xs:w-10 xx:w-9" src="../assets/images/Group.png" alt="group img"></li>
+                    <li><img class="xs:w-10 xx:w-9" src="../assets/images/dom.png" alt="dom png"></li>
                 </ul>
-            </n-drawer-content>
-            </n-drawer>
-        </div>
+                <div class="icons">
+                    <n-icon class="menu" @click="Activate">
+                        <Menu />
+                    </n-icon>
+                </div>
+                <n-drawer
+                    v-model:show="active"
+                    :width="200"
+                    resizable
+                >
+                <n-drawer-content title="Menu" class="shadow-sm" closable>
+                <ul class="flex flex-col justify-center items-left">
+                    <li v-for="item in Menus" :key="item.id" class="px-4 cursor-pointer navbar_list py-2">
+                        <span @click="MenuItem(item.label)" class="text-menuColor xl:text-base xs:text-xs xx:text-xs" :class="{'border-b-gray-400 border-b-2 pb-2': route.name == item.label}">{{item.label}}</span>
+                    </li>
+                    </ul>
+                </n-drawer-content>
+                </n-drawer>
+            </div>
+        </slot>
     </div>
 </template>
 <script setup>

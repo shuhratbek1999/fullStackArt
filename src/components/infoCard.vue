@@ -1,33 +1,43 @@
 <template>
-  <div class="infoo xl:w-full xl:flex xl:justify-center xs:flex xs:justify-center xx:flex xx:justify-center">
-    <div class="border-y-2 xl:justify-start xs:justify-center xx:justify-center py-4 xl:w-10/12 xl:flex xl:flex-wrap xs:flex xs:flex-wrap xx:flex xx:flex-wrap border-y-gray-400">
-       <div class="animate__animated animate__fadeInLeft cards xl:w-3/12 xs:w-5/12 xx:w-5/12 p-4 border-l-2 border-l-gray-400 first:border-l-0 my-4" v-for="card in Cards" :key="card.id">
-          <div class="card_title xl:h-20 xl:text-base xs:text-xs xs:h-16 xx:text-xs xx:h-16">
-                {{card.name}}
-          </div>
-        <div class="card_img_circle flex justify-start py-3">
-            <div class="circle rounded-full w-11 h-11 mr-2">
-                <img class="w-10 h-10" :src="card.img" alt="">
-            </div>
-            <div class="user">
-                <div class="user_title xl:text-base xs:text-xs xx:text-xs">Карточки</div>
-                <div class="user_name xl:text-base xs:text-xs xx:text-xs">{{card.user}}</div>
-            </div>
-        </div>
-        <div class="card_img">
-            <img :src="card.img" :alt="card.name">
-        </div>
+  <div class="flex justify-center">
+       <div class="info_item xl:w-11/12 xl:min-h-101 xl:bg-cityBg xl:flex xl:flex-wrap xl:justify-start">
+           <div 
+           class="
+           item xl:w-1/4 xl:h-96 xl:border-r-2 xl:border-r-gray-500 px-4 xl:my-6
+           cards
+           " 
+           v-for="city in Cards" :key="city.id"
+           ref="cards"
+           >
+               <div class="info_name xl:text-xl xl:w-60 xl:h-28">
+                  {{city.name}}
+               </div>
+               <div class="circle_info xl:flex">
+                   <div class="circle mr-2">
+                      <img class="xl:w-11 xl:h-11 xl:rounded-full xl:border-2" :src="city.img" alt="">
+                   </div>
+                   <div class="user">
+                        <div style="color: #000000" class="user_name xl:text-base">Карточки</div>
+                        <div style="color: #7C7C7C" class="users font-normal xl:text-base">Алексей Филиппов</div>
+                   </div>
+               </div>
+               <div class="images xl:my-2">
+                  <img :src="city.img" alt="">
+               </div>
+           </div>
        </div>
-  </div>
   </div>
 </template>
 
 <script setup>
-import {ref} from "vue"
+import {onMounted, ref} from "vue"
 import img1 from "../assets/images/Rectangle6.png"
 import img2 from "../assets/images/Rectangle8.png"
 import img3 from "../assets/images/Rectangle9.png"
 import img4 from "../assets/images/Rectangle10.png"
+import {gsap} from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 const Cards = ref([
     {
         id: 1,
@@ -55,7 +65,7 @@ const Cards = ref([
     },
      {
         id: 5,
-        name: 'New Creative Academy',
+        name: 'Art Compass',
         user: 'Алексей Филиппов',
         img: img1
     },
@@ -90,14 +100,38 @@ const Cards = ref([
         img: img3
     }
 ])
+
+const initScroolAnimation = () => {
+    Cards.value.forEach((city, index) => {
+        animate(index)
+    })
+}
+const animate = (index) => {
+    const selector = `.item:nth-child(${index+1})`
+    gsap.from(selector, {
+        opacity: 0,
+        y: 50,
+        duration: 0.6,
+        scrollTrigger:{
+            trigger: selector,
+            start: 'top 80%'
+        }
+    })
+}
+onMounted(() => {
+    initScroolAnimation()
+})
 </script>
 
 <style scoped>
 .circle img{
     border-radius: 50%;
 }
-.cards:nth-child(5), .cards:nth-child(9){
-    border-left: 0px;
+.item:nth-child(4n + 1){
+   border-left: 0px;
+}
+.item:nth-child(4n + 4){
+    border-right: 0px;
 }
 @media(min-width: 360px){
 .cards:nth-child(2n + 1){

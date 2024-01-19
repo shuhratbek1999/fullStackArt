@@ -26,6 +26,7 @@ module.exports = {
         '4xl': ['2.25rem', { lineHeight: '1.25', letterSpacing: '-0.02em' }],
         '5xl': ['3rem', { lineHeight: '1.25', letterSpacing: '-0.02em' }],
         '6xl': ['3.75rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        '10xl': ['8.25rem', { lineHeight: '1.3', letterSpacing: '-0.001em' }],
       },
       screens: {
         xs: '480px',
@@ -43,7 +44,21 @@ module.exports = {
         80: '20rem',
       },
       height:{
-        125: '45rem'
+        96: '22rem',
+        98: '32rem',
+        99: '22.125',
+        100: '41rem',
+        101: '44rem',
+        125: '45rem',
+        110: '35.5rem',
+        15: '3.8125rem'
+      },
+      minHeight:{
+        101: '44rem',
+        98: '32rem'
+      },
+      width:{
+        130: '39.375rem'
       },
       maxWidth: {
         '8xl': '88rem',
@@ -57,7 +72,8 @@ module.exports = {
         menuColor: '#282828',
         cityBg: '#E5E5E5',
         cityFot: '#282828',
-        ffff: '#FFFFFF'
+        ffff: '#FFFFFF',
+        eeee: '#EEEEEE'
       }
     },
   },
