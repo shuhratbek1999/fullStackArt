@@ -114,7 +114,7 @@ const animate = (index) => {
         duration: 0.6,
         scrollTrigger:{
             trigger: selector,
-            start: 'top 90%'
+            start: 'top 98%'
         }
     })
 }
