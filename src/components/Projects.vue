@@ -1,9 +1,12 @@
 <template>
-     <div class="projectss xl:mt-20 xl:flex xl:items-center xl:justify-center relative xl:mb-5">
-         <div class="route text-white xl:text-10xl xl:mr-72 xl:font-bold">
+     <div class="projectss xl:mt-16 xl:flex xl:items-center xl:mb-5">
+         <div class="img_content">
+           salom
+         </div>
+         <div class="route xl:text-9xl xl:text-eeee absolute left-52 z-30">
              {{ route.name.toUpperCase() }}
          </div>
-         <div class="img absolute right-16 bottom-10 wow animate__fadeIn" data-wow-duration="2s">
+         <div class="img absolute right-16 bottom-10 z-30">
              <img src="../assets/images/Ellipse.png" alt="">
          </div>
      </div>
@@ -30,36 +33,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@media(min-width: 480px){
-.projectss img:nth-child(1){
-    width: 40px;
-    height: 40px;
-}  
-.projectss{
-    min-width: 100%;
-    height: 120px;
-    background-image: url('../assets/images/Rectangle1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-}
-}
-@media(min-width: 360px){
-.projectss img:nth-child(1){
-    width: 35px;
-    height: 35px;
-}  
-.projectss{
-    min-width: 100%;
-    height: 100px;
-    background-image: url('../assets/images/Rectangle1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-     display: flex;
-    position: relative;
-    margin-top: 48px;
-}
-}
 @media(min-width: 1280px){
 .projectss img:nth-child(1){
     width: 78px;
@@ -74,21 +47,17 @@ onMounted(() => {
     background-position: center;
     display: flex;
     position: relative;
-    filter: brightness(0.6);
+    z-index: 10;
 }
-/* .projectss::before{
-     content: "";
+.img_content{
+    width: 100%;
+    height: 240px;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     background-color: black;
-    z-index: 2;
-    opacity: 0.4;
-} */
-.route{
-    opacity: 2;
+    opacity: 0.5;
+    z-index: 20;
 }
 }
 </style>
