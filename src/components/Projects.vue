@@ -1,6 +1,6 @@
 <template>
      <slot>
-        <div class="projectss proo xl:mt-16 xl:flex xl:items-center xl:mb-5"
+        <div class="projectss proo xl:mt-16 xl:flex xl:items-center"
           :style="{'background-image': props.Img.img ? 'url(' + props.Img.img + ')' : 'none'}"
         >
          <div class="img_content">
