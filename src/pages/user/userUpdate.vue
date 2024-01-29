@@ -3,7 +3,7 @@
         <Sidebar :sidebarOpen="sidebarOpen" @close-sidebar="sidebarOpen = false" />
         <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
              <Header :sidebarOpen="sidebarOpen" @toggle-sidebar="sidebarOpen = !sidebarOpen" />
-             <div class="pro_all xl:w-11/12 mx-auto rounded-md xl:flex xl:items-center xl:justify-around border-2 h-80">
+             <div class="pro_all xl:w-11/12 mx-auto rounded-md xl:mt-8 xl:flex xl:items-center xl:justify-around border-2 h-80">
                  <div class="category_name xl:w-5/12 xl:h-40">
                     <label class="inline-block" for="">User name</label>
                     <n-input :class="{error: v$.$invalid}" v-model:value="name" type="text" placeholder="name is required" />

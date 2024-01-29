@@ -8,7 +8,7 @@
            <div 
            class="
            infoo
-           item xl:w-11/12 xl:min-h-98 px-3 xl:my-6 font-Atyp
+           item xl:w-11/12 xl:min-h-98 px-3 font-Atyp
            " 
            >
               <div class="city_img xl:flex">
@@ -35,7 +35,7 @@
                  </ol>
               </div>
            </div>
-           <div v-if="city.Url.length > 0" class="footer xl:w-full xl:flex xl:justify-center xl:h-15 my-2"
+           <div v-if="city.Url.length > 0" class="footer xl:w-full xl:flex xl:justify-center xl:h-15"
               :class="['bg-cityFot', 'text-cityBg']"
            >
                <div 

@@ -1,6 +1,6 @@
 <template>
     <div class="content xl:w-full xl:min-h-screen xl:flex xl:justify-center xl:items-center">
-        <div class="forms xl:w-11/12 xl:min-h-96 xl:bg-gray-200 xl:p-4">
+        <div class="forms xl:w-11/12 xl:min-h-96 xl:bg-gray-200 xl:p-4 xl:rounded-md shadow-lg xl:my-4 font-Atyp">
             <div class="form_top xl:flex xl:justify-between xl:my-3">
                 <div class="selec xl:w-5/12">
                     <label class="mb-2 inline-block" for="select">Category</label>
@@ -61,7 +61,7 @@
             <div class="form_top xl:flex xl:justify-between xl:my-3">
                 <div class="selec xl:w-5/12" v-if="selectCategory == 'Projects'">
                     <label class="mb-2 inline-block" for="name">Description</label>
-                    <n-input id="name" size="large" v-model:value="data.description" type="textarea" />
+                    <n-input id="name" class="rounded" size="large" v-model:value="data.description" type="textarea" />
                 </div>
                 <div class="selec xl:w-11/12" v-else>
                     <label class="mb-2 inline-block" for="name">Text</label>

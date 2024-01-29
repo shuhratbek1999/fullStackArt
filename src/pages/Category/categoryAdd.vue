@@ -38,16 +38,19 @@
                       <n-button @click="Cancel" type="error" class="bg-red-500 mt-10 ml-4">Cancel</n-button>
                     </div>
                  </div>
-                  <div class="category_name xl:w-5/12">
-                    <label class="mb-4 inline-block" for="name">page image</label>
-                      <n-upload
-                      v-model:file-list="img"
-                      list-type="image-card"
-                      :max=1
-                      >
-                          Click to Upload
-                      </n-upload>
-                      <n-checkbox
+                  <div class="category_name xl:w-5/12 xl:flex">
+                      <div>
+                        <label class="mb-4 inline-block" for="name">page image</label>
+                          <n-upload
+                          v-model:file-list="img"
+                          list-type="image-card"
+                          :max=1
+                          >
+                              Click to Upload
+                          </n-upload>
+                      </div>
+                      <div class="ml-4">
+                        <n-checkbox
                         v-if="route.params.id"
                         size="large"
                         label="update image"
@@ -63,6 +66,7 @@
                           height: 96px;
                         "
                       />
+                      </div>
                   </div>
             </div>
         </div>
