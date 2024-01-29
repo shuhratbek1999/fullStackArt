@@ -63,9 +63,13 @@
                     <label class="mb-2 inline-block" for="name">Description</label>
                     <n-input id="name" class="rounded" size="large" v-model:value="data.description" type="textarea" />
                 </div>
-                <div class="selec xl:w-11/12" v-else>
+                <div class="selec xl:w-5/12" v-else>
                     <label class="mb-2 inline-block" for="name">Text</label>
                     <n-input id="name" size="large" v-model:value="data.description" type="textarea" />
+                </div>
+                <div class="input xl:w-5/12" v-if="selectCategory == 'Live Arts'">
+                    <label class="mb-2 inline-block" for="name">Music category</label>
+                    <n-input :disabled="Music_type.length>0" id="name" v-model:value="Music_type" size="large" type="text" />
                 </div>
                 <div class="input xl:w-5/12" v-if="selectCategory == 'Projects'">
                     <label class="mb-2 inline-block" for="name">Extra Description</label>
@@ -158,6 +162,7 @@ let insta = ref(false),facebook = ref(false),you = ref(false),
 sayt = ref(false);
 let change_image = ref(false)
 let image = ref(null)
+let Music_type = ref("")
 const Category = ref([])
 const fileList = ref([])
 const selectCategory = ref("")
@@ -183,7 +188,7 @@ let data = ref({
 const SelectUpdate = (id) => {
     let index = Category.value.findIndex(ids => ids.id == id)
     selectCategory.value = Category.value[index].name
-    // console.log(Category.value[index])
+    Music_type.value = Category.value[index].music_type
 }
 const Saqlash = () => {
     data.value.Urls.forEach(item => {

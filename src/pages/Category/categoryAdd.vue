@@ -96,7 +96,7 @@ const Cancel = () =>{
   router.push('/category_all')
 }
 const Pages = ref([])
-const selectPages = ref("")
+let selectPages = ref("")
 let page_id = ref(null),
 img = ref([]),
 title = ref(""),
@@ -176,9 +176,11 @@ const OneCategory = () => {
    axios.get('category/one/' + route.params.id)
    .then(res => {
       if(res){
+        console.log(res.data.data)
         page_id.value = res.data.data.page_id
         title.value = res.data.data.title
         music_type.value = res.data.data.music_type
+        selectPages.value = res.data.data.page.name
         image = FILE_URL + "images/" + res.data.data.img
       }
    })

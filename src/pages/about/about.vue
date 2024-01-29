@@ -5,7 +5,7 @@
       </div>
       <ProjectLabel>
          <div class="projectss mt-16 xl:h-60 xx:mt-11 xx:h-40 xx:flex xx:items-center xx:justify-around xs:mt-11 xs:h-40 xs:flex xs:items-center xs:justify-around h-64 xl:flex xl:items-center xl:justify-around">
-            <div class="flex xl:text-9xl xx:text-6xl xs:xx:text-6xl font-bold text-cityFot animate__animated animate__backInLeft">
+            <div class="flex route_name xl:text-9xl xx:text-6xl xs:xx:text-6xl font-bold text-cityFot animate__animated animate__backInLeft">
                 {{route.name}}
             </div>
             <div class="circles w-1/4"></div>
@@ -31,6 +31,9 @@ const route = useRoute()
 </script> 
 
 <style scoped>
+.route_name{
+   font-size: 170px;
+}
 /* .about_footer{
     
 } */

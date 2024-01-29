@@ -6,8 +6,11 @@
       <ProjectLabel :Img="CategoryImg" />
       <div class="cardAll">
          <InfoCard>
-          <div class="flex justify-center" v-if="AllArray">
+          <div class="xl:flex xl:flex-col items-center" v-if="AllArray">
+            <div class="titles text-8xl font-Atyp w-11/12 text-left py-10">{{TypeArray.toUpperCase()}}</div>
             <div class="info_item xl:w-11/12 xl:min-h-98 xl:bg-cityBg xl:flex xl:flex-wrap xl:justify-start"
+               data-aos="fade-up"
+               data-aos-delay="100"
                v-if="AllArray.length > 0">
                   <div 
                      class="
@@ -16,8 +19,6 @@
                      " 
                      v-for="(city,index) in AllArray" :key="city.id"
                      ref="cards"
-                     data-aos="fade-up"
-                     data-aos-delay="100"
                      >
                      <div class="info_name xl:text-xl xl:w-60 xl:min-h-8 hover:cursor-pointer">
                         <a :href="'#' +'city_info' + index">{{city.name}}</a>
@@ -60,6 +61,7 @@ const route = useRoute()
 const FILE_URL = inject("FILE_URL");
 const AllArray = ref([])
 const CategoryImg = ref({})
+let TypeArray = ref('')
 const OneProject = () => {
    axios.get('category/all')
    .then(res => {
@@ -78,6 +80,7 @@ const ProjectsProp = (arr) => {
             CategoryImg.value = res
             AllArray.value = res.project
             store.cityAll = res.project
+            TypeArray.value = res.music_type
          }
       })
    }

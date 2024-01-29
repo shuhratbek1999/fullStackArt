@@ -10,7 +10,7 @@
                     </ul>
                     <ul class="flex justify-center">
                         <li v-for="item in Menus" :key="item.id" class="px-5 cursor-pointer">
-                            <span @click="MenuItem(item.label)" class="text-menuColor xl:text-sm xs:text-xs" :class="{'border-b-gray-400 border-b-2 pb-2': route.name == item.label}">{{item.label}}</span>
+                            <span @click="MenuItem(item.label)" class="text-menuColor font-Atyp xl:text-sm xs:text-xs" :class="{'border-b-gray-400 border-b-2 pb-2': route.name == item.label}">{{item.label}}</span>
                         </li>
                     </ul>
                 </div>
@@ -94,6 +94,10 @@ const Menus = ref([
     {
         id: 9,
         label: 'News'
+    },
+    {
+        id: 10,
+        label: 'Eng'
     }
 ])
 

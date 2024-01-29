@@ -5,7 +5,7 @@
         >
          <div class="img_content">
          </div>
-         <div class="route xl:text-9xl xl:text-eeee absolute left-52 z-30">
+         <div class="route xl:text-eeee absolute left-52 z-30">
              {{ props.Img.title }}
          </div>
          <div class="img absolute right-16 bottom-10 z-30">
@@ -42,7 +42,7 @@ watch(() => props.Img, () => {
 }  
 .projectss{
     min-width: 100%;
-    height: 240px;
+    height: 260px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,9 +51,12 @@ watch(() => props.Img, () => {
     position: relative;
     z-index: 10;
 }
+.route{
+    font-size: 170px;
+}
 .img_content{
     width: 100%;
-    height: 240px;
+    height: 260px;
     position: absolute;
     top: 0;
     left: 0;
