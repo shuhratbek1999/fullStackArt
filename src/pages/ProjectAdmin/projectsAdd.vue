@@ -69,7 +69,7 @@
                 </div>
                 <div class="input xl:w-5/12" v-if="selectCategory == 'Live Arts'">
                     <label class="mb-2 inline-block" for="name">Music category</label>
-                    <n-input :disabled="Music_type.length > 0" id="name" v-model:value="Music_type" size="large" type="text" />
+                    <n-input :disabled="selectCategory == 'Live Arts'" id="name" v-model:value="Music_type" size="large" type="text" />
                 </div>
                 <div class="input xl:w-5/12" v-if="selectCategory == 'Projects'">
                     <label class="mb-2 inline-block" for="name">Extra Description</label>
@@ -188,6 +188,7 @@ let data = ref({
 const SelectUpdate = (id) => {
     let index = Category.value.findIndex(ids => ids.id == id)
     selectCategory.value = Category.value[index].name
+    console.log(Category.value[index]);
     Music_type.value = Category.value[index].music_type
 }
 const Saqlash = () => {
