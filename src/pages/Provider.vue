@@ -7,14 +7,7 @@ const themeOverrides = {
 
   },
   common:{
-    Button: {
-    textColor: 'black',
-    fontSizeLarge: "18px",
-    heightLarge: "45px",
-    paddingLarge: "10px 20px",
-    paddingRoundLarge: "20px",
-    borderRadiusLarge: "10px",
-  },
+    
   }
 };
 const uzUz = {

@@ -3,12 +3,12 @@
       <div class="project_menu xl:w-full xs:flex xs:justify-between xs:w-1/3">
         <topMenu />
       </div>
-      <ProjectLabel />
+      <ProjectLabel :Img="CategoryImg" />
       <div class="cardAll">
-         <InfoCard />
+         <InfoCard :infoCard="AllArray" />
       </div>
       <div class="city_info">
-        <CityInfo />
+        <CityInfo :cityInfo="AllArray" />
       </div>
       <Footer />
   </div>
@@ -21,18 +21,34 @@ import ProjectLabel from "../../components/Projects.vue"
 import InfoCard from "../../components/infoCard.vue"
 import CityInfo from "../../components/CityInfo.vue"
 import Footer from "../../components/allFooter.vue"
-import {onMounted} from "vue"
-// const handlerScroll = () => {
-//   let project = document.querySelector('.projects'),
-//   city = document.querySelector('.city_info')
-//    console.log("scrool bolyapti", window.pageYOffset, window.getComputedStyle(city).height);
-//    if(window.pageYOffset >= city.scrollHeight){
-//       console.log("trueee");
-//    }
-// }
-// onMounted(() => {
-//   window.addEventListener('scroll', handlerScroll)
-// })
+import  {City} from "../../stores/index"
+import {onMounted, reactive, ref} from "vue"
+import axios from "axios"
+import {useRoute} from "vue-router"
+const store = City()
+const route = useRoute()
+const AllArray = ref([])
+const CategoryImg = ref({})
+const OneProject = () => {
+   axios.get('category/all')
+   .then(res => {
+      ProjectsProp(res.data.data)
+   })
+}
+const ProjectsProp = (arr) => {
+   if(arr.length > 0){
+      arr.map(res => {
+         if(res.page.name == route.name){
+            CategoryImg.value = res
+            AllArray.value = res.project
+            store.cityAll = res.project
+         }
+      })
+   }
+}
+onMounted(() => {
+   OneProject()
+})
 </script>
 
 <style scoped>

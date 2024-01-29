@@ -1,34 +1,36 @@
 <template>
-     <div class="projectss xl:mt-16 xl:flex xl:items-center xl:mb-5">
+     <slot>
+        <div class="projectss proo xl:mt-16 xl:flex xl:items-center xl:mb-5"
+          :style="{'background-image': props.Img.img ? 'url(' + props.Img.img + ')' : 'none'}"
+        >
          <div class="img_content">
-           salom
          </div>
          <div class="route xl:text-9xl xl:text-eeee absolute left-52 z-30">
-             {{ route.name.toUpperCase() }}
+             {{ props.Img.title }}
          </div>
          <div class="img absolute right-16 bottom-10 z-30">
+            <!-- {{props.Img.img}} -->
              <img src="../assets/images/Ellipse.png" alt="">
+             <!-- <img :src="props.Img.img" class="w-12 h-12" alt=""> -->
          </div>
      </div>
+     </slot>
 </template>
 
 <script setup>
-import {onMounted, ref} from "vue"
+import {inject, onMounted, ref, watch} from "vue"
 import {useRoute} from "vue-router"
-import {gsap} from "gsap"
-import {ScrollTrigger} from "gsap/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger)
+const FILE_URL = inject('FILE_URL')
 const route = useRoute()
 const textCss = ref("")
-setTimeout(() => {
-    textCss.value = "animate__zoomInUp"
-}, 2000);
-onMounted(() => {
-    gsap.from('.route', {
-        opacity: 0,
-        duration: 4,
-        y: 50,
-    })
+const props = defineProps({
+    Img:{
+        type: Object
+    }
+})
+watch(() => props.Img, () => {
+    props.Img.title = props.Img.title.toUpperCase()
+    props.Img.img = FILE_URL + 'images/' + props.Img.img
 })
 </script>
 
@@ -41,10 +43,10 @@ onMounted(() => {
 .projectss{
     min-width: 100%;
     height: 240px;
-    background-image: url('../assets/images/Rectangle1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
     display: flex;
     position: relative;
     z-index: 10;
@@ -56,7 +58,7 @@ onMounted(() => {
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.7;
     z-index: 20;
 }
 }

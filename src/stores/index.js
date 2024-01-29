@@ -1,7 +1,8 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
 
-export const Register = defineStore("register", () => {
-  let registratsiya = ref({})
-  return { registratsiya};
+export const City = defineStore("citys", () => {
+  let cityAll = ref([]),
+  cityOne = ref({})
+  return { cityAll, cityOne};
 });

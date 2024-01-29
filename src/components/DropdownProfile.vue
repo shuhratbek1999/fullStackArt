@@ -23,10 +23,10 @@
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <div v-show="dropdownOpen" class="origin-top-right z-10 absolute top-full min-w-44 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1.5 rounded shadow-lg overflow-hidden mt-1" :class="align === 'right' ? 'right-0' : 'left-0'">
+      <div v-show="dropdownOpen" class="origin-top-right bg-gray-400 text-white z-10 absolute top-full min-w-44 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1.5 rounded shadow-lg overflow-hidden mt-1" :class="align === 'right' ? 'right-0' : 'left-0'">
         <div class="pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700">
-          <div class="font-medium text-slate-800 dark:text-slate-100">Acme Inc.</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 italic">Administrator</div>
+          <div class="font-medium dark:text-slate-100 text-white text-2xl">{{user.name}}</div>
+          <div class="text-xs text-white dark:text-slate-400 italic">{{user.role}}</div>
         </div>
         <ul
           ref="dropdown"
@@ -34,19 +34,13 @@
           @focusout="dropdownOpen = false"
         >
           <li>
-            <router-link class="font-medium text-sm hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/profil" @click="dropdownOpen = false">
-           <n-icon class="mr-2" size="20" color="black">
-             <User />
-            </n-icon> profil</router-link>
-          </li>
-          <li>
-            <router-link class="font-medium text-sm hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/" @click="dropdownOpen = false">
+            <router-link class="font-medium text-sm hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/login" @click="dropdownOpen = false">
            <n-icon class="mr-2" size="20" color="black">
              <Password16Filled />
             </n-icon> parol</router-link>
           </li>
           <li class="text-red">
-            <router-link class="font-medium text-sm text-red-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/" @click="dropdownOpen = false">
+            <router-link class="font-medium text-sm text-red-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/login" @click="dropdownOpen = false">
            <n-icon class="mr-2" size="20" color="red">
              <Logout />
             </n-icon> Chiqish</router-link>
@@ -68,7 +62,8 @@ export default {
   props: ['align'],
   data() {
     return {
-      UserAvatar: UserAvatar
+      UserAvatar: UserAvatar,
+      user: JSON.parse(localStorage.getItem('user'))
     }
   }, 
   components:{
