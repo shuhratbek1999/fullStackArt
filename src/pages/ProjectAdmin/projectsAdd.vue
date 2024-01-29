@@ -132,8 +132,9 @@
                 </div>
             </div>
             <n-button @click="Saqlash" class="xl:bg-blue-600" type="success">
-                Saqlash
+                Save
             </n-button>
+            <n-button @click="Cancel" type="error" class="bg-red-500 mt-10 ml-4">Cancel</n-button>
         </div>
     </div>
 </template>
@@ -287,6 +288,9 @@ const UpdateProject = (model) => {
         Urls: model.Url 
     }
     selectCategory.value = model.category.page.name
+}
+const Cancel = () => {
+    router.push('/project_all')
 }
 const Categorys = () => {
     axios.get('category/alls').then(res => {

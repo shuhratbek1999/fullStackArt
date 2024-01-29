@@ -33,7 +33,7 @@
         </div>
         <div class="register w-1/2 xl:h-110 xl:flex xl:items-center">
             <div class="w-10/12 bg-blue-100 xl:h-3/4 rounded-r-md xl:flex xl:justify-center xl:items-center">
-                <span class="xl:text-slate-800 xl:font-medium hover:underline hover:cursor-pointer">Parol yoki login esdan chiqdimi</span>
+                <span class="xl:text-slate-800 xl:font-medium hover:underline hover:cursor-pointer">Forgot password or login?</span>
             </div>
         </div>
 </div>
@@ -106,12 +106,12 @@ const Login = () => {
             localStorage.setItem('user', JSON.stringify(res.data.data))
             notification.success({
                 content: `request success`,
-                meta: `${res.data.message}`,
+                meta: `You are registered!`,
                 duration: 2500,
                 keepAliveOnHover: true
             });
             setTimeout(() => {
-                router.push('/admin')
+                router.push('/category_all')
             }, 2000);
         }
         else{

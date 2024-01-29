@@ -7,7 +7,7 @@
            <div 
                 class="
                 item xl:w-1/4 xl:h-96 xl:border-r-2 xl:border-r-gray-500 px-4 xl:my-6
-                cards aos-init
+                cards aos-init font-Atyp
                 " 
                 v-for="(city,index) in props.infoCard" :key="city.id"
                 ref="cards"

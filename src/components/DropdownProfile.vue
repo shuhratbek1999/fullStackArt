@@ -37,13 +37,13 @@
             <router-link class="font-medium text-sm hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/login" @click="dropdownOpen = false">
            <n-icon class="mr-2" size="20" color="black">
              <Password16Filled />
-            </n-icon> parol</router-link>
+            </n-icon> Password</router-link>
           </li>
           <li class="text-red">
             <router-link class="font-medium text-sm text-red-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/login" @click="dropdownOpen = false">
            <n-icon class="mr-2" size="20" color="red">
              <Logout />
-            </n-icon> Chiqish</router-link>
+            </n-icon> Exit</router-link>
           </li>
         </ul>
       </div> 

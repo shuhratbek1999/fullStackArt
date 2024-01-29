@@ -16,7 +16,8 @@
                     <label class="my-4 inline-block" for="">Password</label>
                     <n-input v-model:value="password" type="password" placeholder="password is required" />
                     <div class="buttons">
-                      <n-button @click="Saqlash" type="success" class="bg-blue-500 mt-10">Saqlash</n-button>
+                      <n-button @click="Saqlash" type="success" class="bg-blue-500 mt-10">Save</n-button>
+                       <n-button @click="Cancel" type="error" class="bg-red-500 mt-10 ml-4">Cancel</n-button>
                     </div>
                  </div>
             </div>
@@ -53,6 +54,9 @@ const rules = computed(() => (
 ))
 let Errors = ref(null)
 const v$ = useVuelidate(rules, {name});
+const Cancel = () => {
+    router.push('/user_all')
+}
 const Saqlash = () => {
     let data = {
         name: name.value,

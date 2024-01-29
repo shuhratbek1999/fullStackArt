@@ -137,7 +137,6 @@ const Add = () => {
 }
 const allProject = () => {
     axios.get('project/all').then(res => {
-      console.log(res.data.data)
         if(!res.error){
             Projects.value = res.data.data
         }

@@ -2,6 +2,6 @@
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-
+@import url('../../public/fonts/style.css');
 
 @import 'tailwindcss/utilities';

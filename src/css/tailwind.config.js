@@ -13,6 +13,7 @@ module.exports = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+        Atyp: ['Atyp']
       },
       fontSize: {
         xx: ['0.62rem', {lineHeight: '1.5'}],

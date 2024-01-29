@@ -8,7 +8,7 @@
            <div 
            class="
            infoo
-           item xl:w-11/12 xl:min-h-98 px-3 xl:my-6
+           item xl:w-11/12 xl:min-h-98 px-3 xl:my-6 font-Atyp
            " 
            >
               <div class="city_img xl:flex">

@@ -34,11 +34,12 @@
                         <n-input v-model:value="music_type" size="large"  type="text" placeholder="music is required" />
                      </div>
                     <div class="buttons mt-4">
-                      <n-button @click="Saqlash" type="success" class="bg-blue-500 mt-10">Saqlash</n-button>
+                      <n-button @click="Saqlash" type="success" class="bg-blue-500 mt-10">Save</n-button>
+                      <n-button @click="Cancel" type="error" class="bg-red-500 mt-10 ml-4">Cancel</n-button>
                     </div>
                  </div>
                   <div class="category_name xl:w-5/12">
-                    <label class="mb-4 inline-block" for="name">category image</label>
+                    <label class="mb-4 inline-block" for="name">page image</label>
                       <n-upload
                       v-model:file-list="img"
                       list-type="image-card"
@@ -49,7 +50,7 @@
                       <n-checkbox
                         v-if="route.params.id"
                         size="large"
-                        label="Rasmni yangilash"
+                        label="update image"
                         v-model:checked="change_image"
                       />
                       <n-avatar
@@ -86,6 +87,9 @@ const sidebarOpen = ref(false)
 const change_image = ref(false)
 const Add = () => {
   router.push('/category_add')
+}
+const Cancel = () =>{
+  router.push('/category_all')
 }
 const Pages = ref([])
 const selectPages = ref("")

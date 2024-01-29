@@ -94,15 +94,7 @@ const Menus = ref([
     {
         id: 9,
         label: 'News'
-    },
-    {
-        id: 10,
-        label: 'Login'
-    },
-    // {
-    //     id: 11,
-    //     label: 'Eng'
-    // }
+    }
 ])
 
 const MenuItem = (name) => {
@@ -133,9 +125,6 @@ const MenuItem = (name) => {
         break;
         case 'Visual Arts':
              router.push('/visual')
-        break;
-        case 'Login':
-             router.push('/login')
         break;
         default:
             break;
