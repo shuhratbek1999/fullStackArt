@@ -7,11 +7,11 @@
           class="footer_left"
           >
           <div class="xl:text-3xl font-normal text-ffff">
-            <span class="font-bold xl:text-5xl">Founders:</span> <br>
+            <span class="font-bold xl:text-5xl">{{t('footer.founders')}}</span> <br>
             Martina Stefanova, Doychin Kotlarov
           </div>
           <div class="xl:text-3xl font-normal text-ffff">
-            <span class="font-bold xl:text-5xl">General Manager:</span> <br>
+            <span class="font-bold xl:text-5xl">{{t('footer.general')}}</span> <br>
             Martina Stefanova
           </div>
         </div>
@@ -21,19 +21,31 @@
                     <div class="instagramm flex justify-center items-center">
                         <img class="xl:w-10 xl:h-10" src="../assets/images/ins.png" alt="instagram">
                     </div>
-                <div class="ml-2"><a href="#" class="xl:text-3xl xx:text-xl xl:text-white xl:opacity-100">doma_art_foundation</a></div>
+                <div class="ml-2">
+                  <a href="#" class="xl:text-3xl xx:text-xl xl:text-white xl:opacity-100">
+                   {{t('footer.dom1')}}
+                  </a>
+                  </div>
             </div>
             <div class="icon flex items-center cursor-pointer xl:my-5">
                     <div class="facebook flex justify-center items-center">
                         <img class="xl:w-10 xl:h-10" src="../assets/images/iface.png" alt="facebook">
                     </div>
-                <div class="ml-2"><a href="#" class="xl:text-3xl xx:text-xl">doma_art_foundation</a></div>
+                <div class="ml-2">
+                  <a href="#" class="xl:text-3xl xx:text-xl">
+                    {{t('footer.dom2')}}
+                  </a>
+                </div>
             </div>
             <div class="icon flex items-center cursor-pointer">
                     <div class="facebook flex justify-center items-center">
                         <img class="xl:w-10 xl:h-10" src="../assets/images/inyou.png" alt="you tube">
                     </div>
-                <div class="ml-2"><a href="#" class="xl:text-3xl xx:text-xl">doma_art_foundation</a></div>
+                <div class="ml-2">
+                  <a href="#" class="xl:text-3xl xx:text-xl">
+                      {{t('footer.dom3')}}
+                    </a>
+                  </div>
             </div>
          </div>
   </div>
@@ -41,6 +53,8 @@
 
 <script setup>
 import {FacebookF,Instagram, Youtube} from "@vicons/fa"
+import {useI18n} from "vue-i18n"
+const {t} = useI18n()
 </script>
 
 <style scoped>

@@ -6,15 +6,26 @@ import {createPinia} from 'pinia'
 import axios from "axios";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import {createI18n} from 'vue-i18n'
+import de from "./i18n/de.json" 
+import en from "./i18n/en.json" 
+
+const i18n = createI18n({ 
+  locale: 'en', 
+  fallbackLocale: "en", 
+  messages: { de, en }, 
+  legacy: false 
+})
 const pinia = createPinia();
 const app = createApp(Provider);
 app.use(pinia);
+app.use(i18n)
 AOS.init()
 import {useVuelidate} from "@vuelidate/core"
 app.use(useVuelidate)
 const Bearer = "Bearer ";
-let BASE_URL = "http://164.90.232.255:3000/api/v1/admin-app/";
-// let BASE_URL = "http://localhost:3010/api/v1/admin-app/";
+// let BASE_URL = "http://164.90.232.255:3000/api/v1/admin-app/";
+let BASE_URL = "http://localhost:3010/api/v1/admin-app/";
 let FILE_URL = BASE_URL
 axios.interceptors.request.use(
     function (config) {

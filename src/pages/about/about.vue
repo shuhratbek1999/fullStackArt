@@ -6,7 +6,7 @@
       <ProjectLabel>
          <div class="projectss mt-16 xl:h-60 xx:mt-11 xx:h-40 xx:flex xx:items-center xx:justify-around xs:mt-11 xs:h-40 xs:flex xs:items-center xs:justify-around h-64 xl:flex xl:items-center xl:justify-around">
             <div class="flex route_name xl:text-9xl xx:text-6xl xs:xx:text-6xl font-bold text-cityFot animate__animated animate__backInLeft">
-                {{route.name}}
+                {{t('about.routeabout')}}
             </div>
             <div class="circles w-1/4"></div>
         </div>
@@ -26,6 +26,8 @@ import ProjectLabel from "../../components/Projects.vue"
 import AboutInfo from "../../components/aboutInfo.vue"
 import AboutFooter from "../../components/footer.vue"
 import {useRouter, useRoute} from "vue-router"
+import {useI18n} from "vue-i18n"
+const {t} = useI18n()
 const router = useRouter()
 const route = useRoute()
 </script> 

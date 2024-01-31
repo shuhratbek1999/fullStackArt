@@ -4,51 +4,57 @@
         <div class="footer_top  xl:w-full xl:h-20 xl:flex xl:items-center xl:justify-center">
             <ul class="xl:flex xl:items-center xl:justify-between xl:w-full">
                 <li v-for="item in Menus" :key="item.id" class="px-4 xl:first:pl-0 last:pr-0 cursor-pointer">
-                    <span @click="MenuItem(item.label)" class="text-white xl:text-sm xs:text-xs xl:text-eeee">{{item.label}}</span>
+                    <span 
+                        @click="MenuItem(item.label)" 
+                        class="text-white xl:text-sm xs:text-xs xl:text-eeee">
+                        {{ $t(`menu.${item.label.toLowerCase()}`) }}
+                     </span>
                 </li>
             </ul>
         </div>
         <div class="footer_center xl:border-y-2 xl:border-y-eeee xl:w-full xl:h-48 xl:flex xl:items-start xl:py-6 xl:justify-between">
              <div class="footer_item">
-                <span class="xl:text-sm xl:text-eeee xl:font-normal">Location</span> <br> 
-                <span class="xl:text-sm xl:text-eeee xl:font-medium">Uzbekistan Tashkent</span>
+                <span class="xl:text-sm xl:text-eeee xl:font-normal">{{t('footer.location')}}</span> <br> 
+                <span class="xl:text-sm xl:text-eeee xl:font-medium">{{t('footer.adress')}}</span>
              </div>
              <div class="footer_item">
-                <span class="xl:text-sm xl:text-eeee xl:font-normal">Contact:</span> <br> 
+                <span class="xl:text-sm xl:text-eeee xl:font-normal">{{t('footer.contact')}}</span> <br> 
                 <span class="xl:text-sm xl:text-eeee xl:font-medium">+1(234)56789</span>
              </div>
              <div class="footer_item">
-                <span class="xl:text-sm xl:text-eeee xl:font-normal">E-mail:</span> <br> 
+                <span class="xl:text-sm xl:text-eeee xl:font-normal">{{t('footer.email')}}</span> <br> 
                 <span class="xl:text-sm xl:text-eeee xl:font-medium">Elbekgulomov0@gmail.com</span>
              </div>
              <div class="footer_item">
                 <div class="item xl:text-sm xl:text-eeee xl:font-normal">
-                   <span class="xl:text-sm xl:text-eeee xl:font-medium"> Founders:</span> <br> 
+                   <span class="xl:text-sm xl:text-eeee xl:font-medium"> {{t('footer.founders')}}</span> <br> 
                    <span>Martina Stefanova,</span> <br> 
                    <span>Doychin Kotlarov</span>
                 </div>
                 <div class="item xl:text-sm xl:text-eeee xl:font-normal xl:mt-2">
-                    <span class="xl:font-medium">General Manager:</span> <br>
+                    <span class="xl:font-medium">{{t('footer.general')}}</span> <br>
                    <span> Martina Stefanova</span>
                 </div>
              </div>
              <div class="footer_item">
                 <div class="icon xl:flex xl:items-center">
                     <img class="xl:mr-2 xl:w-8 xl:h-8" src="../assets/images/ins.png" alt="instagram">
-                    <span class="xl:text-sm xl:text-ffff">doma_art_foundation</span>
+                    <span class="xl:text-sm xl:text-ffff">{{t('footer.dom1')}}</span>
                 </div>
                 <div class="icon xl:flex xl:items-center xl:my-3">
                     <img class="xl:mr-2 xl:w-8 xl:h-8" src="../assets/images/iface.png" alt="facebook">
-                    <span class="xl:text-sm xl:text-ffff">DomaArtFoundation</span>
+                    <span class="xl:text-sm xl:text-ffff">{{t('footer.dom2')}}</span>
                 </div>
                 <div class="icon xl:flex xl:items-center">
                     <img class="xl:mr-2 xl:w-8 xl:h-8" src="../assets/images/inyou.png" alt="youtube">
-                    <span class="xl:text-sm xl:text-ffff">DOMA Art Foundation</span>
+                    <span class="xl:text-sm xl:text-ffff">{{t('footer.dom3')}}</span>
                 </div>
              </div>
         </div>
         <div class="footer_bottom xl:w-full xl:justify-center xl:h-12">
-             <div class="footer_b_text xl:flex xl:justify-center xl:text-ffff">Design & Development: GNSPRO</div>
+             <div class="footer_b_text xl:flex xl:justify-center xl:text-ffff">
+                {{t('footer.title')}}
+             </div>
         </div>
       </div>
   </div>
@@ -58,6 +64,8 @@
 import topMenu from './TopMenu.vue'
 import {ref} from "vue"
 import {useRouter, useRoute} from "vue-router"
+import { useI18n } from "vue-i18n";
+const { t,locale } = useI18n();
 const router = useRouter()
 const route = useRoute()
 const Menus = ref([

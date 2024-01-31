@@ -15,7 +15,7 @@
                 data-aos-delay="100"
                 >
                <div class="info_name xl:text-xl xl:w-60 xl:h-28 hover:cursor-pointer">
-                  <a :href="'#' +'city_info' + index">{{city.name}}</a>
+                  <a :href="'#' +'city_info' + index">{{t('city.name', {city: city.name})}}</a>
                </div>
                <div class="circle_info xl:flex">
                    <div class="circle mr-2">
@@ -38,8 +38,10 @@
 <script setup>
 import {onMounted, ref, inject, watch} from "vue"
 import {City} from "../stores/index"
+import {useI18n} from "vue-i18n"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+const {t} = useI18n()
 const FILE_URL = inject("FILE_URL");
 const store = City()
 const props = defineProps({
