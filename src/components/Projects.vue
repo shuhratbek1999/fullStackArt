@@ -1,11 +1,11 @@
 <template>
      <slot>
-        <div class="projectss proo xl:mt-16 xl:flex xl:items-center"
+        <div class="projectss proo xl:mt-12 xl:flex xl:items-center"
           :style="{'background-image': props.Img.img ? 'url(' + props.Img.img + ')' : 'none'}"
         >
          <div class="img_content">
          </div>
-         <div class="route xl:text-eeee absolute left-52 z-30">
+         <div class="route xl:text-eeee absolute z-30 w-full text-center font-AtypDBold font-normal">
              {{ props.Img.title }}
          </div>
          <div class="img absolute right-16 bottom-10 z-30">
@@ -52,7 +52,7 @@ watch(() => props.Img, () => {
     z-index: 10;
 }
 .route{
-    font-size: 170px;
+    font-size: 150px;
 }
 .img_content{
     width: 100%;

@@ -30,7 +30,7 @@ const route = useRoute()
 const AllArray = ref([])
 const CategoryImg = ref({})
 const OneProject = () => {
-   axios.get('category/all')
+   axios.get('category/categoryAll/' + route.name)
    .then(res => {
       ProjectsProp(res.data.data)
    })
@@ -38,11 +38,9 @@ const OneProject = () => {
 const ProjectsProp = (arr) => {
    if(arr.length > 0){
       arr.map(res => {
-         if(res.page.name == route.name){
             CategoryImg.value = res
             AllArray.value = res.project
             store.cityAll = res.project
-         }
       })
    }
 }

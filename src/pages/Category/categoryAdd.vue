@@ -176,7 +176,6 @@ const OneCategory = () => {
    axios.get('category/one/' + route.params.id)
    .then(res => {
       if(res){
-        console.log(res.data.data)
         page_id.value = res.data.data.page_id
         title.value = res.data.data.title
         music_type.value = res.data.data.music_type

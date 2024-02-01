@@ -16,7 +16,7 @@
                       clearable
                       />
                 </div>
-                <div class="input xl:w-5/12">
+                <div class="input xl:w-5/12" v-if="selectCategory !== 'About us'">
                     <label class="mb-2 inline-block" for="name">Name</label>
                     <n-input id="name" size="large" v-model:value="data.name" type="text" placeholder="name is required" />
                 </div>
@@ -71,7 +71,7 @@
                     <label class="mb-2 inline-block" for="name">Music category</label>
                     <n-input :disabled="selectCategory == 'Live Arts'" id="name" v-model:value="Music_type" size="large" type="text" />
                 </div>
-                <div class="input xl:w-5/12" v-if="selectCategory == 'Projects'">
+                <div class="input xl:w-5/12" v-if="selectCategory == 'Projects' || selectCategory == 'About us'">
                     <label class="mb-2 inline-block" for="name">Extra Description</label>
                     <n-input id="name" size="large" v-model:value="data.extra_description" type="textarea" />
                 </div>
@@ -188,7 +188,6 @@ let data = ref({
 const SelectUpdate = (id) => {
     let index = Category.value.findIndex(ids => ids.id == id)
     selectCategory.value = Category.value[index].name
-    console.log(Category.value[index]);
     Music_type.value = Category.value[index].music_type
 }
 const Saqlash = () => {
@@ -199,7 +198,12 @@ const Saqlash = () => {
         item.sayt_url = sayt_url.value
     })
     let formData = new FormData()
-    formData.append("name", data.value.name)
+    if(selectCategory == 'About us'){
+        formData.append("name", "About")
+    }
+    else{
+        formData.append("name", data.value.name)
+    }
     formData.append("category_id", data.value.category_id)
     formData.append("aftor_name", data.value.aftor_name)
     formData.append("description", data.value.description)

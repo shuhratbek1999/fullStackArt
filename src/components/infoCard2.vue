@@ -7,51 +7,67 @@
            <div 
                 class="
                 item xl:w-1/4 xl:h-97 xl:border-r-2 xl:border-r-gray-500 px-2 xl:my-6
-                cards aos-init font-Atyp
+                cards aos-init font-Atyp relative
                 " 
                 v-for="(city,index) in props.infoCard" :key="city.id"
                 ref="cards"
                 data-aos="fade-up"
                 data-aos-delay="100"
                 >
-               <div class="info_name xl:text-xl xl:w-60 xl:h-38 hover:cursor-pointer">
-                  <a :href="'#' +'city_info' + index">{{t('city.name', {city: city.name})}}</a>
-               </div>
-               <div class="circle_info xl:flex">
-                   <div class="circle mr-2">
-                      <img class="xl:w-11 xl:h-11 xl:rounded-full xl:border-2" :src="FILE_URL + 'images/' + city.aftor_img" alt="">
-                   </div>
-                   <div class="user">
-                        <div style="color: #000000" class="user_name xl:text-base">Карточки</div>
-                        <div style="color: #7C7C7C" class="users font-normal xl:text-base">{{city.aftor_name}}</div>
-                   </div>
-               </div>
-               <div class=" absolute bottom-0 overflow-hidden">
-                  <img class="w-72 h-40 hover:scale-105 duration-500" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
-               </div>
+               <div class="content xl:h-56 relative">
+                    <div class="info_name xl:text-xl xl:w-60 hover:cursor-pointer font-AtypBold">
+                        <a :href="'#' +'city_info' + index">
+                            {{city.name}}
+                        </a>
+                    </div>
+                    <p class="xl:text-base font-Atyp">
+                        <a :href="'#' +'city_info' + index" class="info_spam">
+                            {{city.description}}
+                        </a>
+                    </p>
+                    <div class="time absolute bottom-3 font-Atyp">
+                        {{ moment(city.date_time * 1000).format("YYYY-MM-DD") }}
+                    </div>
+                </div>
+                <div class="images absolute bottom-0 overflow-hidden w-72 h-40 cursor-pointer" @click="ModalShow(city,index)"
+                >
+                    <img class="hover:scale-105 duration-500" draggable="true" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
+                </div>
            </div>
+            <Modal :showModal="show" class="absolute top-0 right-0" />
        </div>
   </div>
 </slot>
 </template>
 
 <script setup>
-import {onMounted, ref, inject, watch} from "vue"
+import Modal from './modal.vue'
+import {onMounted, ref, inject, watch,computed} from "vue"
 import {City} from "../stores/index"
 import {useI18n} from "vue-i18n"
+import moment from "moment"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const {t} = useI18n()
 const FILE_URL = inject("FILE_URL");
 const store = City()
+const emit = defineEmits(['showModal'])
+const show = ref({})
 const props = defineProps({
     infoCard:{
         type: Array,
         required: false
     }
 })
+const ModalShow = (data, index) => {
+    store.cityOne = data
+    show.value.bool = true
+    show.value.Id = index + 1
+}
 const Cards = ref([])
-
+const UrlImages = (img) => {
+   return FILE_URL + 'images/' + img[0].url
+}
 watch(() => store.cityAll, () => {
     Cards.value = store.cityAll
 })
@@ -75,9 +91,6 @@ onMounted(() => {
 }
 .item:nth-child(4n + 4){
     border-right: 0px;
-}
-.images_img:hover{
-    transform: scale(1.1);
 }
 a {
   background: 

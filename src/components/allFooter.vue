@@ -4,11 +4,12 @@
         <div class="footer_top  xl:w-full xl:h-20 xl:flex xl:items-center xl:justify-center">
             <ul class="xl:flex xl:items-center xl:justify-between xl:w-full">
                 <li v-for="item in Menus" :key="item.id" class="px-4 xl:first:pl-0 last:pr-0 cursor-pointer">
-                    <span 
+                    <a 
+                        href="#"
                         @click="MenuItem(item.label)" 
-                        class="text-white xl:text-sm xs:text-xs xl:text-eeee">
+                        class="text-white xl:text-sm xs:text-xs xl:text-eeee spam">
                         {{ $t(`menu.${item.label.toLowerCase()}`) }}
-                     </span>
+                     </a>
                 </li>
             </ul>
         </div>
@@ -121,6 +122,17 @@ const MenuItem = (name) => {
 }
 </script>
 
-<style>
-
+<style scoped>
+.spam{
+    background: linear-gradient(to right, transparent, transparent),
+    linear-gradient(to right, white, white);
+    background-size: 100% 0.1rem, 0 0.1rem;
+    background-repeat: no-repeat;
+    background-position: 100% 100%, 0 100%;
+    transition: background-size 0.3s ease-in;
+    padding-bottom: 2px;
+}
+.spam:hover{
+    background-size: 0 0.1rem, 95% 0.1rem;
+}
 </style>

@@ -13,7 +13,9 @@ module.exports = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        Atyp: ['Atyp']
+        Atyp: ['Atyp'],
+        AtypBold: ['Atyp Bold'],
+        AtypDBold: ['Atyp-Bold']
       },
       fontSize: {
         xx: ['0.62rem', {lineHeight: '1.5'}],
@@ -52,11 +54,15 @@ module.exports = {
         101: '44rem',
         125: '45rem',
         110: '35.5rem',
-        15: '3.8125rem'
+        15: '3.8125rem',
+        97: "23.25rem",
+        38: "9.4375rem",
+        95: "23.875rem"
       },
       minHeight:{
         101: '44rem',
-        98: '32rem'
+        98: '32rem',
+        102: '55rem'
       },
       width:{
         130: '39.375rem'

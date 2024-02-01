@@ -16,10 +16,10 @@
                     <img :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 xl:rounded" alt="">
                  </div>
                  <div class="text xl:w-130 xl:text-xl xl:font-normal pl-4">
-                    <div class="city_name xl:text-4xl underline font-medium xl:pb-4">
+                    <div class="city_name xl:text-4xl font-AtypBold font-medium underline-offset-4 pb-2 underline">
                             {{city.name}}
                     </div>
-                     <div class="description xl:text-xl">
+                     <div class="description xl:text-xl font-Atyp">
                         {{city.description}}
                      </div>
                  </div>
@@ -107,5 +107,17 @@ watch(() => store.cityAll, () => {
     width: 100%;
     height: 2px;
     background-color: black;
+} */
+/* .city_name{
+    background: linear-gradient(to right, transparent, transparent),
+    linear-gradient(to right, black,black);
+    background-size: 80% 0.1rem, 0 0.1rem;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.8s ease-in;
+}
+.city_name:hover{
+    background-size:  0 0.1rem, 95% 0.1rem;
+    cursor: pointer;
 } */
 </style>
