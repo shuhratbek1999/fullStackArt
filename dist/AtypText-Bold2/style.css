@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Atyp';
+    src: local('Atyp Text Bold'), local('Atyp-Text-Bold'),
+        url('AtypText-Bold.woff2') format('woff2'),
+        url('AtypText-Bold.woff') format('woff'),
+        url('AtypText-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }

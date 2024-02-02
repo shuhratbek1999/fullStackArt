@@ -99,7 +99,8 @@ a {
   background-size: 100% 0.1em, 0 0.1em;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.8s ease-in;
+  transition: background-size 0.5s ease-in;
+  padding-bottom: 4px;
 }
 a:hover,
 a:focus {

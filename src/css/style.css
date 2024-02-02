@@ -4,6 +4,8 @@
 @import 'tailwindcss/components';
 @import url('../../public/fonts/style.css');
 @import url('../../public/bold/style.css');
-@import url('../../public/AtypDisplayBold/style.css');
+@import url('../../public/AtypDisplayMedium/style.css');
+@import url('../../public/AtypDisplayBold2/style.css');
+@import url('../../public/AtypText-Bold2/style.css');
 
 @import 'tailwindcss/utilities';

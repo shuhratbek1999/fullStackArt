@@ -5,8 +5,8 @@
         >
          <div class="img_content">
          </div>
-         <div class="route xl:text-eeee absolute z-30 w-full text-center font-AtypDBold font-normal">
-             {{ props.Img.title }}
+         <div class="route absolute z-30 w-full">
+             <h1 class="xl:text-eeee text-center font-normal">{{ props.Img.title }}</h1>
          </div>
          <div class="img absolute right-16 bottom-10 z-30">
             <!-- {{props.Img.img}} -->
@@ -51,8 +51,10 @@ watch(() => props.Img, () => {
     position: relative;
     z-index: 10;
 }
-.route{
-    font-size: 150px;
+.route h1{
+   font-size: 128px; 
+   font-family: sans-serif;
+   font-weight: 700;
 }
 .img_content{
     width: 100%;

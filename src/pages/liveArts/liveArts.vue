@@ -16,8 +16,8 @@
                      data-aos-delay="100"
                      :key="index">
                      <div class="live_top xl:h-56 relative">
-                           <div class="info_name xl:text-xl xl:w-60 hover:cursor-pointer font-AtypBold">
-                                 <a :href="'#' +'city_info' + index">
+                           <div class="info_name xl:text-xl xl:w-60 hover:cursor-pointer">
+                                 <a :href="'#' +'city_info' + index" class="font-AtypBold">
                                     {{city.name}}
                                  </a>
                            </div>
@@ -114,7 +114,7 @@ a {
   background-size: 100% 0.1em, 0 0.1em;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.8s ease-in;
+  transition: background-size 0.5s ease-in;
 }
 a:hover,
 a:focus {

@@ -15,7 +15,8 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
         Atyp: ['Atyp'],
         AtypBold: ['Atyp Bold'],
-        AtypDBold: ['Atyp-Bold']
+        AtypMed: ['Atyp-Medium'],
+        AtypTB: ['Atyp-Text-Bold']
       },
       fontSize: {
         xx: ['0.62rem', {lineHeight: '1.5'}],

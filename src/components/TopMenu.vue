@@ -121,7 +121,7 @@ const Options = ref([
         value: 'en'
     },
     {
-        label: 'Deutsch',
+        label: 'Bulgaria',
         value: 'de'
     }
 ])
