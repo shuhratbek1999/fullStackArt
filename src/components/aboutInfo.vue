@@ -16,7 +16,7 @@
                     </a>
                   </div>
                   <div class="rights w-4/12 pl-3">
-                     <a href="#" class="font-Atyp text-xl underline underline-offset-4">
+                     <a href="#" class="font-Atyp text-xl texts">
                         {{info.extra_description}}
                     </a>
                   </div>
