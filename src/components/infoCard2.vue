@@ -7,7 +7,7 @@
            <div 
                 class="
                 item xl:w-1/4 xl:h-97 xl:border-r-2 xl:border-r-gray-500 px-2 xl:my-6
-                cards aos-init font-Atyp relative
+                cards aos-init relative
                 " 
                 v-for="(city,index) in props.infoCard" :key="city.id"
                 ref="cards"
@@ -15,17 +15,17 @@
                 data-aos-delay="100"
                 >
                <div class="content xl:h-56 relative">
-                    <div class="info_name xl:text-xl xl:w-60 hover:cursor-pointer font-AtypBold">
+                    <div class="info_name xl:text-xl xl:w-60 hover:cursor-pointer font-sans font-medium">
                         <a :href="'#' +'city_info' + index">
                             {{city.name}}
                         </a>
                     </div>
-                    <p class="xl:text-base font-Atyp">
+                    <p class="xl:text-base font-sans">
                         <a :href="'#' +'city_info' + index" class="info_spam">
                             {{city.description}}
                         </a>
                     </p>
-                    <div class="time absolute bottom-3 font-Atyp">
+                    <div class="time absolute bottom-3 font-Atyp text-gray-500">
                         {{ moment(city.date_time * 1000).format("YYYY-MM-DD") }}
                     </div>
                 </div>

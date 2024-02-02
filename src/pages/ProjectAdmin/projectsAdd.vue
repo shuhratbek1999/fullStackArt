@@ -17,7 +17,8 @@
                       />
                 </div>
                 <div class="input xl:w-5/12" v-if="selectCategory !== 'About us'">
-                    <label class="mb-2 inline-block" for="name">Name</label>
+                    <label class="mb-2 inline-block" v-if="selectCategory !== 'News' && selectCategory !== 'Media'" for="name">Name</label>
+                    <label class="mb-2 inline-block" v-else for="name">Link</label>
                     <n-input id="name" size="large" v-model:value="data.name" type="text" placeholder="name is required" />
                 </div>
             </div>
@@ -63,17 +64,32 @@
                     <label class="mb-2 inline-block" for="name">Description</label>
                     <n-input id="name" class="rounded" size="large" v-model:value="data.description" type="textarea" />
                 </div>
-                <div class="selec xl:w-5/12" v-else>
+                <div class="selec xl:w-5/12" v-else-if="selectCategory != 'Media' && selectCategory != 'News'">
                     <label class="mb-2 inline-block" for="name">Text</label>
                     <n-input id="name" size="large" v-model:value="data.description" type="textarea" />
                 </div>
-                <div class="input xl:w-5/12" v-if="selectCategory == 'Live Arts'">
-                    <label class="mb-2 inline-block" for="name">Music category</label>
-                    <n-input :disabled="selectCategory == 'Live Arts'" id="name" v-model:value="Music_type" size="large" type="text" />
+                <div class="extraa w-5/12">
+                <div class="selec" v-if="selectCategory == 'Projects'">
+                    <label class="mb-2 inline-block" for="name">Cart</label>
+                    <n-input id="name" class="rounded" size="large" v-model:value="data.cart" type="text" />
                 </div>
-                <div class="input xl:w-5/12" v-if="selectCategory == 'Projects' || selectCategory == 'About us'">
+                <div class="input xl:w-full" v-if="selectCategory == 'About us'">
                     <label class="mb-2 inline-block" for="name">Extra Description</label>
                     <n-input id="name" size="large" v-model:value="data.extra_description" type="textarea" />
+                </div>
+                <div class="input xl:w-full mt-2" v-if="selectCategory != 'Projects' && selectCategory != 'Media' && selectCategory != 'News'">
+                    <label class="mb-2 inline-block" for="name">date time</label>
+                     <n-date-picker
+                        v-model:value="data.date_time"
+                        value-format="yyyy-MM-dd"
+                        type="date"
+                        size="large"
+                        clearable
+                        placeholder="Select a start date"
+                        style="width: 250px"
+                        :on-update:value="change2"
+                    />
+                </div> 
                 </div>
             </div>
             <div class="form_top xl:flex xl:justify-between xl:my-3" v-if="selectCategory == 'Projects'">
@@ -168,6 +184,8 @@ const fileList = ref([])
 const selectCategory = ref("")
 let data = ref({
     category_id: null,
+    date_time: null,
+    cart: "",
     name: "",
     aftor_name: "",
     aftor_img: [],
@@ -190,6 +208,9 @@ const SelectUpdate = (id) => {
     selectCategory.value = Category.value[index].name
     Music_type.value = Category.value[index].music_type
 }
+const change2 = (e) => {
+    data.value.date_time = e
+};
 const Saqlash = () => {
     data.value.Urls.forEach(item => {
         item.insta_url = insta_url.value
@@ -205,6 +226,8 @@ const Saqlash = () => {
         formData.append("name", data.value.name)
     }
     formData.append("category_id", data.value.category_id)
+    formData.append("date_time", data.value.date_time)
+    formData.append("cart", data.value.cart)
     formData.append("aftor_name", data.value.aftor_name)
     formData.append("description", data.value.description)
     formData.append("extra_description", data.value.extra_description)

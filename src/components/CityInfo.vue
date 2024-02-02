@@ -1,6 +1,6 @@
 <template>
   <div class="info_citys relative" v-if="props.cityInfo.length > 0">
-       <div class="info_item xl:w-full xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:items-center"
+       <div class="info_item xl:w-full xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:items-center xl:my-6"
           v-for="(city,index) in props.cityInfo" :key="city.id"
            :id="'city_info' + index"
            data-aos="fade-up"
@@ -8,7 +8,7 @@
            <div 
            class="
            infoo
-           item xl:w-11/12 xl:min-h-98 px-3 font-Atyp
+           item xl:w-11/12 xl:min-h-98 px-3 font-sans
            " 
            >
               <div class="city_img xl:flex">
@@ -16,20 +16,20 @@
                     <img :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 xl:rounded" alt="">
                  </div>
                  <div class="text xl:w-130 xl:text-xl xl:font-normal pl-4">
-                    <div class="city_name xl:text-4xl font-AtypBold font-medium underline-offset-4 pb-2 underline">
+                    <div class="city_name xl:text-4xl font-sans font-medium underline-offset-4 pb-2 underline">
                             {{city.name}}
                     </div>
-                     <div class="description xl:text-xl font-Atyp">
-                        {{city.description}}
+                     <div class="description xl:text-xl font-sans">
+                        {{DescText[index]}}
                      </div>
                  </div>
               </div>
-              <div v-if="city.extra_description.length>0" class="city_text xl:text-xl xl:py-4">
-                 {{ city.extra_description }}
+              <div v-if="ExtraText.length>0" class="city_text xl:text-xl xl:py-4 font-sans">
+                 {{ ExtraText[index] }}
               </div>
               <div v-if="city.Fact.length > 0" class="city_ul xl:py-4">
                  <ol class="list-disc xl:ml-5 xl:text-xl">
-                    <li v-for="item in city.Fact" :key="item.id">
+                    <li v-for="item in city.Fact" :key="item.id" class="font-sans">
                         {{item.text}}
                     </li>
                  </ol>
@@ -88,6 +88,8 @@ const props = defineProps({
         required: true
     }
 })
+const DescText = ref([])
+const ExtraText = ref([])
 const ModalShow = (data, index) => {
     store.cityOne = data
     show.value.bool = true
@@ -95,9 +97,19 @@ const ModalShow = (data, index) => {
 }
 const Citys = ref([])
 let Urls = ref([])
-
+const CircleText = (arr) => {
+    if(arr.length > 0){
+        arr.map(res => {
+          let news = res.description.slice(0, 601)
+          let extra = res.description.slice(602, res.description.length - 1)
+          DescText.value.push(news)
+          ExtraText.value.push(extra)
+        })
+    }
+}
 watch(() => store.cityAll, () => {
     Citys.value = store.cityAll
+    CircleText(store.cityAll)
 })
 </script>
 

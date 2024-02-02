@@ -4,10 +4,15 @@
          <topMenu /> 
       </div>
       <ProjectLabel :Img="CategoryImg" />
-      <div style="min-height: 1150px" class="cardAll border-2 border-white">
+      <div class="cardAll">
+         <InfoCard :infoCard="AllArray" />
+      </div>
+      <!-- <div style="min-height: 1150px" class="cardAll border-2 border-white">
          <div class="lives xl:flex xl:flex-col xl:items-center" v-for="live in AllArray" :key="live">
             <div class="live w-11/12">
-                  <div  class="live_title font-AtypDBold">{{live.music_type}}</div>
+                  <div  class="live_title">
+                     <h1 class="font-sans font-bold">{{live.music_type}}</h1>
+                  </div>
                   <div class="live_content xl:flex flex-wrap">
                   <div class="live_child relative w-1/4 xl:h-97 my-4 item xl:border-r-2 xl:border-r-gray-500 px-2" 
                      v-for="(city,index) in live.project" 
@@ -17,11 +22,11 @@
                      :key="index">
                      <div class="live_top xl:h-56 relative">
                            <div class="info_name xl:text-xl xl:w-60 hover:cursor-pointer">
-                                 <a :href="'#' +'city_info' + index" class="font-AtypBold">
+                                 <a :href="'#' +'city_info' + index" class="font-sans font-medium">
                                     {{city.name}}
                                  </a>
                            </div>
-                           <p class="xl:text-base font-Atyp">
+                           <p class="xl:text-base font-sans">
                                  <a :href="'#' +'city_info' + index" class="info_spam">
                                     {{city.description}}
                                  </a>
@@ -43,7 +48,7 @@
                   </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <Footer />
       <Modal :showModal="show" class="absolute top-0 right-0" />
   </div>
@@ -53,7 +58,7 @@
 import topMenu from "../../components/TopMenu.vue"
 import Navbar from "../../components/Navbar.vue"
 import ProjectLabel from "../../components/Projects.vue"
-import InfoCard from "../../components/infoCard.vue"
+import InfoCard from "../../components/infoCard2.vue"
 import Footer from "../../components/allFooter.vue"
 import Modal from '../../components/modal.vue'
 import moment from "moment"
@@ -71,26 +76,23 @@ const FILE_URL = inject("FILE_URL");
 const AllArray = ref([])
 const CategoryImg = ref({})
 let TypeArray = ref([])
+const ModalShow = (data, index) => {
+   store.cityOne = data
+    show.value.bool = true
+    show.value.Id = index + 1
+}
 const OneProject = () => {
-   axios.get('category/all')
+   axios.get('category/categoryAll/' + route.name)
    .then(res => {
       ProjectsProp(res.data.data)
    })
 }
-const ModalShow = (data, index) => {
-    store.cityOne = data
-    show.value.bool = true
-    show.value.Id = index + 1
-}
 const ProjectsProp = (arr) => {
    if(arr.length > 0){
       arr.map(res => {
-         if(res.page.name == route.name){
             CategoryImg.value = res
-            AllArray.value.push(res)
+            AllArray.value = res.project
             store.cityAll = res.project
-            TypeArray.value.push(res.music_type)
-         }
       })
    }
 }

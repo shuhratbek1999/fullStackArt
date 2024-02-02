@@ -29,10 +29,10 @@
                         <label class="mb-4 inline-block" for="">Page title</label>
                         <n-input v-model:value="title" size="large"  type="text" placeholder="title is required" />
                      </div>
-                     <div class="item" v-if="selectPages == 'Live Arts'">
+                     <!-- <div class="item" v-if="selectPages == 'Live Arts'">
                         <label class="mb-4 inline-block" for="">Music</label>
                         <n-input v-model:value="music_type" size="large"  type="text" placeholder="music is required" />
-                     </div>
+                     </div> -->
                     <div class="buttons mt-4">
                       <n-button @click="Saqlash" type="success" class="bg-blue-500 mt-10">Save</n-button>
                       <n-button @click="Cancel" type="error" class="bg-red-500 mt-10 ml-4">Cancel</n-button>

@@ -3,7 +3,7 @@
     class="top_menu fixed top-0 w-full xl:h-16 bg-greys z-20">
     <slot>
         <div class="content xl:w-full xl:flex xl:justify-center">
-            <div class="navbar xl:w-11/12 xl:flex xl:items-center xl:justify-between">
+            <div class="navbar xs:hidden xx:hidden xl:w-11/12 xl:flex xl:items-center xl:justify-between">
                 <ul class="flex justify-center items-center w-2/12">
                     <li><img src="../assets/images/dom.png" alt="dom png"></li>
                     <li class="mr-1"><img src="../assets/images/Group.png" alt="group img"></li>
@@ -13,8 +13,8 @@
                         <span 
                             v-if="item.label != 'eng'" 
                             @click="MenuItem(item.label)" 
-                            class="text-menuColor font-Atyp xl:text-sm xs:text-xs" 
-                            :class="[{'border-b-gray-400 border-b-2 pb-2': route.name == item.label},{'text-sm': locale == 'de'}]"
+                            class="text-menuColor font-sans xl:text-sm xs:text-xs" 
+                            :class="[{'border-b-gray-400 border-b-2 pb-2 font-medium': route.name == item.label},{'text-sm': locale == 'de'}]"
                             >
                             {{ $t(`menu.${item.label.toLowerCase()}`) }}
                         </span>

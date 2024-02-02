@@ -1,12 +1,12 @@
 <template>
      <slot>
-        <div class="projectss proo xl:mt-12 xl:flex xl:items-center"
+        <div class="projectss proo mt-12 xl:flex xl:items-center"
           :style="{'background-image': props.Img.img ? 'url(' + props.Img.img + ')' : 'none'}"
         >
          <div class="img_content">
          </div>
          <div class="route absolute z-30 w-full">
-             <h1 class="xl:text-eeee text-center font-normal">{{ props.Img.title }}</h1>
+             <h1 class="xl:text-eeee text-center font-normal xl:text-9xl">{{ props.Img.title }}</h1>
          </div>
          <div class="img absolute right-16 bottom-10 z-30">
             <!-- {{props.Img.img}} -->
@@ -35,7 +35,12 @@ watch(() => props.Img, () => {
 </script>
 
 <style scoped>
-@media(min-width: 1280px){
+.route h1{
+   font-size: 128px !important; 
+   font-family: sans-serif;
+   font-weight: 700;
+}
+@media(min-width: 1200px){
 .projectss img:nth-child(1){
     width: 78px;
     height: 78px;
@@ -67,4 +72,18 @@ watch(() => props.Img, () => {
     z-index: 20;
 }
 }
+@media(min-width: 360px max-width: 480px){
+.route h1{
+   font-size: 48px !important; 
+   font-family: sans-serif;
+   font-weight: 700;
+}
+}
+/* @media(min-width: 480px){
+.route h1{
+   font-size: 60px; 
+   font-family: sans-serif;
+   font-weight: 700;
+}
+} */
 </style>
