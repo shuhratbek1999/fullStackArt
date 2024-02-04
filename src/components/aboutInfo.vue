@@ -59,7 +59,7 @@ const props = defineProps({
     background-size: 0 2px;
     background-position: left bottom;
     background-repeat: no-repeat;
-    transition: background-size 0.6s ease-out;
+    transition: background-size 0.4s ease-out;
 }
 .texts:hover{
     background-size: 100% 2px;

@@ -19,7 +19,17 @@
                 <div class="input xl:w-5/12" v-if="selectCategory !== 'About us'">
                     <label class="mb-2 inline-block" v-if="selectCategory !== 'News' && selectCategory !== 'Media'" for="name">Name</label>
                     <label class="mb-2 inline-block" v-else for="name">Link</label>
-                    <n-input id="name" size="large" v-model:value="data.name" type="text" placeholder="name is required" />
+                    <n-input id="name" size="large" v-model:value="data.name" type="text" placeholder="link is required" />
+                </div>
+            </div>
+            <div 
+                class="form_top xl:flex xl:justify-between xl:my-3" 
+                v-if="selectCategory == 'News' || selectCategory == 'Media'"
+                >
+                <div class="input xl:w-5/12" v-if="selectCategory !== 'About us'">
+                    <label class="mb-2 inline-block" v-if="selectCategory !== 'News' && selectCategory !== 'Media'" for="name">Name</label>
+                    <label class="mb-2 inline-block" v-else for="name">Name</label>
+                    <n-input id="name" size="large" v-model:value="data.aftor_name" type="text" placeholder="name is required" />
                 </div>
             </div>
             <div class="form_top xl:flex xl:justify-between xl:my-3" v-if="selectCategory == 'Projects'">

@@ -12,7 +12,7 @@
         >
            <div 
                 class="
-                item xl:w-1/4 xl:h-97 xl:border-r-2 xl:border-r-gray-500 px-2 xl:my-6
+                item xl:w-1/4 xl:h-80 xl:border-r-2 xl:border-r-gray-500 px-2 xl:my-6
                 cards aos-init relative
                 " 
                 v-for="(city,index) in AllArray" :key="city.id"
@@ -23,7 +23,7 @@
                <div class="content xl:h-56 relative">
                     <div class="info_name xl:text-xl xl:w-60 hover:cursor-pointer font-sans font-medium">
                         <a target="_blank" :href="city.name">
-                            {{city.name}}
+                            {{city.aftor_name}}
                         </a>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ a {
   background-size: 100% 0.1em, 0 0.1em;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.5s ease-in;
+  transition: background-size 0.3s ease-in;
   padding-bottom: 4px;
 }
 a:hover,
