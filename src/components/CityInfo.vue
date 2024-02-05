@@ -17,7 +17,7 @@
                  </div>
                  <div class="text xl:w-6/12 pl-4">
                     <div class="city_name">
-                            <a href="#" class="xl:text-4xl font-sans font-medium pb-2">{{city.name}}</a>
+                            <a href="#" class="xl:text-4xl font-sans font-medium">{{city.name}}</a>
                     </div>
                      <div class="description text-justify xl:text-xl font-sans">
                         {{DescText[index]}}
