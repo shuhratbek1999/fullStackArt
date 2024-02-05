@@ -19,7 +19,7 @@
                </div>
                <div class="circle_info xl:flex">
                    <div class="circle mr-2">
-                      <img class="xl:w-11 xl:h-11 xl:rounded-full xl:border-2" :src="FILE_URL + 'images/' + city.aftor_img" alt="">
+                      <img class="xl:w-11 xl:h-11 xl:rounded-full xl:border-2 cursor-pointer" :src="FILE_URL + 'images/' + city.aftor_img" alt="">
                    </div>
                    <div class="user">
                         <div style="color: #000000" class="user_name xl:text-base font-sans">{{city.cart}}</div>
@@ -27,7 +27,7 @@
                    </div>
                </div>
                <div class=" absolute bottom-0 overflow-hidden">
-                  <img class="w-72 h-40 hover:scale-105 duration-500" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
+                  <img class="w-72 h-40 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
                </div>
            </div>
        </div>

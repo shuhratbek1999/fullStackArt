@@ -39,7 +39,7 @@
               :class="['bg-cityFot', 'text-cityBg']"
            >
                <div 
-                    class="city_footer item xl:h-15 px-3 xl:flex xl:justify-center xl:items-center"
+                    class="city_footer item xl:h-15 px-3 xl:flex xl:justify-center xl:items-center xl:mr-12"
                     v-for="item in city.Url" :key="item.id"
                     >
                     <div v-if="item.type == 'instagramm'" class="icon xl:flex xl:items-center">

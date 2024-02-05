@@ -11,7 +11,7 @@
         "news": "Nachricht"
     },
     "city": {
-        "name": "{city} hayt"
+        "name": "{city}"
     },
     "footer":{
         "location": "Standort",
