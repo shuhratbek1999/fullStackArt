@@ -128,10 +128,10 @@ const Options = ref([
 const MenuItem = (name) => {
     switch (name) {
         case 'About us':
-            router.push('/about')
+            router.push('/')
             break;
         case 'Projects':
-            router.push('/')
+            router.push('/project')
             break;
         case 'Education':
             router.push('/education')

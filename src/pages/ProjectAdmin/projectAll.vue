@@ -148,7 +148,7 @@ const Filtered = (text) => {
     search.value = text
 }
 const filterArray = (text,arr) =>{
-  if(text.length > 0){
+  if(text.length > 0 && arr){
     return arr.filter(x => x.category.page.name.toLowerCase().indexOf(text.toLowerCase()) > -1)
   }
   return arr

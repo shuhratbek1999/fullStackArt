@@ -1,6 +1,6 @@
 <template>
   <div class="info_citys relative" v-if="props.cityInfo.length > 0">
-       <div class="info_item xl:w-full xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:items-center xl:my-6"
+       <div class="info_item xl:w-full xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:items-center xl:mt-4 xl:mb-2"
           v-for="(city,index) in props.cityInfo" :key="city.id"
            :id="'city_info' + index"
            data-aos="fade-up"
@@ -8,26 +8,26 @@
            <div 
            class="
            infoo
-           item xl:w-11/12 xl:min-h-98 px-3 font-sans
+           item xl:w-11/12 xl:min-h-94 px-3 font-sans
            " 
            >
-              <div class="city_img xl:flex">
-                 <div @click="ModalShow(city,index)" class="images">
-                    <img :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 xl:rounded" alt="">
+              <div class="city_img xl:flex xl:w-full">
+                 <div @click="ModalShow(city,index)" class="images w-6/12">
+                    <img :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 xl:rounded cursor-pointer" alt="">
                  </div>
-                 <div class="text xl:w-130 xl:text-xl xl:font-normal pl-4">
-                    <div class="city_name xl:text-4xl font-sans font-medium underline-offset-4 pb-2 underline">
-                            {{city.name}}
+                 <div class="text xl:w-6/12 pl-4">
+                    <div class="city_name">
+                            <a href="#" class="xl:text-4xl font-sans font-medium pb-2">{{city.name}}</a>
                     </div>
-                     <div class="description xl:text-xl font-sans">
+                     <div class="description text-justify xl:text-xl font-sans">
                         {{DescText[index]}}
                      </div>
                  </div>
               </div>
-              <div v-if="ExtraText.length>0" class="city_text xl:text-xl xl:py-4 font-sans">
+              <div v-if="ExtraText.length>0" class="city_text xl:text-xl font-sans pb-3 text-justify">
                  {{ ExtraText[index] }}
               </div>
-              <div v-if="city.Fact.length > 0" class="city_ul xl:py-4">
+              <div v-if="city.Fact.length > 0" class="city_ul pb-3">
                  <ol class="list-disc xl:ml-5 xl:text-xl">
                     <li v-for="item in city.Fact" :key="item.id" class="font-sans">
                         {{item.text}}
@@ -35,35 +35,43 @@
                  </ol>
               </div>
            </div>
-           <div v-if="city.Url.length > 0" class="footer xl:w-full xl:flex xl:justify-center xl:h-15"
+           <div v-if="city.Url.length > 0" class="footer xl:w-full xl:flex xl:justify-end xl:h-15"
               :class="['bg-cityFot', 'text-cityBg']"
            >
                <div 
-                    class="city_footer item xl:w-11/12 px-3 xl:my-6 xl:flex xl:justify-end xl:items-center"
+                    class="city_footer item xl:h-15 px-3 xl:flex xl:justify-center xl:items-center"
                     v-for="item in city.Url" :key="item.id"
                     >
-                    <div v-if="item.you_tube_url" class="icon xl:flex xl:items-center">
+                    <div v-if="item.type == 'instagramm'" class="icon xl:flex xl:items-center">
                         <div class="xl:mr-2">
                             <img src="../assets/images/inyou.png" alt="">
                         </div>
                         <div class="link">
-                            <a target="_blank" :href="item.you_tube_url" class="xl:text-2xl">{{item.you_tube_url}}</a>
+                            <a target="_blank" :href="item.link" class="xl:text-xl">{{item.name}}</a>
                         </div>
                     </div>
-                    <div v-if="item.facebook_url" class="icon xl:flex xl:items-center xl:px-4">
+                    <div v-if="item.type == 'facebook'" class="icon icon xl:flex xl:items-center">
                         <div class="xl:mr-2">
                             <img src="../assets/images/iface.png" alt="">
                         </div>
                         <div class="link">
-                            <a target="_blank" :href="item.facebook_url" class="xl:text-2xl">{{item.facebook_url}}</a>
+                            <a target="_blank" :href="item.link" class="xl:text-xl">{{item.name}}</a>
                         </div>
                     </div>
-                    <div v-if="item.insta_url" class="icon xl:flex xl:items-center">
+                    <div v-if="item.type == 'you tube'" class="icon icon xl:flex xl:items-center">
                         <div class="xl:mr-2">
-                            <img src="../assets/images/ins.png" alt="">
+                            <img src="../assets/images/inyou.png" alt="">
                         </div>
                         <div class="link">
-                            <a target="_blank" :href="item.insta_url" class="xl:text-2xl">{{item.insta_url}}</a>
+                            <a target="_blank" :href="item.link" class="xl:text-xl">{{item.name}}</a>
+                        </div>
+                    </div>
+                    <div v-if="item.type == 'Site'" class="icon xl:flex xl:items-center">
+                        <div class="xl:mr-2">
+                            <img src="../assets/images/inyou.png" alt="">
+                        </div>
+                        <div class="link">
+                            <a target="_blank" :href="item.link" class="xl:text-2xl">{{item.name}}</a>
                         </div>
                     </div>
                </div>
@@ -114,22 +122,17 @@ watch(() => store.cityAll, () => {
 </script>
 
 <style scoped>
-/* .item:nth-child(4n + 1)::after{
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: black;
-} */
-/* .city_name{
-    background: linear-gradient(to right, transparent, transparent),
-    linear-gradient(to right, black,black);
-    background-size: 80% 0.1rem, 0 0.1rem;
-    background-position: 100% 100%, 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.8s ease-in;
+a {
+  background: 
+    linear-gradient(to right, transparent, transparent),
+    linear-gradient(to right, black, black);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in;
 }
-.city_name:hover{
-    background-size:  0 0.1rem, 95% 0.1rem;
-    cursor: pointer;
-} */
+a:hover,
+a:focus {
+  background-size: 0 0.1em, 100% 0.1em;
+}
 </style>

@@ -111,11 +111,32 @@ const Menus = ref([
 const MenuItem = (name) => {
     switch (name) {
         case 'About us':
-            router.push('/about')
+            router.push('/')
             break;
         case 'Projects':
             router.push('/project')
             break;
+        case 'Education':
+            router.push('/education')
+            break;
+        case 'Live Arts':
+             router.push('/livearts')
+        break;
+        case 'Media':
+             router.push('/media')
+        break;
+        case 'News':
+             router.push('/news')
+        break;
+        case 'Publications':
+             router.push('/publication')
+        break;
+        case 'Screenings':
+             router.push('/screenings')
+        break;
+        case 'Visual Arts':
+             router.push('/visual')
+        break;
         default:
             break;
     }

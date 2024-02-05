@@ -1,14 +1,16 @@
 <template>
-  <div class="visual bg-cityBg relative">
-      <div class="visual_menu">
-         <topMenu />
+  <div class="projects bg-cityBg">
+      <div class="project_menu xl:w-full xs:flex xs:justify-between xs:w-1/3">
+        <topMenu />
       </div>
       <ProjectLabel :Img="CategoryImg" />
       <div class="cardAll">
          <InfoCard :infoCard="AllArray" />
       </div>
+      <div class="city_info">
+        <CityInfo :cityInfo="AllArray" />
+      </div>
       <Footer />
-      <Modal :showModal="show" class="absolute top-0 right-0" />
   </div>
 </template>
 
@@ -16,14 +18,13 @@
 import topMenu from "../../components/TopMenu.vue"
 import Navbar from "../../components/Navbar.vue"
 import ProjectLabel from "../../components/Projects.vue"
-import InfoCard from "../../components/infoCard2.vue"
+import InfoCard from "../../components/infoCard.vue"
+import CityInfo from "../../components/CityInfo.vue"
 import Footer from "../../components/allFooter.vue"
-import Modal from '../../components/modal.vue'
 import  {City} from "../../stores/index"
 import {onMounted, reactive, ref} from "vue"
 import axios from "axios"
 import {useRoute} from "vue-router"
-const show = ref({})
 const store = City()
 const route = useRoute()
 const AllArray = ref([])

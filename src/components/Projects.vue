@@ -8,11 +8,9 @@
          <div class="route absolute z-30 w-full">
              <h1 class="xl:text-eeee text-center font-normal xl:text-9xl">{{ props.Img.title }}</h1>
          </div>
-         <div class="img absolute right-16 bottom-10 z-30">
-            <!-- {{props.Img.img}} -->
+         <!-- <div class="img absolute right-16 bottom-10 z-30">
              <img src="../assets/images/Ellipse.png" alt="">
-             <!-- <img :src="props.Img.img" class="w-12 h-12" alt=""> -->
-         </div>
+         </div> -->
      </div>
      </slot>
 </template>

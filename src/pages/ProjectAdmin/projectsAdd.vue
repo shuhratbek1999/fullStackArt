@@ -16,23 +16,12 @@
                       clearable
                       />
                 </div>
-                <div class="input xl:w-5/12" v-if="selectCategory !== 'About us'">
-                    <label class="mb-2 inline-block" v-if="selectCategory !== 'News' && selectCategory !== 'Media'" for="name">Name</label>
-                    <label class="mb-2 inline-block" v-else for="name">Link</label>
-                    <n-input id="name" size="large" v-model:value="data.name" type="text" placeholder="link is required" />
+                <div class="input xl:w-5/12">
+                    <label class="mb-2 inline-block" for="name">Name</label>
+                    <n-input id="name" size="large" v-model:value="data.name" type="text" placeholder="name is required" />
                 </div>
             </div>
-            <div 
-                class="form_top xl:flex xl:justify-between xl:my-3" 
-                v-if="selectCategory == 'News' || selectCategory == 'Media'"
-                >
-                <div class="input xl:w-5/12" v-if="selectCategory !== 'About us'">
-                    <label class="mb-2 inline-block" v-if="selectCategory !== 'News' && selectCategory !== 'Media'" for="name">Name</label>
-                    <label class="mb-2 inline-block" v-else for="name">Name</label>
-                    <n-input id="name" size="large" v-model:value="data.aftor_name" type="text" placeholder="name is required" />
-                </div>
-            </div>
-            <div class="form_top xl:flex xl:justify-between xl:my-3" v-if="selectCategory == 'Projects'">
+            <div class="form_top xl:flex xl:justify-between xl:my-3" v-if="selectCategory !== 'About us'">
                 <div class="selec xl:w-5/12">
                     <label class="mb-2 inline-block" for="name">Aftor name</label>
                     <n-input id="name" size="large" v-model:value="data.aftor_name" type="text" placeholder="aftor name is required" />
@@ -52,7 +41,7 @@
                     <n-checkbox
                       v-if="route.params.id"
                       size="large"
-                      label="Rasmni yangilash"
+                      label="Update img"
                       v-model:checked="change_image"
                       class="mr-4"
                     />
@@ -69,25 +58,17 @@
                  </div>
                 </div>
             </div>
-            <div class="form_top xl:flex xl:justify-between xl:my-3">
-                <div class="selec xl:w-5/12" v-if="selectCategory == 'Projects'">
+            <div class="form_top xl:flex xl:justify-between xl:my-10">
+                <div class="selec xl:w-5/12">
                     <label class="mb-2 inline-block" for="name">Description</label>
                     <n-input id="name" class="rounded" size="large" v-model:value="data.description" type="textarea" />
                 </div>
-                <div class="selec xl:w-5/12" v-else-if="selectCategory != 'Media' && selectCategory != 'News'">
-                    <label class="mb-2 inline-block" for="name">Text</label>
-                    <n-input id="name" size="large" v-model:value="data.description" type="textarea" />
-                </div>
-                <div class="extraa w-5/12">
-                <div class="selec" v-if="selectCategory == 'Projects'">
+                <div class="extraa w-5/12 xl:flex justify-around" v-if="selectCategory !== 'About us'">
+                <div class="selec xl:mr-10">
                     <label class="mb-2 inline-block" for="name">Cart</label>
                     <n-input id="name" class="rounded" size="large" v-model:value="data.cart" type="text" />
                 </div>
-                <div class="input xl:w-full" v-if="selectCategory == 'About us'">
-                    <label class="mb-2 inline-block" for="name">Extra Description</label>
-                    <n-input id="name" size="large" v-model:value="data.extra_description" type="textarea" />
-                </div>
-                <div class="input xl:w-full mt-2" v-if="selectCategory != 'Projects' && selectCategory != 'Media' && selectCategory != 'News'">
+                <div class="input">
                     <label class="mb-2 inline-block" for="name">date time</label>
                      <n-date-picker
                         v-model:value="data.date_time"
@@ -101,10 +82,21 @@
                     />
                 </div> 
                 </div>
+                <div class="extra_text w-5/12" v-else>
+                    <label class="mb-2 inline-block" for="name">extra text</label>
+                    <n-input id="name" class="rounded" size="large" v-model:value="data.extra_description" type="textarea" />
+                </div>
             </div>
-            <div class="form_top xl:flex xl:justify-between xl:my-3" v-if="selectCategory == 'Projects'">
+            <div class="form_top xl:flex xl:flex-col xl:justify-center xl:my-3">
+                <div class="urls_content xl:flex xl:justify-between xl:items-center bg-gray-400 p-4 xl:rounded-tr-lg xl:rounded-bl-lg text-white">
+                    <label class="mb-2 inline-block text-2xl font-sans" for="name">Fact</label>
+                    <div class="button_fact xl:w-1/12 rounded">
+                        <n-button @click="FactAdd" type="success" class="xl:bg-blue-700 rounded-md">
+                            Add
+                        </n-button>
+                    </div>
+                </div>
                 <div class="selec xl:w-10/12">
-                        <label class="mb-2 inline-block" for="name">Facts</label>
                     <div class="facts xl:my-3 xl:flex xl:justify-between xl:items-center" v-for="(item,index) in data.Facts" :key="index">
                         <n-input class="xl:w-11/12" id="name" size="large" v-model:value="item.text" type="textarea" />
                         <div class="w-11 h-11 bg-white rounded-full flex justify-center items-center xl:ml-4">
@@ -114,15 +106,69 @@
                         </div>
                     </div>
                 </div>
-                <div class="button_fact xl:w-1/12 xl:mt-4 rounded">
-                    <n-button @click="FactAdd" type="success" class="xl:bg-blue-700">
-                        Add
-                    </n-button>
+            </div>
+            <div class="form_top xl:flex xl:flex-col xl:my-3">
+                <div class="urls_content xl:flex xl:justify-between xl:items-center xl:rounded-tr-lg xl:rounded-bl-lg bg-gray-400 p-4 text-white">
+                    <label class="mb-2 inline-block text-2xl" for="name">Urls</label>
+                    <div class="button_fact xl:w-1/12 rounded">
+                        <n-button @click="UrlAdd" type="success" class="xl:bg-blue-700 rounded-md">
+                            Add
+                        </n-button>
+                    </div>
+                </div>
+                <div class="selec xl:w-full xl:mt-2">
+                    <div class="url_top xl:w-full xl:flex xl:justify-between xl:items-center xl:rounded-tr-lg xl:rounded-bl-lg bg-gray-400 p-3 text-white font-sans">
+                        <div class="url_h xl:w-2/12 text-xl">name</div>
+                        <div class="url_h xl:w-5/12 text-xl">link</div>
+                        <div class="url_h xl:w-2/12 text-xl">color</div>
+                        <div class="url_h xl:w-2/12 text-xl">Ijtimoiy tarmoq</div>
+                        <!-- <div class="url_h xl:w-3/12"></div> -->
+                    </div>
+                    <div class="facts xl:my-3 xl:flex xl:justify-between xl:items-center" v-for="(item,index) in data.Urls" :key="index">
+                        <div class="name xl:w-2/12">
+                            <n-input class="xl:w-56" placeholder="name is required" id="name" size="large" v-model:value="item.name" type="text" />
+                        </div>
+                        <div class="link xl:w-5/12 xl:mx-2">
+                            <n-input class="xl:w-40" placeholder="link is required" id="name" size="large" v-model:value="item.link" type="text" />
+                        </div>
+                        <div class="color xl:w-2/12 xl:mr-2">
+                             <n-select 
+                                id="select" 
+                                size="large" 
+                                v-model:value="item.color" 
+                                :options="Colors" 
+                                label-field="name"
+                                value-field="name"
+                                placeholder="select is required"
+                                filterable
+                                clearable
+                                />
+                        </div>
+                        <div class="logo xl:w-2/12">
+                            <n-select 
+                                id="select" 
+                                size="large" 
+                                v-model:value="item.type" 
+                                :options="Logos" 
+                                @update:value="SelectLogos"
+                                label-field="name"
+                                value-field="name"
+                                placeholder="select is required"
+                                filterable
+                                clearable
+                                />
+                        </div>
+                        <div class="xl:w-11 xl:h-11 bg-white rounded-full flex justify-center items-center xl:ml-3">
+                            <n-icon class="cursor-pointer" size="20" @click="DeleteUrl(index)">
+                                <TrashAltRegular />
+                            </n-icon>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="form_top xl:flex xl:justify-between xl:my-3">
                 <div class="selec xl:w-11/12">
-                    <label class="mb-2 inline-block" for="name">Images</label>
+                    <label class="mb-2 inline-block text-2xl font-bold" for="name">Images</label>
                     <n-upload
                     v-model:file-list="data.Images"
                     list-type="image-card"
@@ -133,33 +179,8 @@
                     <!-- <div class="delete absolute top-0 left-0">{{data.Images}}</div> -->
                 </div>
             </div>
-            <div class="form_top xl:flex xl:justify-center xl:my-3" v-if="selectCategory == 'Projects'">
-                <div class="selec xl:w-full xl:flex xl:justify-between xl:flex-wrap">
-                    <div class="insta xl:w-5/12">
-                    <n-checkbox size="large" class="xl:mb-4" v-model:checked="insta">
-                        Instagramm 
-                    </n-checkbox>
-                    <n-input v-if="insta" id="name" size="large" v-model:value="insta_url" type="text" />
-                    </div>
-                    <div class="insta xl:w-5/12">
-                    <n-checkbox size="large" class="xl:mb-4" v-model:checked="facebook">
-                        Facebook
-                    </n-checkbox>
-                    <n-input v-if="facebook" id="name" size="large" v-model:value="facebook_url" type="text" />
-                    </div>
-                    <div class="insta xl:w-5/12 xl:mt-4">
-                    <n-checkbox size="large" class="xl:mb-4" v-model:checked="you">
-                        You tube
-                    </n-checkbox>
-                    <n-input v-if="you" id="name" size="large" v-model:value="you_tube_url" type="text" />
-                    </div>
-                    <div class="insta xl:w-5/12 xl:mt-4">
-                    <n-checkbox size="large" class="xl:mb-4" v-model:checked="sayt">
-                        web sayt
-                    </n-checkbox>
-                    <n-input v-if="sayt" id="name" size="large" v-model:value="sayt_url" type="text" />
-                    </div>
-                </div>
+            <div class="form_top xl:flex xl:justify-center xl:my-3">
+                
             </div>
             <n-button @click="Saqlash" class="xl:bg-blue-600" type="success">
                 Save
@@ -180,12 +201,6 @@ const FILE_URL = inject("FILE_URL");
 const message = useMessage()
 const router = useRouter()
 const route = useRoute()
-let insta_url = ref(""),
-facebook_url = ref(""),
-you_tube_url = ref(""),
-sayt_url = ref("")
-let insta = ref(false),facebook = ref(false),you = ref(false),
-sayt = ref(false);
 let change_image = ref(false)
 let image = ref(null)
 let Music_type = ref("")
@@ -204,30 +219,20 @@ let data = ref({
     user_id: user_id,
     Images: [],
     Facts: [],
-    Urls: [
-        {
-            insta_url: insta_url.value,
-            facebook_url: facebook_url.value,
-            you_tube_url: you_tube_url.value,
-            sayt_url: sayt_url.value
-        }
-    ]
+    Urls: []
 })
 const SelectUpdate = (id) => {
     let index = Category.value.findIndex(ids => ids.id == id)
     selectCategory.value = Category.value[index].name
     Music_type.value = Category.value[index].music_type
 }
+const SelectLogos = (e) => {
+    console.log(e);
+}
 const change2 = (e) => {
     data.value.date_time = e
 };
 const Saqlash = () => {
-    data.value.Urls.forEach(item => {
-        item.insta_url = insta_url.value
-        item.facebook_url = facebook_url.value
-        item.you_tube_url = you_tube_url.value
-        item.sayt_url = sayt_url.value
-    })
     let formData = new FormData()
     if(selectCategory == 'About us'){
         formData.append("name", "About")
@@ -289,8 +294,60 @@ const FactAdd = () => {
     }
     data.value.Facts.push(texts)
 }
+const DeleteUrl = (index) => {
+     data.value.Urls.splice(index, 1)
+}
+const UrlAdd = () => {
+    let url = {
+        name: "",
+        link: "",
+        type: "instagramm",
+        color: "black"
+    }
+    data.value.Urls.push(url)
+}
+const Colors = ref([
+    {
+        id: 1,
+        name: 'black'
+    },
+    {
+        id: 2,
+        name: 'white'
+    },
+    {
+        id: 3,
+        name: 'red'
+    },
+    {
+        id: 4,
+        name: 'blue'
+    },
+])
+const Logos = ref([
+    {
+        id: 1,
+        name: "instagramm"
+    },
+    {
+        id: 2,
+        name: "facebook"
+    },
+    {
+        id: 3,
+        name: "you tube"
+    },
+    {
+        id: 4,
+        name: "Site"
+    },
+    {
+        id: 5,
+        name: "Twitter"
+    },
+])
 const DeleteFact = (index) => {
-   data.value.Facts = data.value.Facts.splice(index, 1)
+   data.value.Facts.splice(index, 1)
 }
 const ProjectOne = () => {
     axios.get('project/one/' + route.params.id)
@@ -304,20 +361,8 @@ const ProjectOne = () => {
     })
 }
 const UpdateProject = (model) => {
-    if(model.Url.length > 0){
-        if(model.Url[0].insta_url.length > 0){
-            insta.value = true
-        }else if(model.Url[0].facebook_url.length > 0){
-            facebook.value = true
-        }
-        else if(model.Url[0].you_tube_url.length > 0){
-            you.value = true
-        }
-        else if(model.Url[0].sayt_url.length > 0){
-            sayt.value = true
-        }
-    }
     image = FILE_URL + 'images/' + model.aftor_img
+    model.date_time = model.date_time * 1000
     data.value = {
         category_id: model.category_id,
         name: model.name,
@@ -328,7 +373,9 @@ const UpdateProject = (model) => {
         user_id: model.user_id,
         Images: model.Images,
         Facts: model.Fact,
-        Urls: model.Url 
+        Urls: model.Url,
+        cart: model.cart,
+        date_time: model.date_time
     }
     selectCategory.value = model.category.page.name
 }
