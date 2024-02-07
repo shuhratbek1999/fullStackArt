@@ -1,13 +1,18 @@
 <template>
-    <div class="containers w-full xl:flex xl:h-screen xl:justify-center xl:items-center">
-        <div class="login w-1/2 flex justify-end xl:items-center xl:h-110">
+    <div class="containers w-full xl:flex xl:h-screen xl:justify-center xl:items-center xl:flex-row xx:flex 
+    xx:flex-col xx:h-100 xx:justify-center xx:items-center xs:flex xs:h-100 xs:justify-center 
+    xs:items-center
+    ">
+        <div class="login xl:w-1/2 xx:w-full xx:h-97 xs:w-full flex xl:justify-end xx:justify-center xs:justify-center items-center xl:h-110">
             <n-form
                 ref="formRef"
                 :label-width="200"
                 :model="data"
                 :rules="rules"
                 :size="size"
-                class="xl:w-10/12 xl:h-3/4 xl:flex xl:flex-col xl:items-center xl:justify-center xl:p-4 border-2 rounded-l-md"
+                class="xx:w-11/12 xs:w-11/12 xx:h-full xs:h-2/4 xl:w-10/12 xl:h-3/4 xl:flex xl:flex-col xl:items-center xl:justify-center xl:p-4 border-2 rounded-l-md
+                xx:flex xx:flex-col xx:items-center xx:justify-center xs:flex xs:flex-col xs:items-center xs:justify-center
+                "
                 >
                 <n-form-item class="w-8/12" label="Login" path="user.name">
                     <n-input v-model:value="data.login" placeholder="Input Name" />
@@ -31,7 +36,7 @@
                 </n-form-item>
             </n-form>
         </div>
-        <div class="register w-1/2 xl:h-110 xl:flex xl:items-center">
+        <div class="register w-1/2 xl:h-110 xl:flex xl:items-center xx:h-10 xs:h-10 xx:mt-4 xl:mt-0">
             <div class="w-10/12 bg-blue-100 xl:h-3/4 rounded-r-md xl:flex xl:justify-center xl:items-center">
                 <span class="xl:text-slate-800 xl:font-medium hover:underline hover:cursor-pointer">Forgot password or login?</span>
             </div>

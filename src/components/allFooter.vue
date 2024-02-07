@@ -1,59 +1,63 @@
 <template>
-  <div class="all_footer xl:flex xl:justify-center xl:bg-menuColor xl:items-center xl:h-96">
-      <div class="content xl:w-11/12 xl:h-96 xl:flex xl:flex-col justify-center">
-        <div class="footer_top  xl:w-full xl:h-20 xl:flex xl:items-center xl:justify-center">
-            <ul class="xl:flex xl:items-center xl:justify-between xl:w-full">
-                <li v-for="item in Menus" :key="item.id" class="px-4 xl:first:pl-0 last:pr-0 cursor-pointer">
+  <div class="all_footer xl:flex xl:justify-center xl:bg-menuColor xl:items-center xl:h-96 
+  xx:flex xx:justify-center xx:bg-menuColor xx:items-center xx:h-80 xs:flex xs:justify-center xs:bg-menuColor xs:items-center xs:h-96">
+      <div class="content xl:w-11/12 xl:h-96 xl:flex xl:flex-col justify-center 
+      xx:w-11/12 xx:h-80 xx:flex xx:flex-col xs:w-11/12 xs:h-96 xs:flex xs:flex-col">
+        <div class="footer_top  xl:w-full xl:h-20 xl:flex xl:items-center xl:justify-center xx:box-border
+        xx:w-full xx:h-16 xx:flex xx:items-center xx:justify-center xs:w-full xs:h-20 xs:flex xs:items-center xs:justify-center
+        ">
+            <ul class="flex items-center justify-between w-full">
+                <li v-for="item in Menus" :key="item.id" class="px-4 xx:px-1 xs:px-2 first:pl-0 last:pr-0 cursor-pointer">
                     <a 
                         href="#"
                         @click="MenuItem(item.label)" 
-                        class="text-white xl:text-sm xs:text-xs xl:text-eeee spam">
+                        class="xs:text-xs text-eeee spam xl:text-base menu360">
                         {{ $t(`menu.${item.label.toLowerCase()}`) }}
                      </a>
                 </li>
             </ul>
         </div>
-        <div class="footer_center xl:border-y-2 xl:border-y-eeee xl:w-full xl:h-48 xl:flex xl:items-start xl:py-6 xl:justify-between">
-             <div class="footer_item">
-                <span class="xl:text-sm xl:text-eeee xl:font-normal">{{t('footer.location')}}</span> <br> 
-                <span class="xl:text-sm xl:text-eeee xl:font-medium">{{t('footer.adress')}}</span>
+        <div class="footer_center border-y-2 border-y-eeee w-full h-48 flex items-start py-6 justify-between xx:flex-wrap xs:flex-wrap xl:flex-nowrap">
+             <div class="footer_item xx:w-4/12 xs:w-4/12 xs:mb-2 xl:w-1/5">
+                <span class="text-sm text-eeee font-normal xx:text-xx xs:text-xs xl:text-base">{{t('footer.location')}}</span> <br> 
+                <span class="text-sm text-eeee font-medium xx:text-xx xs:text-xs xl:text-base">{{t('footer.adress')}}</span>
              </div>
-             <div class="footer_item">
-                <span class="xl:text-sm xl:text-eeee xl:font-normal">{{t('footer.contact')}}</span> <br> 
-                <span class="xl:text-sm xl:text-eeee xl:font-medium">+1(234)56789</span>
+             <div class="footer_item xx:w-4/12 xs:w-4/12 xs:mb-2 xl:w-1/5">
+                <span class="text-sm text-eeee font-normal xx:text-xx xs:text-xs xl:text-base">{{t('footer.contact')}}</span> <br> 
+                <span class="text-sm text-eeee font-medium xx:text-xx xs:text-xs xl:text-base">+1(234)56789</span>
              </div>
-             <div class="footer_item">
-                <span class="xl:text-sm xl:text-eeee xl:font-normal">{{t('footer.email')}}</span> <br> 
-                <span class="xl:text-sm xl:text-eeee xl:font-medium">Elbekgulomov0@gmail.com</span>
+             <div class="footer_item xx:w-4/12 xs:w-4/12 xs:mb-2 xl:w-1/5">
+                <span class="text-sm text-eeee font-normal xx:text-xx xs:text-xs xl:text-base">{{t('footer.email')}}</span> <br> 
+                <span class="text-sm text-eeee font-medium xx:text-xx xs:text-xs xl:text-base">Elbekgulomov0@gmail.com</span>
              </div>
-             <div class="footer_item">
-                <div class="item xl:text-sm xl:text-eeee xl:font-normal">
-                   <span class="xl:text-sm xl:text-eeee xl:font-medium"> {{t('footer.founders')}}</span> <br> 
-                   <span>Martina Stefanova,</span> <br> 
-                   <span>Doychin Kotlarov</span>
+             <div class="footer_item xx:w-8/12 xs:w-8/12 xx:flex xl:w-1/5 xs:flex xl:flex-col">
+                <div class="item text-sm xx:w-6/12 xs:w-6/12 text-eeee font-normal xx:text-xx xs:text-xs xl:text-base">
+                   <span class="text-sm text-eeee font-medium xx:text-xx xs:text-xs xl:text-base"> {{t('footer.founders')}}</span> <br> 
+                   <span class="xx:text-xx xs:text-xx xl:text-base">Martina Stefanova,</span> <br> 
+                   <span class="xx:text-xx xs:text-xx xl:text-base">Doychin Kotlarov</span>
                 </div>
-                <div class="item xl:text-sm xl:text-eeee xl:font-normal xl:mt-2">
-                    <span class="xl:font-medium">{{t('footer.general')}}</span> <br>
-                   <span> Martina Stefanova</span>
+                <div class="item text-sm text-eeee font-normal">
+                    <span class="font-medium xx:text-xx xs:text-xs xl:text-base">{{t('footer.general')}}</span> <br>
+                   <span class="xx:text-xx xs:text-xx xl:text-base"> Martina Stefanova</span>
                 </div>
              </div>
-             <div class="footer_item">
-                <div class="icon xl:flex xl:items-center">
-                    <img class="xl:mr-2 xl:w-8 xl:h-8" src="../assets/images/ins.png" alt="instagram">
-                    <span class="xl:text-sm xl:text-ffff">{{t('footer.dom1')}}</span>
+             <div class="footer_item xx:w-4/12 xs:w-4/12 xl:w-1/5">
+                <div class="icon flex items-center">
+                    <img class="mr-1 xl:w-8 xl:h-8 xx:w-4 xx:h-4" src="../assets/images/ins.png" alt="instagram">
+                    <span class="text-sm text-ffff xx:text-xx xs:text-xs xl:text-base">{{t('footer.dom1')}}</span>
                 </div>
-                <div class="icon xl:flex xl:items-center xl:my-3">
-                    <img class="xl:mr-2 xl:w-8 xl:h-8" src="../assets/images/iface.png" alt="facebook">
-                    <span class="xl:text-sm xl:text-ffff">{{t('footer.dom2')}}</span>
+                <div class="icon flex items-center my-3 xx:my-1 xs:my-1">
+                    <img class="mr-1 xl:w-8 xl:h-8 xx:w-4 xx:h-4" src="../assets/images/iface.png" alt="facebook">
+                    <span class="text-sm text-ffff xx:text-xx xs:text-xs xl:text-base">{{t('footer.dom2')}}</span>
                 </div>
-                <div class="icon xl:flex xl:items-center">
-                    <img class="xl:mr-2 xl:w-8 xl:h-8" src="../assets/images/inyou.png" alt="youtube">
-                    <span class="xl:text-sm xl:text-ffff">{{t('footer.dom3')}}</span>
+                <div class="icon flex items-center">
+                    <img class="mr-1 xl:w-8 xl:h-8 xx:w-4 xx:h-4" src="../assets/images/inyou.png" alt="youtube">
+                    <span class="text-sm text-ffff xx:text-xx xs:text-xs xl:text-base">{{t('footer.dom3')}}</span>
                 </div>
              </div>
         </div>
-        <div class="footer_bottom xl:w-full xl:justify-center xl:h-12">
-             <div class="footer_b_text xl:flex xl:justify-center xl:text-ffff">
+        <div class="footer_bottom w-full justify-center h-12">
+             <div class="footer_b_text flex justify-center text-ffff xx:text-xx xs:text-xs xl:text-base">
                 {{t('footer.title')}}
              </div>
         </div>
@@ -155,5 +159,15 @@ const MenuItem = (name) => {
 }
 .spam:hover{
     background-size: 0 0.1rem, 95% 0.1rem;
+}
+@media(min-width: 360px){
+.menu360{
+    font-size: 8px;
+}
+}
+@media(min-width: 1280px){
+.menu360{
+    font-size: 16px;
+}
 }
 </style>

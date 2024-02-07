@@ -3,7 +3,9 @@
       <div class="project_menu xl:w-full xs:flex xs:justify-between xs:w-1/3">
         <topMenu />
       </div>
-      <ProjectLabel :Img="CategoryImg" />
+      <div class="labels">
+         <ProjectLabel :Img="CategoryImg" />
+      </div>
       <div class="cardAll">
          <InfoCard :infoCard="AllArray" />
       </div>

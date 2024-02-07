@@ -4,7 +4,7 @@
         class="about_content xl:w-11/12 xl:flex xl:flex-wrap xl:justify-between xl:items-start
            xx:flex xx:flex-wrap xx:justify-center xx:w-11/12
            xs:flex xs:flex-wrap xs:justify-center xs:w-11/12
-        "
+        " 
          v-for="(item,index) in props.allPost" :key="index"
         >
                <div 
@@ -29,7 +29,7 @@
                   xx:pt-4 xl:pt-0 xl:pl-4
                   "
                   >
-                     <a href="#" class="font-Atyp xl:text-xl texts xx:text-xs xs:text-xs">
+                     <a href="#" class="font-Atyp xl:text-xl texts xx:text-xs xx:font-medium xs:text-xs">
                         {{info.extra_description}}
                     </a>
                   </div>

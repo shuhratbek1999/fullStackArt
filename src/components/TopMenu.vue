@@ -1,6 +1,6 @@
 <template>
     <div 
-    class="top_menu fixed top-0 w-full xl:h-16 bg-greys z-20">
+    class="top_menu fixed top-0 w-full xl:h-16 xx:h-12 bg-greys z-20">
     <slot>
         <div class="content xl:w-full xl:flex xl:justify-center">
             <div class="navbar xs:hidden xx:hidden xl:w-11/12 xl:flex xl:items-center xl:justify-between">
@@ -28,16 +28,16 @@
             </div>
             <div 
                 class="
-                hidden_navbar xs:h-14 xl:hidden xs:flex xs:justify-between xs:w-full xs:px-10 xs:items-center
-                xx:h-14 xx:flex xx:justify-between xx:w-full xx:px-10 xx:items-center
+                hidden_navbar xs:h-12 xl:hidden xs:flex xs:justify-between xs:w-full xs:px-0 xs:items-center
+                xx:h-12 xx:flex xx:justify-between xx:w-full xx:px-3 xx:items-center
                 "
                 >
                     <ul class="xs:flex xs:items-center xx:flex xx:items-center">
-                        <li class="mr-1"><img class="xs:w-10 xx:w-9" src="../assets/images/Group.png" alt="group img"></li>
-                        <li><img class="xs:w-10 xx:w-9" src="../assets/images/dom.png" alt="dom png"></li>
+                        <li><img class="xs:w-10 xx:w-9 xx:mr-1 xs:mr-1" src="../assets/images/dom.png" alt="dom png"></li>
+                        <li><img class="xs:w-12 xx:w-14" src="../assets/images/Group.png" alt="group img"></li>
                     </ul>
                     <div class="icons">
-                        <n-icon class="menu" @click="Activate">
+                        <n-icon size="35" class="menu" @click="Activate">
                             <Menu />
                         </n-icon>
                     </div>
