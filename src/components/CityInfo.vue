@@ -24,7 +24,7 @@
                     <div class="city_name">
                             <a href="#" class="xl:text-4xl xx:text-xs xs:text-xs font-sans font-medium">{{city.name}}</a>
                     </div>
-                     <div id="description" class="description xx:h-20 xs:h-24 text-justify xl:text-xl xx:text-xx font-sans">
+                     <div id="description" class="description xx:h-16 xs:h-24 text-justify xl:text-xl xx:text-xx font-sans">
                         {{DescText[index]}}
                      </div>
                  </div>
