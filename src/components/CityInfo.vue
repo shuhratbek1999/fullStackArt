@@ -34,7 +34,7 @@
               </div>
               <div v-if="city.Fact.length > 0" class="city_ul pb-3">
                  <ol class="list-disc xl:ml-5 xl:text-xl">
-                    <li v-for="item in city.Fact" :key="item.id" class="font-sans xl:text-base xx:text-xx xs:text-xs">
+                    <li v-for="item in city.Fact" :key="item.id" class="font-sans xl:text-xl xx:text-xx xs:text-xs">
                         {{item.text}}
                     </li>
                  </ol>
@@ -73,12 +73,22 @@
                             <a target="_blank" :href="item.link" class="xl:text-xl xx:text-xx xs:text-xs">{{item.name}}</a>
                         </div>
                     </div>
-                    <div v-if="item.type == 'Site'" class="icon flex xl:items-center">
+                    <div v-if="item.type == 'Google'" class="icon flex xl:items-center">
                         <div class="xl:mr-2 xx:mr-1 xs:mr-1">
                             <img src="../assets/images/inyou.png" class="xx:w-6 xx:h-6 xl:w-8 xl:h-8" alt="">
                         </div>
                         <div class="link">
                             <a target="_blank" :href="item.link" class="xl:text-xl xx:text-xx xs:text-xs">{{item.name}}</a>
+                        </div>
+                    </div>
+                    <div v-if="item.type == 'Twitter'" class="icon flex xl:items-center">
+                        <div class="xl:mr-2 xx:mr-1 xs:mr-1 xl:w-9 border-2 xl:h-9 xx:w-6 xx:h-6 xs:w-6 xs:h-6 rounded-full flex justify-center items-center">
+                            <n-icon class="xx:text-sm xl:text-xl">
+                                <LogoTwitter />
+                            </n-icon>
+                        </div>
+                        <div class="link">
+                            <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
                         </div>
                     </div>
                </div>
@@ -91,6 +101,7 @@
 <script setup>
 import {onMounted, ref, inject,watchEffect, computed, watch} from "vue"
 import {FacebookF,Instagram, Youtube} from "@vicons/fa"
+import {LogoTwitter} from "@vicons/ionicons5"
 import {City} from '../stores/index'
 import Modal from './modal.vue'
 const store = City()

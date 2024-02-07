@@ -37,8 +37,8 @@
             </n-form>
         </div>
         <div class="register w-1/2 xl:h-110 xl:flex xl:items-center xx:h-10 xs:h-10 xx:mt-4 xl:mt-0">
-            <div class="w-10/12 bg-blue-100 xl:h-3/4 rounded-r-md xl:flex xl:justify-center xl:items-center">
-                <span class="xl:text-slate-800 xl:font-medium hover:underline hover:cursor-pointer">Forgot password or login?</span>
+            <div class="w-10/12 xx:w-10/12 bg-blue-100 xl:h-3/4 rounded-r-md xl:flex xl:justify-center xl:items-center">
+                <span class="text-slate-800 font-medium hover:underline hover:cursor-pointer">Forgot password or login?</span>
             </div>
         </div>
 </div>

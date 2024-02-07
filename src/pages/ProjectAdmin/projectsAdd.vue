@@ -118,33 +118,19 @@
                 </div>
                 <div class="selec xl:w-full xl:mt-2">
                     <div class="url_top xl:w-full xl:flex xl:justify-between xl:items-center xl:rounded-tr-lg xl:rounded-bl-lg bg-gray-400 p-3 text-white font-sans">
-                        <div class="url_h xl:w-2/12 text-xl">name</div>
-                        <div class="url_h xl:w-5/12 text-xl">link</div>
-                        <div class="url_h xl:w-2/12 text-xl">color</div>
-                        <div class="url_h xl:w-2/12 text-xl">Ijtimoiy tarmoq</div>
+                        <div class="url_h xl:w-3/12 text-xl">name</div>
+                        <div class="url_h xl:w-6/12 text-xl">link</div>
+                        <div class="url_h xl:w-3/12 text-xl">social network</div>
                         <!-- <div class="url_h xl:w-3/12"></div> -->
                     </div>
                     <div class="facts xl:my-3 xl:flex xl:justify-between xl:items-center" v-for="(item,index) in data.Urls" :key="index">
-                        <div class="name xl:w-2/12">
+                        <div class="name xl:w-3/12">
                             <n-input class="xl:w-56" placeholder="name is required" id="name" size="large" v-model:value="item.name" type="text" />
                         </div>
-                        <div class="link xl:w-5/12 xl:mx-2">
+                        <div class="link xl:w-6/12 xl:mx-2">
                             <n-input class="xl:w-40" placeholder="link is required" id="name" size="large" v-model:value="item.link" type="text" />
                         </div>
-                        <div class="color xl:w-2/12 xl:mr-2">
-                             <n-select 
-                                id="select" 
-                                size="large" 
-                                v-model:value="item.color" 
-                                :options="Colors" 
-                                label-field="name"
-                                value-field="name"
-                                placeholder="select is required"
-                                filterable
-                                clearable
-                                />
-                        </div>
-                        <div class="logo xl:w-2/12">
+                        <div class="logo xl:w-3/12">
                             <n-select 
                                 id="select" 
                                 size="large" 
@@ -339,7 +325,7 @@ const Logos = ref([
     },
     {
         id: 4,
-        name: "Site"
+        name: "Google"
     },
     {
         id: 5,

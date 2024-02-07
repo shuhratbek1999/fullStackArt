@@ -22,7 +22,7 @@
                   <div class="all" v-for="(pro,index) in all.project" :key="index">
                       <div class="itemss my-2" v-for="(item,index) in pro.Url" :key="index">
                         <div v-if="item.type == 'instagramm'" class="icon flex items-center">
-                        <div class="mr-2 xl:w-12 xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
+                        <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
                             <n-icon class="xx:text-sm xl:text-xl">
                                <LogoInstagram />
                             </n-icon>
@@ -32,7 +32,7 @@
                         </div>
                         </div>
                         <div v-if="item.type == 'facebook'" class="icon flex items-center">
-                            <div class="mr-2 xl:w-12 xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
+                            <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
                                 <n-icon class="xx:text-sm xl:text-xl">
                                   <FacebookF />
                                 </n-icon>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div v-if="item.type == 'you tube'" class="icon flex items-center">
-                            <div class="mr-2 xl:w-12 xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
+                            <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
                                 <n-icon class="xx:text-sm xl:text-xl">
                                   <Youtube />
                                 </n-icon>
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div v-if="item.type == 'Site'" class="icon flex items-center">
-                            <div class="xl:mr-2 xl:w-12 xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
+                            <div class="xl:mr-2 xl:w-12 bg-black xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
                                 <n-icon class="xx:text-sm xl:text-xl">
                                   <Google />
                                 </n-icon>

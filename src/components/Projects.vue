@@ -6,7 +6,11 @@
          <div class="img_content xl:h-64 xx:h-24">
          </div>
          <div class="route absolute z-30 w-full">
-             <h1 class="text-eeee text-center font-normal xl:text-9xl xx:text-5xl xx:font-bold">{{ props.Img.title }}</h1>
+             <h1 class="text-eeee text-center font-normal xl:text-9xl xx:font-bold"
+              :class="[getLength(props.Img.title) ? 'xx:text-4xl' : 'text-5xl']"
+             >
+                {{ props.Img.title }}
+            </h1>
          </div>
          <!-- <div class="img absolute right-16 bottom-10 z-30">
              <img src="../assets/images/Ellipse.png" alt="">
@@ -26,6 +30,19 @@ const props = defineProps({
         type: Object
     }
 })
+const getLength = (text) =>{
+    if(text){
+        if(text.length > 12){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    else{
+        return false
+    }
+}
 watch(() => props.Img, () => {
     props.Img.title = props.Img.title.toUpperCase()
     props.Img.img = FILE_URL + 'images/' + props.Img.img

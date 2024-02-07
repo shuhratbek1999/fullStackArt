@@ -30,7 +30,7 @@
                         <div style="color: #7C7C7C" class="users font-normal xl:text-base xx:text-xx xs:text-xs font-sans text-base">{{city.aftor_name}}</div>
                    </div>
                </div>
-               <div class=" absolute bottom-0 overflow-hidden xx:pr-2">
+               <div class=" absolute bottom-0 overflow-hidden xx:pr-2 xl:pr-0">
                   <img class="xl:w-72 xl:h-40 xx:w-32 xx:h-16 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
                </div>
            </div>
