@@ -20,11 +20,11 @@
                  <div @click="ModalShow(city,index)" class="images w-6/12">
                     <img :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 xx:w-48 xx:h-28 xs:w-130 xs:h-96 rounded cursor-pointer" alt="">
                  </div>
-                 <div class="text w-6/12 xl:pl-4 xx:pl-2">
-                    <div class="city_name">
-                            <a href="#" class="xl:text-4xl xx:text-xs xs:text-xs font-sans font-medium">{{city.name}}</a>
-                    </div>
+                 <div class="text w-6/12 xl:pl-4 xx:pl-2 bg-red-100">
                      <div id="description" class="description xx:h-16 xs:h-24 text-justify xl:text-xl xx:text-xx font-sans">
+                        <div class="city_name">
+                                <a href="#" class="xl:text-4xl xx:text-xs xs:text-xs font-sans font-medium">{{city.name}}</a>
+                        </div>
                         {{DescText[index]}}
                      </div>
                  </div>
@@ -125,7 +125,6 @@ const Citys = ref([])
 let Urls = ref([])
 const CircleText = (arr) => {
 let desc = document.querySelector('.info_citys')
-console.log(desc.clientWidth)
     if(arr.length > 0){
         arr.map(res => {
           if(desc.clientWidth > 1200){
@@ -134,8 +133,8 @@ console.log(desc.clientWidth)
             DescText.value.push(news)
             ExtraText.value.push(extra)
           }else{
-            let news = res.description.slice(0, 145)
-            let extra = res.description.slice(146, res.description.length - 1)
+            let news = res.description.slice(0, (222 - res.name.length))
+            let extra = res.description.slice((news.length + 1), res.description.length - 1)
             DescText.value.push(news)
             ExtraText.value.push(extra)
           }

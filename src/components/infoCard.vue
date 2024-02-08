@@ -58,7 +58,6 @@ const Cards = ref([])
 
 watch(() => store.cityAll, () => {
     Cards.value = store.cityAll
-    console.log(store.cityAll)
 })
 onMounted(() => {
    AOS.init({
