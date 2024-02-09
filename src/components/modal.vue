@@ -11,8 +11,8 @@
         >
             <div class="content min-h-64 overflow-y-scroll" v-if="InfoAll">
                 <div class="images xl:flex-row xx:flex xx:justify-center xx:flex-col xx:items-center xs:flex xs:justify-center xs:flex-col xs:items-center my-2 xl:flex xl:justify-start xl:flex-wrap" v-if="InfoAll.Images.length > 0">
-                    <div class="img p-1" v-for="item in InfoAll.Images" :key="item.Id">
-                        <img class="xl:w-56 xl:h-56 xx:w-60 xx:h-60" :src="FILE_URL + 'images/' + item.url" alt="rasm">
+                    <div class="img p-1" v-for="(item,index) in InfoAll.Images" :key="item.Id">
+                        <img @click="Images(index)" class="xl:w-56 xl:h-56 xx:w-60 xx:h-60" :src="FILE_URL + 'images/' + item.url" alt="rasm">
                     </div>
                 </div>
             </div>
@@ -40,6 +40,10 @@ const segmented = ref({
     content: "soft",
     footer: "soft"
 })
+const Images = (index) => {
+        let names = FILE_URL + 'images/' + InfoAll.value.Images[index].url
+        window.open(names, '_blank')
+}
 // const widths = document.querySelector('.modal')
 // const bodyStyle = ref({
 //     width: '1050px'

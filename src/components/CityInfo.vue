@@ -20,8 +20,8 @@
                  <div @click="ModalShow(city,index)" class="images w-6/12">
                     <img :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 xx:w-48 xx:h-28 xs:w-130 xs:h-96 rounded cursor-pointer" alt="">
                  </div>
-                 <div class="text w-6/12 xl:pl-4 xx:pl-2 bg-red-100">
-                     <div id="description" class="description xx:h-16 xs:h-24 text-justify xl:text-xl xx:text-xx font-sans">
+                 <div class="text w-6/12 xl:pl-4 xx:pl-2">
+                     <div id="description" class="description overflow-y-hidden xl:h-96 xx:h-28 xs:h-24 text-justify xl:text-xl xx:text-xx font-sans">
                         <div class="city_name">
                                 <a href="#" class="xl:text-4xl xx:text-xs xs:text-xs font-sans font-medium">{{city.name}}</a>
                         </div>
@@ -29,7 +29,7 @@
                      </div>
                  </div>
               </div>
-              <div v-if="ExtraText.length>0" class="city_text xl:text-xl font-sans pb-3 text-justify xx:text-xx xs:text-xs">
+              <div v-if="ExtraText.length>0" class="city_text mt-1 xl:text-xl font-sans pb-3 text-justify xx:text-xx xs:text-xs">
                  {{ ExtraText[index] }}
               </div>
               <div v-if="city.Fact.length > 0" class="city_ul pb-3">
@@ -127,13 +127,22 @@ const CircleText = (arr) => {
 let desc = document.querySelector('.info_citys')
     if(arr.length > 0){
         arr.map(res => {
-          if(desc.clientWidth > 1200){
-            let news = res.description.slice(0, 601)
-            let extra = res.description.slice(602, res.description.length - 1)
-            DescText.value.push(news)
-            ExtraText.value.push(extra)
+            if(desc.clientWidth > 1200){
+                if(res.name.length >= 34){
+                    let news = res.description.slice(0, (750 - 80))
+                let extra = res.description.slice((news.length + 1), res.description.length - 1)
+                DescText.value.push(news)
+                ExtraText.value.push(extra)
+                console.log(news.length);
+            }
+            else{
+               let news = res.description.slice(0, (750 - res.name.length))
+                let extra = res.description.slice((news.length + 1), res.description.length - 1)
+                DescText.value.push(news)
+                ExtraText.value.push(extra) 
+            }
           }else{
-            let news = res.description.slice(0, (222 - res.name.length))
+            let news = res.description.slice(0, (230 - res.name.length))
             let extra = res.description.slice((news.length + 1), res.description.length - 1)
             DescText.value.push(news)
             ExtraText.value.push(extra)
