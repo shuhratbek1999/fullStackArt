@@ -1,9 +1,9 @@
 <template>
     <div 
-    class="top_menu fixed top-0 xl:w-full overflow-x-hidden lg:w-full md:w-full xx:w-10/12 xs:w-10/12 flex items-center justify-center xl:h-16 lg:h-16 md:h-16 xx:h-12 bg-greys z-20">
+    class="top_menu fixed top-0 xl:w-full overflow-x-hidden lg:w-full md:w-full xx:w-full xs:w-full flex items-center justify-center xl:h-16 lg:h-16 md:h-16 xx:h-12 bg-greys z-20">
     <slot>
-        <div class="content xl:w-full lg:w-full md:w-full xx:w-full xs:w-full flex justify-center items-center">
-            <div class="navbar lg:flex md:flex xs:hidden xx:hidden w-11/12 flex items-center justify-between">
+        <div class="content w-full flex justify-center items-center">
+            <div class="navbar xx:hidden xs:hidden xl:flex lg:flex md:flex flex items-center w-11/12">
                 <ul class="flex justify-center items-center w-2/12">
                     <li><img class="lg:w-8 lg:h-8 md:w-8 md:h-8 mr-1" src="../assets/images/dom.png" alt="dom png"></li>
                     <li class="mr-1"><img class="md:w-16 xl:w-full lg:w-full" src="../assets/images/Group.png" alt="group img"></li>
@@ -29,8 +29,8 @@
             <div 
                 class="
                 hidden_navbar xs:h-12 xl:hidden lg:hidden md:hidden
-                xs:w-10/12 xx:w-11/12 xx:flex xx:justify-between xx:items-center
-                xs:flex xs:justify-between xs:items-center
+                xs:w-full xx:w-full xx:flex xx:justify-between xx:items-center
+                xs:flex xs:justify-between xs:items-center xx:px-2 xs:px-2
                 "
                 >
                     <ul class="xs:flex xs:items-center xx:flex xx:items-center">

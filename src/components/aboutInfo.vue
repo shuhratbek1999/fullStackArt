@@ -25,7 +25,7 @@
                   md:w-8/12 md:border-r-2 md:border-r-black md:border-b-0
                   "
                   >
-                    <a href="#" class="texts font-Atyp xl:text-base lg:text-base md:text-base xx:text-xs xs:text-xs">
+                    <a href="#" class="texts text-justify xl:w-full font-Atyp xl:text-base lg:text-base md:text-base xx:text-xs xs:text-xs">
                         {{info.description}}
                     </a>
                   </div>
@@ -34,9 +34,9 @@
                   xx:pt-4 xl:pt-0 xl:pl-4 md:w-4/12 md:pl-4 lg:w-4/12 lg:pl-4
                   "
                   >
-                     <a href="#" class="font-Atyp xl:text-xl md:text-xl lg:text-xl texts xx:text-xs xx:font-medium xs:text-xs">
+                     <span class="font-Atyp text-justify xl:text-xl md:text-xl lg:text-xl texts xx:text-xs xx:font-medium xs:text-xs">
                         {{info.extra_description}}
-                    </a>
+                    </span>
                   </div>
                 </div>
         </div>

@@ -11,7 +11,7 @@
                     <a 
                         href="#"
                         @click="MenuItem(item.label)" 
-                        class="xs:text-xs text-eeee spam xl:text-base lg:text-base md:text-base">
+                        class="xs:text-xs xx:text-xx text-eeee spam xl:text-base lg:text-base md:text-base">
                         {{ $t(`menu.${item.label.toLowerCase()}`) }}
                      </a>
                 </li>

@@ -22,13 +22,13 @@
                  <div class="images w-full flex justify-center">
                     <img @click="ModalShow(city,index)" :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 lg:w-130 lg:h-96 md:w-130 md:h-96 xx:w-48 xx:h-28 xs:w-130 xs:h-96 rounded cursor-pointer" alt="">
                  </div>
-                 <div class="text w-full xx:my-2 xs:my-2  xx:text-xx xs:text-xs xl:text-xl md:text-base">
+                 <div class="text w-full xx:my-2 xs:my-2 text-justify xx:text-xx xs:text-xs xl:text-xl md:text-base">
                      {{city.description}}
                  </div>
               </div>
               <div v-if="city.Fact.length > 0" class="city_ul pb-3">
                  <ol class="list-disc xl:ml-5 xl:text-xl lg:text-xl">
-                    <li v-for="item in city.Fact" :key="item.id" class="font-sans xl:text-xl lg:text-base md:text-base xx:text-xx xs:text-xs">
+                    <li v-for="item in city.Fact" :key="item.id" class="font-sans xl:text-xl text-justify lg:text-base md:text-base xx:text-xx xs:text-xs">
                         {{item.text}}
                     </li>
                  </ol>
@@ -117,50 +117,8 @@ const ModalShow = (data, index) => {
 }
 const Citys = ref([])
 let Urls = ref([])
-const CircleText = (arr) => {
-let desc = document.querySelector('.info_citys')
-    if(arr.length > 0){
-        arr.map(res => {
-            if(desc.clientWidth > 1200){
-                if(res.name.length >= 34){
-                let news = res.description.slice(0, (750 - 80))
-                let extra = res.description.slice((news.length + 1), res.description.length - 1)
-                DescText.value.push(news)
-                ExtraText.value.push(extra)
-            }
-            else{
-                let news = res.description.slice(0, (750 - res.name.length))
-                let extra = res.description.slice((news.length + 1), res.description.length - 1)
-                DescText.value.push(news)
-                ExtraText.value.push(extra) 
-            }
-          }
-          else if(desc.clientWidth > 961){
-              if(res.name.length >= 34){
-                let news = res.description.slice(0, (750 - 80))
-                let extra = res.description.slice((news.length + 1), res.description.length - 1)
-                DescText.value.push(news)
-                ExtraText.value.push(extra)
-            }
-            else{
-                let news = res.description.slice(0, (750 - res.name.length))
-                let extra = res.description.slice((news.length + 1), res.description.length - 1)
-                DescText.value.push(news)
-                ExtraText.value.push(extra) 
-            }
-          }
-          else{
-            let news = res.description.slice(0, (230 - res.name.length))
-            let extra = res.description.slice((news.length + 1), res.description.length - 1)
-            DescText.value.push(news)
-            ExtraText.value.push(extra)
-          }
-        })
-    }
-}
 watch(() => store.cityAll, () => {
     Citys.value = store.cityAll
-    CircleText(store.cityAll)
 })
 </script>
 
