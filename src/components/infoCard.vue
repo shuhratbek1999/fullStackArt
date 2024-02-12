@@ -5,6 +5,7 @@
          info_item xl:w-11/12 lg:w-11/12 lg:min-h-98 lg:flex lg:flex-wrap lg:justify-start xx:w-11/12 xx:min-h-52 xl:min-h-98 xl:flex xl:flex-wrap xl:justify-start
          xx:flex xx:flex-wrap xx:justify-start xs:flex xs:flex-wrap xs:justify-start xx:mt-4
          md:flex md:flex-wrap md:justify-start md:mt-10 lg:mt-10
+         md:w-11/12
          "
          v-if="props.infoCard.length > 0"
         > 
@@ -13,7 +14,7 @@
                 item xl:w-1/4 xl:h-97 lg:w-1/4 lg:h-97 lg:px-2 border-r-2 border-r-gray-500 xl:px-2 xl:my-6 lg:my-6
                 cards aos-init font-Atyp
                 xx:w-4/12 xx:h-40 box-border xx:my-2 xs:my-2 xx:px-2
-                md:w-1/4 md:h-80
+                md:w-1/3 md:h-80
                 " 
                 v-for="(city,index) in props.infoCard" :key="city.id"
                 ref="cards"
@@ -35,8 +36,8 @@
                     </div>
                 </div>
                </div>
-               <div class=" absolute bottom-0 overflow-hidden md:pr-0 lg:pr-0 xx:pr-2 xl:pr-0">
-                  <img class="xl:w-72 xl:h-40 xx:w-32 lg:w-11/12 lg:h-40 xx:h-16 md:w-52 md:h-28 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
+               <div class="absolute bottom-0 w-full overflow-hidden md:pr-0 lg:pr-0 xx:pr-2 xl:pr-0 md:p-0">
+                  <img class="xl:w-11/12 xl:h-40 xx:w-11/12 xs:w-11/12 lg:w-11/12 lg:h-40 xx:h-16 md:w-11/12 md:h-28 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
                </div>
            </div>
        </div>
@@ -101,6 +102,11 @@ a:focus {
 @media(min-width: 360px){
 .cards:nth-child(2n + 2){
     border-left: 0px;
+}
+}
+@media(min-width: 768px){
+.cards:nth-child(2n + 3){
+    border-right: 0px;
 }
 }
 </style>

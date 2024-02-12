@@ -18,25 +18,17 @@
            item xl:w-11/12 xl:min-h-94 lg:w-11/12 lg:min-h-94 md:w-11/12 md:min-h-94 px-3 font-sans xx:w-11/12 xx:min-h-52 xs:w-11/12 xs:min-h-52
            " 
            >
-              <div class="city_img xl:flex xl:w-full lg:flex lg:w-full md:flex md:w-full xx:flex xx:w-full xs:flex xs:w-full">
-                 <div @click="ModalShow(city,index)" class="images w-6/12">
-                    <img :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 lg:w-130 lg:h-96 md:w-130 md:h-96 xx:w-48 xx:h-28 xs:w-130 xs:h-96 rounded cursor-pointer" alt="">
+              <div class="city_img flex-col xl:flex xl:w-full lg:flex lg:w-full md:flex md:w-full xx:flex xx:w-full xs:flex xs:w-full">
+                 <div class="images w-full flex justify-center">
+                    <img @click="ModalShow(city,index)" :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 lg:w-130 lg:h-96 md:w-130 md:h-96 xx:w-48 xx:h-28 xs:w-130 xs:h-96 rounded cursor-pointer" alt="">
                  </div>
-                 <div class="text w-6/12 xl:pl-4 lg:pl-4 md:pl-4 xx:pl-2">
-                     <div id="description" class="description overflow-y-hidden xl:h-96 lg:h-96 md:h-96 xx:h-28 xs:h-24 text-justify xl:text-xl lg:text-xl md:text-base xx:text-xx font-sans">
-                        <div class="city_name">
-                                <a href="#" class="xl:text-4xl lg:text-4xl md:text-3xl xx:text-xs xs:text-xs font-sans font-medium">{{city.name}}</a>
-                        </div>
-                        {{DescText[index]}}
-                     </div>
+                 <div class="text w-full xx:my-2 xs:my-2  xx:text-xx xs:text-xs xl:text-xl md:text-base">
+                     {{city.description}}
                  </div>
-              </div>
-              <div v-if="ExtraText.length>0" class="city_text mt-1 xl:text-xl lg:text-xl md:text-base font-sans pb-3 text-justify xx:text-xx xs:text-xs">
-                 {{ ExtraText[index] }}
               </div>
               <div v-if="city.Fact.length > 0" class="city_ul pb-3">
                  <ol class="list-disc xl:ml-5 xl:text-xl lg:text-xl">
-                    <li v-for="item in city.Fact" :key="item.id" class="font-sans xl:text-xl lg:text-xl md:text-base xx:text-xx xs:text-xs">
+                    <li v-for="item in city.Fact" :key="item.id" class="font-sans xl:text-xl lg:text-base md:text-base xx:text-xx xs:text-xs">
                         {{item.text}}
                     </li>
                  </ol>

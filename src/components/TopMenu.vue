@@ -5,8 +5,8 @@
         <div class="content xl:w-full lg:w-full md:w-full xx:w-full xs:w-full flex justify-center items-center">
             <div class="navbar lg:flex md:flex xs:hidden xx:hidden w-11/12 flex items-center justify-between">
                 <ul class="flex justify-center items-center w-2/12">
-                    <li><img class="lg:w-8 lg:h-8 md:w-8 md:h-8" src="../assets/images/dom.png" alt="dom png"></li>
-                    <li class="mr-1"><img src="../assets/images/Group.png" alt="group img"></li>
+                    <li><img class="lg:w-8 lg:h-8 md:w-8 md:h-8 mr-1" src="../assets/images/dom.png" alt="dom png"></li>
+                    <li class="mr-1"><img class="md:w-16 xl:w-full lg:w-full" src="../assets/images/Group.png" alt="group img"></li>
                 </ul>
                 <ul class="flex justify-between w-10/12">
                     <li v-for="item in Menus" :key="item.id" class="cursor-pointer h-full">
