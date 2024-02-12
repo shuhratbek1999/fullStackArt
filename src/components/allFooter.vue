@@ -7,11 +7,11 @@
         xx:w-full xx:h-16 xx:flex xx:items-center xx:justify-center xs:w-full xs:h-20 xs:flex xs:items-center xs:justify-center
         ">
             <ul class="flex items-center justify-between w-full">
-                <li v-for="item in Menus" :key="item.id" class="px-4 xx:px-1 xs:px-2 first:pl-0 last:pr-0 cursor-pointer">
+                <li v-for="item in Menus" :key="item.id" class="xl:px-4 lg:px-4 md:px-4 xx:px-1 xs:px-1 first:pl-0 last:pr-0 cursor-pointer">
                     <a 
                         href="#"
                         @click="MenuItem(item.label)" 
-                        class="xs:text-xs xx:text-xx text-eeee spam xl:text-base lg:text-base md:text-base">
+                        class="xs:text-xs xx:text-xz text-eeee spam xl:text-base lg:text-base md:text-base">
                         {{ $t(`menu.${item.label.toLowerCase()}`) }}
                      </a>
                 </li>
