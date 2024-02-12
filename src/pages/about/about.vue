@@ -4,12 +4,12 @@
       <topMenu />
       </div>
       <ProjectLabel>
-         <div class="projectss mt-16 xl:h-95 xx:mt-14 xx:h-40 xx:flex xx:items-center xx:justify-around xs:mt-14 xs:h-40 xs:flex xs:items-center xs:justify-around h-64 xl:flex xl:items-center xl:justify-around">
+         <div class="projectss mt-16 xl:h-95 md:h-96 lg:h-95 xx:mt-14 xx:h-40 xx:flex xx:items-center xx:justify-around xs:mt-14 xs:h-40 xs:flex xs:items-center xs:justify-around h-64 xl:flex xl:items-center xl:justify-around">
             <div 
             class="flex route_name w-11/12 border-b-2 border-b-black pb-10 xs:xx:text-6xl 
             font-bold text-cityFot animate__animated animate__backInLeft"
             >
-                <div class="texts xl:w-7/12 uppercase xx:text-5xl xs:text-5xl xl:text-9xl">
+                <div class="texts xl:w-7/12 lg:w-7/12 md:w-7/12 uppercase xx:text-5xl xs:text-5xl xl:text-9xl lg:text-8xl md:text-7xl">
                     {{t('about.routeabout')}}
                 </div>
             </div>

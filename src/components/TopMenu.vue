@@ -1,11 +1,11 @@
 <template>
     <div 
-    class="top_menu fixed top-0 w-full xl:h-16 xx:h-12 bg-greys z-20">
+    class="top_menu fixed top-0 xl:w-full overflow-x-hidden lg:w-full md:w-full xx:w-10/12 xs:w-10/12 flex items-center justify-center xl:h-16 lg:h-16 md:h-16 xx:h-12 bg-greys z-20">
     <slot>
-        <div class="content xl:w-full xl:flex xl:justify-center">
-            <div class="navbar xs:hidden xx:hidden xl:w-11/12 xl:flex xl:items-center xl:justify-between">
+        <div class="content xl:w-full lg:w-full md:w-full xx:w-full xs:w-full flex justify-center items-center">
+            <div class="navbar lg:flex md:flex xs:hidden xx:hidden w-11/12 flex items-center justify-between">
                 <ul class="flex justify-center items-center w-2/12">
-                    <li><img src="../assets/images/dom.png" alt="dom png"></li>
+                    <li><img class="lg:w-8 lg:h-8 md:w-8 md:h-8" src="../assets/images/dom.png" alt="dom png"></li>
                     <li class="mr-1"><img src="../assets/images/Group.png" alt="group img"></li>
                 </ul>
                 <ul class="flex justify-between w-10/12">
@@ -28,8 +28,9 @@
             </div>
             <div 
                 class="
-                hidden_navbar xs:h-12 xl:hidden xs:flex xs:justify-between xs:w-full xs:px-0 xs:items-center
-                xx:h-12 xx:flex xx:justify-between xx:w-full xx:px-3 xx:items-center
+                hidden_navbar xs:h-12 xl:hidden lg:hidden md:hidden
+                xs:w-10/12 xx:w-11/12 xx:flex xx:justify-between xx:items-center
+                xs:flex xs:justify-between xs:items-center
                 "
                 >
                     <ul class="xs:flex xs:items-center xx:flex xx:items-center">
@@ -39,7 +40,7 @@
                     <div class="icons">
                         <n-icon size="35" class="menu" @click="Activate">
                             <Menu />
-                        </n-icon>
+                        </n-icon> 
                     </div>
                     <n-drawer
                         v-model:show="active"

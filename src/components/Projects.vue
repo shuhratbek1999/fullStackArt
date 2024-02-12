@@ -1,12 +1,12 @@
 <template>
      <slot>
-        <div class="projectss proo mt-12 xl:flex xl:items-center xx:flex xx:items-center xl:h-64 xx:h-24"
+        <div class="projectss proo mt-12 xl:flex xl:items-center lg:flex lg:items-center md:flex md:items-center xx:flex xx:items-center xl:h-64 lg:h-64 md:h-40 xx:h-24"
           :style="{'background-image': props.Img.img ? 'url(' + props.Img.img + ')' : 'none'}"
         >
-         <div class="img_content xl:h-64 xx:h-24">
+         <div class="img_content xl:h-64 lg:h-64 md:h-40 xx:h-24">
          </div>
          <div class="route absolute z-30 w-full">
-             <h1 class="text-eeee text-center font-normal xl:text-9xl xx:font-bold"
+             <h1 class="text-eeee text-center font-normal xl:text-9xl xx:font-bold lg:text-8xl md:text-7xl"
               :class="[getLength(props.Img.title) ? 'xx:text-4xl' : 'text-5xl']"
              >
                 {{ props.Img.title }}
@@ -52,6 +52,31 @@ watch(() => props.Img, () => {
 <style scoped>
 
 @media(min-width: 1200px){
+.projectss img:nth-child(1){
+    width: 78px;
+    height: 78px;
+}  
+.projectss{
+    min-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    display: flex;
+    position: relative;
+    z-index: 10;
+}
+.img_content{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 20;
+}
+}
+@media(min-width: 961px){
 .projectss img:nth-child(1){
     width: 78px;
     height: 78px;
