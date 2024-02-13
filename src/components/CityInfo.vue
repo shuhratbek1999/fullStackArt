@@ -19,8 +19,17 @@
            " 
            >
               <div class="city_img flex-col xl:flex xl:w-full lg:flex lg:w-full md:flex md:w-full xx:flex xx:w-full xs:flex xs:w-full">
+                 <div class="city_titles mb-3 font-sans font-semibold">
+                    <a class="xl:text-4xl lg:text-4xl md:text-3xl" href="#">{{ city.name }}</a>
+                 </div>
                  <div class="images w-full flex justify-center">
-                    <img @click="ModalShow(city,index)" :src="FILE_URL + 'images/' + city.Images[0].url" class="xl:w-130 xl:h-96 lg:w-130 lg:h-96 md:w-130 md:h-96 xx:w-48 xx:h-28 xs:w-130 xs:h-96 rounded cursor-pointer" alt="">
+                    <img 
+                        @click="ModalShow(city,index)" 
+                        :src="FILE_URL + 'images/' + city.Images[0].url" 
+                        class="xl:w-130 xl:h-96 lg:w-130 lg:h-96 md:w-130 md:h-96 xx:w-48 xx:h-28 xs:w-130 xs:h-96 
+                        rounded cursor-pointer" 
+                        alt=""
+                    >
                  </div>
                  <div class="text w-full xx:my-2 xs:my-2 text-justify xx:text-xx xs:text-xs xl:text-xl md:text-base">
                      {{city.description}}

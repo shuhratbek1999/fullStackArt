@@ -26,17 +26,17 @@
                     "info_name relative xl:text-xl lg:text-lg xx:text-xx xs:text-xs xl:w-60 xl:h-48 lg:h-48 md:h-48 xx:h-24 xs:h-24 hover:cursor-pointer md:text-base"
                     >
                   <a class="font-sans font-medium xx:text-xx xs:text-xs xl:text-xl md:text-xl lg:text-lg" :href="'#' +'city_info' + index">{{t('city.name', {city: city.name})}}</a>
-                <div class="circle_info xl:flex xx:flex absolute bottom-0">
+                <div class="circle_info xl:flex xx:flex xx:items-center xs:flex xs:items-center xl:items-center lg:flex lg:items-center md:flex md:items-center absolute bottom-1">
                     <div class="circle mr-2">
                         <img class="xl:w-11 xl:h-11 lg:w-11 lg:h-11 xx:w-5 xx:h-5 md:w-9 md:h-9 rounded-full cursor-pointer" :src="FILE_URL + 'images/' + city.aftor_img" alt="">
                     </div>
                     <div class="user">
-                            <div style="color: #000000" class="user_name xl:text-base lg:text-base md:text-base text-base xx:text-xx xs:text-xs font-sans">{{city.cart}}</div>
-                            <div style="color: #7C7C7C" class="users font-normal lg:text-base md:text-base xl:text-base xx:text-xx xs:text-xs font-sans text-base">{{city.aftor_name}}</div>
+                        <div style="color: #000000" class="user_name xl:text-base lg:text-base md:text-base text-base xx:text-xz xs:text-xs font-sans">{{city.cart}}</div>
+                        <div style="color: #7C7C7C" class="users font-normal lg:text-base md:text-base xl:text-base xx:text-xz xs:text-xs font-sans text-base">{{city.aftor_name}}</div>
                     </div>
                 </div>
                </div>
-               <div class="absolute bottom-0 w-full overflow-hidden md:pr-0 lg:pr-0 xx:pr-2 xl:pr-0 md:p-0">
+               <div class="absolute bottom-0 w-full overflow-hidden md:pr-0 lg:pr-0 xl:p-0 xx:pr-2 xl:pr-0 md:p-0">
                   <img class="xl:w-11/12 xl:h-40 xx:w-11/12 xs:w-11/12 lg:w-11/12 lg:h-40 xx:h-16 md:w-11/12 md:h-28 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
                </div>
            </div>
