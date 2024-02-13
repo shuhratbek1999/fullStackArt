@@ -253,7 +253,7 @@ const Saqlash = () => {
                     router.push('/project_all')
                 }, 2000);
             }else{
-                message.error(`dasturda xatolik`)
+                message.error(`error`)
             }
         })
       }else{
@@ -269,7 +269,7 @@ const Saqlash = () => {
                     router.push('/project_all')
                 }, 2000);
             }else{
-                message.error(`dasturda xatolik`)
+                message.error(`error`)
             } 
         })
       }

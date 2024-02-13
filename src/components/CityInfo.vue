@@ -22,7 +22,7 @@
                  <div class="city_titles mb-3 font-sans font-semibold">
                     <a class="xl:text-4xl lg:text-4xl md:text-3xl" href="#">{{ city.name }}</a>
                  </div>
-                 <div class="images w-full flex justify-center">
+                 <div class="images w-full flex justify-start">
                     <img 
                         @click="ModalShow(city,index)" 
                         :src="FILE_URL + 'images/' + city.Images[0].url" 
