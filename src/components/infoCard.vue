@@ -13,7 +13,7 @@
                 class="
                 item xl:w-1/4 xl:h-97 lg:w-1/4 lg:h-97 lg:px-2 border-r-2 border-r-gray-500 xl:px-2 xl:my-6 lg:my-6
                 cards aos-init font-Atyp
-                xx:w-4/12 xx:h-40 box-border xx:my-2 xs:my-2 xx:px-2
+                xx:w-4/12 xx:h-44 xs:w-4/12 xs:h-44 box-border xx:my-2 xs:my-2 xx:px-2
                 md:w-1/3 md:h-80
                 " 
                 v-for="(city,index) in props.infoCard" :key="city.id"
@@ -31,13 +31,13 @@
                         <img class="xl:w-11 xl:h-11 lg:w-11 lg:h-11 xx:w-5 xx:h-5 md:w-9 md:h-9 rounded-full cursor-pointer" :src="FILE_URL + 'images/' + city.aftor_img" alt="">
                     </div>
                     <div class="user">
-                        <div style="color: #000000" class="user_name xl:text-base lg:text-base md:text-base text-base xx:text-xz xs:text-xs font-sans">{{city.cart}}</div>
-                        <div style="color: #7C7C7C" class="users font-normal lg:text-base md:text-base xl:text-base xx:text-xz xs:text-xs font-sans text-base">{{city.aftor_name}}</div>
+                        <div style="color: #000000" class="user_name xl:text-xls lg:text-xls md:text-xls xx:text-xz xs:text-xz font-sans">{{city.cart}}</div>
+                        <div style="color: #7C7C7C" class="users font-normal lg:text-xls md:text-xls xl:text-xls xx:text-xz xs:text-xz font-sans text-base">{{city.aftor_name}}</div>
                     </div>
                 </div>
                </div>
                <div class="absolute bottom-0 w-full overflow-hidden md:pr-0 lg:pr-0 xl:p-0 xx:pr-2 xl:pr-0 md:p-0">
-                  <img class="xl:w-11/12 xl:h-40 xx:w-11/12 xs:w-11/12 lg:w-11/12 lg:h-40 xx:h-16 md:w-11/12 md:h-28 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
+                  <img class="xl:w-11/12 xl:h-44 xx:w-11/12 xs:w-11/12 lg:w-11/12 lg:h-44 xx:h-20 xs:h-20 md:w-11/12 md:h-28 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
                </div>
            </div>
        </div>
@@ -80,9 +80,6 @@ onMounted(() => {
 .circle img{
     border-radius: 50%;
 }
-.item:nth-child(4n + 1){
-   border-left: 0px;
-}
 .images_img:hover{
     transform: scale(1.1);
 }
@@ -100,13 +97,26 @@ a:focus {
   background-size: 0 0.1em, 100% 0.1em;
 }
 @media(min-width: 360px){
-.cards:nth-child(2n + 2){
-    border-left: 0px;
-}
-}
-@media(min-width: 768px){
 .cards:nth-child(2n + 3){
     border-right: 0px;
+}
+}
+/* @media(min-width: 768px){
+.cards:nth-child(2n + 3){
+    border-right: 0px;
+}
+} */
+@media(min-width: 1280px){
+.cards:nth-child(2n + 4){
+    border-right: 0px;
+}
+}
+@media(min-width: 1024px){
+.cards:nth-child(2n + 4){
+    border-right: 0px;
+}
+.cards:nth-child(2n + 3){
+    border-right: 2px solid gray;
 }
 }
 </style>
