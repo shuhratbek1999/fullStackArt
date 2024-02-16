@@ -252,6 +252,11 @@ export default {
         id: 8,
         label: 'News',
         routes: 'news_all'
+      },
+      {
+        id: 9,
+        label: 'About us',
+        routes: 'about_all'
       }
     ])
     // close on click outside

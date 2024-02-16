@@ -31,6 +31,7 @@ import ScreeningsAll from "./pages/ProjectAdmin/screeningsAll.vue"
 import PublicationAll from "./pages/ProjectAdmin/publicationAll.vue"
 import MediaAll from "./pages/ProjectAdmin/mediaAll.vue"
 import NewsAll from "./pages/ProjectAdmin/newsAll.vue"
+import AboutAll from "./pages/ProjectAdmin/aboutAll.vue"
 const routerHistory = createWebHistory()
 
 const router = createRouter({
@@ -90,6 +91,11 @@ const router = createRouter({
       path: "/project_all",
       name: "Projectss",
       component: ProjectAll,
+    },
+    {
+      path: "/about_all",
+      name: "About uss",
+      component: AboutAll,
     },
     {
       path: "/education",
