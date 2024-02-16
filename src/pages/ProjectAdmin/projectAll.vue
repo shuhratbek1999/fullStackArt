@@ -14,8 +14,8 @@
                   @input="Filtered"
                 />
               </div>
-            <div class="pro_all xl:w-full xl:flex xl:flex-col xl:items-center xl:my-4">
-                <div class="tables xl:w-11/12">
+            <div class="pro_all w-full flex flex-col items-center my-4">
+                <div class="tables w-11/12">
                     <n-data-table
                     :single-line="false"
                     :columns="columns"

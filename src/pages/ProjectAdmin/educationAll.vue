@@ -14,17 +14,16 @@
                   @input="Filtered"
                 />
               </div>
-            <div class="pro_all xl:w-full xl:flex xl:flex-col xl:items-center xl:my-4">
-                <div class="tables xl:w-11/12">
+            <div class="pro_all w-full flex flex-col items-center my-4">
+                <div class="tables w-11/12">
                     <n-data-table
-                    size="small"
                     :single-line="false"
                     :columns="columns"
                     :data="filterArray(search,Projects)"
                     :pagination="pagination"
                 />
                 </div>
-           <div class="buttons w-10/12">
+            <div class="buttons w-10/12">
                 <div @click="Add" class="w-12 h-12 cursor-pointer text-white flex justify-center items-center rounded-full bg-blue-600">
                      <n-icon size="20">
                         <Add12Filled />
@@ -160,6 +159,7 @@ const allProject = () => {
     axios.get('category/categoryAll/' + names).then(res => {
         if(!res.error){
            if(res.data.data){
+            console.log(res.data.data[0]);
              Projects.value = res.data.data[0].project
            }
         }
