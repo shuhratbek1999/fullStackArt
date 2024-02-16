@@ -3,8 +3,8 @@
         <Sidebar :sidebarOpen="sidebarOpen" @close-sidebar="sidebarOpen = false" />
         <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
              <Header :sidebarOpen="sidebarOpen" @toggle-sidebar="sidebarOpen = !sidebarOpen" />
-             <div class="pro_all xl:w-full xl:flex xl:flex-col xl:items-center xl:my-4">
-                <div class="tables xl:w-11/12">
+             <div class="pro_all w-full flex flex-col items-center my-4">
+                <div class="tables w-11/12">
                     <n-data-table
                     :single-line="false"
                     :columns="columns"
@@ -12,8 +12,8 @@
                     :pagination="pagination"
                 />
                 </div>
-            <div class="buttons xl:w-11/12">
-                <div @click="Add" class="xl:w-12 xl:h-12 cursor-pointer xl:text-white xl:flex xl:justify-center xl:items-center rounded-full xl:bg-blue-600">
+            <div class="buttons w-11/12">
+                <div @click="Add" class="w-12 h-12 cursor-pointer text-white flex justify-center items-center rounded-full bg-blue-600">
                      <n-icon size="20">
                         <Add12Filled />
                      </n-icon>

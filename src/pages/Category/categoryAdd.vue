@@ -3,8 +3,8 @@
         <Sidebar :sidebarOpen="sidebarOpen" @close-sidebar="sidebarOpen = false" />
         <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
              <Header :sidebarOpen="sidebarOpen" @toggle-sidebar="sidebarOpen = !sidebarOpen" />
-             <div class="pro_all xl:w-11/12 mx-auto rounded-md xl:flex xl:items-center xl:justify-around xl:my-4 border-2 h-80">
-                 <div class="category_name xl:w-5/12 xl:h-56">
+             <div class="pro_all w-11/12 mx-auto rounded-md flex items-center justify-around my-4 border-2 h-80">
+                 <div class="category_name w-5/12 h-56">
                     <div class="item">
                       <label class="mb-4 inline-block" for="">Page Name</label>
                       <n-select 
@@ -38,7 +38,7 @@
                       <n-button @click="Cancel" type="error" class="bg-red-500 mt-10 ml-4">Cancel</n-button>
                     </div>
                  </div>
-                  <div class="category_name xl:w-5/12 xl:flex">
+                  <div class="category_name w-5/12 flex">
                       <div>
                         <label class="mb-4 inline-block" for="name">page image</label>
                           <n-upload
@@ -50,12 +50,14 @@
                           </n-upload>
                       </div>
                       <div class="ml-4">
-                        <n-checkbox
-                        v-if="route.params.id"
-                        size="large"
-                        label="update image"
-                        v-model:checked="change_image"
-                      />
+                        <div class="check mb-2">
+                          <n-checkbox
+                            v-if="route.params.id"
+                            size="large"
+                            label="update image"
+                            v-model:checked="change_image"
+                          />
+                        </div>
                       <n-avatar
                         v-if="route.params.id"
                         :src="image"
