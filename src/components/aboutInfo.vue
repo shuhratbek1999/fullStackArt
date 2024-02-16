@@ -31,7 +31,7 @@
                   </div>
                   <div 
                   class="rights xl:w-4/12 xx:w-11/12 xs:w-11/12
-                  xx:pt-4 xl:pt-0 xl:pl-4 md:w-4/12 md:pl-4 lg:w-4/12 lg:pl-4
+                  xx:pt-4 xl:pt-0 xl:pl-4 md:w-4/12 md:pl-4 lg:w-4/12 lg:pl-4 lg:pt-0 md:pt-0
                   "
                   >
                      <span class="font-Atyp text-justify xl:text-xl md:text-xl lg:text-xl texts xx:text-xs xx:font-medium xs:text-xs">

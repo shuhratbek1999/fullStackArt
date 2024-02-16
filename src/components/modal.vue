@@ -2,7 +2,7 @@
   <div class="modal" :id="'lns_' + modelId" v-if="props.showModal.bool">
        <n-modal
             v-model:show="props.showModal.bool"
-            class="custom-card xl:w-100 xx:w-80 xs:w-90"
+            class="custom-card w-100"
             preset="card"
             title="Images"
             :bordered="false"
@@ -10,10 +10,19 @@
             :segmented="segmented"
         >
             <div class="content min-h-64 overflow-y-scroll" v-if="InfoAll">
-                <div class="images xl:flex-row xx:flex xx:justify-center xx:flex-col xx:items-center xs:flex xs:justify-center xs:flex-col xs:items-center my-2 xl:flex xl:justify-start xl:flex-wrap" v-if="InfoAll.Images.length > 0">
-                    <div class="img p-1" v-for="(item,index) in InfoAll.Images" :key="item.Id">
+                <div class="images xl:flex-row xx:flex xx:justify-center" v-if="InfoAll.Images.length > 0">
+                    <!-- <div class="img p-1" v-for="(item,index) in InfoAll.Images" :key="item.Id">
                         <img @click="Images(index)" class="xl:w-56 xl:h-56 xx:w-60 xx:h-60" :src="FILE_URL + 'images/' + item.url" alt="rasm">
-                    </div>
+                    </div> -->
+                     <n-carousel show-arrow :dot-placement="placement" :dot-type="type">
+                        <div class="images" v-for="(item,index) in InfoAll.Images" :key="index">
+                            <img 
+                                :src="FILE_URL + 'images/' + item.url"  
+                                alt="img"
+                                class="carousel-img"
+                            >
+                        </div>
+                    </n-carousel>
                 </div>
             </div>
             <!-- <template #footer>
@@ -34,6 +43,8 @@ const props = defineProps({
         required: true
     }
 })
+const placement = ref("top")
+const type = ref("top")
 const FILE_URL = inject('FILE_URL')
 let InfoAll = ref({})
 const segmented = ref({
@@ -68,6 +79,9 @@ computed(() => store.cityOne, () => {
 })
 </script>
 
-<style>
-
+<style scoped>
+.carousel-img {
+  width: 100%;
+  object-fit: cover;
+}
 </style>

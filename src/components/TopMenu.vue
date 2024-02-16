@@ -4,9 +4,9 @@
     <slot>
         <div class="content w-full flex justify-center items-center">
             <div class="navbar xx:hidden xs:hidden xl:flex lg:flex md:flex flex items-center w-11/12">
-                <ul class="flex justify-center items-center w-2/12">
+                <ul class="flex justify-center items-center w-2/12 cursor-pointer">
                     <li><img class="lg:w-8 lg:h-8 md:w-8 md:h-8 mr-1" src="../assets/images/dom.png" alt="dom png"></li>
-                    <li class="mr-1"><img class="md:w-16 xl:w-full lg:w-full" src="../assets/images/Group.png" alt="group img"></li>
+                    <li class="mr-1"><img @click="About" class="md:w-16 xl:w-full lg:w-full" src="../assets/images/Group.png" alt="group img"></li>
                 </ul>
                 <ul class="flex justify-between w-10/12">
                     <li v-for="item in Menus" :key="item.id" class="cursor-pointer h-full">
@@ -35,7 +35,7 @@
                 >
                     <ul class="xs:flex xs:items-center xx:flex xx:items-center">
                         <li><img class="xs:w-10 xx:w-9 xx:mr-1 xs:mr-1" src="../assets/images/dom.png" alt="dom png"></li>
-                        <li><img class="xs:w-12 xx:w-14" src="../assets/images/Group.png" alt="group img"></li>
+                        <li><img @click="About"  class="xs:w-12 xx:w-14" src="../assets/images/Group.png" alt="group img"></li>
                     </ul>
                     <div class="icons">
                         <n-icon size="35" class="menu" @click="Activate">
@@ -158,6 +158,9 @@ const MenuItem = (name) => {
         default:
             break;
     }
+}
+const About = () => {
+    router.push('/')
 }
 const handleChange = (event) => {
     // console.log(event.target.value);

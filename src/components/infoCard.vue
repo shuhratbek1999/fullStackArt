@@ -37,7 +37,9 @@
                 </div>
                </div>
                <div class="absolute bottom-0 w-full overflow-hidden md:pr-0 lg:pr-0 xl:p-0 xx:pr-2 xl:pr-0 md:p-0">
-                  <img class="xl:w-11/12 xl:h-44 xx:w-11/12 xs:w-11/12 lg:w-11/12 lg:h-44 xx:h-20 xs:h-20 md:w-11/12 md:h-28 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
+                   <a :href="'#' +'city_info' + index">
+                    <img class="xl:w-11/12 xl:h-44 xx:w-11/12 xs:w-11/12 lg:w-11/12 lg:h-44 xx:h-20 xs:h-20 md:w-11/12 md:h-28 hover:scale-105 duration-500 cursor-pointer" :src="FILE_URL + 'images/' + city.Images[0].url" alt="">
+                   </a>
                </div>
            </div>
        </div>

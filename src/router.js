@@ -22,6 +22,15 @@ import News from "./pages/news/news.vue";
 import Publication from "./pages/publication/publication.vue";  
 import Screengs from "./pages/screengs/screengs.vue";  
 import Visual from "./pages/visual/visual.vue";  
+
+// admin projects
+import VisualAll from "./pages/ProjectAdmin/visualAll.vue"
+import LiveAll from "./pages/ProjectAdmin/liveArts.vue"
+import EducationAll from "./pages/ProjectAdmin/educationAll.vue"
+import ScreeningsAll from "./pages/ProjectAdmin/screeningsAll.vue"
+import PublicationAll from "./pages/ProjectAdmin/publicationAll.vue"
+import MediaAll from "./pages/ProjectAdmin/mediaAll.vue"
+import NewsAll from "./pages/ProjectAdmin/newsAll.vue"
 const routerHistory = createWebHistory()
 
 const router = createRouter({
@@ -38,9 +47,49 @@ const router = createRouter({
       component: Projects,
     },
     {
+      path: "/visual_all",
+      name: "Visual Artss",
+      component: VisualAll,
+    },
+    {
+      path: "/live_all",
+      name: "Live Artss",
+      component: LiveAll,
+    },
+    {
+      path: "/education_all",
+      name: "Educations",
+      component: EducationAll,
+    },
+    {
+      path: "/screenings_all",
+      name: "Screeningss",
+      component: ScreeningsAll,
+    },
+    {
+      path: "/publication_all",
+      name: "Publicationss",
+      component: PublicationAll,
+    },
+    {
+      path: "/media_all",
+      name: "Medias",
+      component: MediaAll,
+    },
+    {
+      path: "/news_all",
+      name: "Newss",
+      component: NewsAll,
+    },
+    {
       path: "/",
       name: "About us",
       component: About,
+    },
+    {
+      path: "/project_all",
+      name: "Projectss",
+      component: ProjectAll,
     },
     {
       path: "/education",
@@ -81,11 +130,6 @@ const router = createRouter({
       path: "/admin",
       name: "DashboardAdmin",
       component: Dashboard,
-    },
-    {
-      path: "/project_all",
-      name: "ProjectAll",
-      component: ProjectAll,
     },
     {
       path: "/project_add",

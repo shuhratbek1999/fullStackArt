@@ -72,7 +72,7 @@ watch(() => props.Img, () => {
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: 20;
 }
 }
@@ -97,7 +97,7 @@ watch(() => props.Img, () => {
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: 20;
 }
 }
@@ -118,7 +118,7 @@ watch(() => props.Img, () => {
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: 20;
 }
 }

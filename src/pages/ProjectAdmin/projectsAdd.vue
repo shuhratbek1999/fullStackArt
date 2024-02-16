@@ -1,6 +1,6 @@
 <template>
-    <div class="content xl:w-full xl:min-h-screen xl:flex xl:justify-center xl:items-center">
-        <div class="forms xl:w-11/12 xl:min-h-96 xl:bg-gray-200 xl:p-4 xl:rounded-md shadow-lg xl:my-4 font-Atyp">
+    <div class="content w-full min-h-screen flex justify-center items-center">
+        <div class="forms w-11/12 min-h-96 bg-gray-200 p-4 rounded-md shadow-lg my-4 font-Atyp">
             <div class="form_top xl:flex xl:justify-between xl:my-3">
                 <div class="selec xl:w-5/12">
                     <label class="mb-2 inline-block" for="select">Category</label>
@@ -26,8 +26,8 @@
                     <label class="mb-2 inline-block" for="name">Aftor name</label>
                     <n-input id="name" size="large" v-model:value="data.aftor_name" type="text" placeholder="aftor name is required" />
                 </div>
-                <div class="input xl:w-5/12 xl:flex xl:items-center">
-                 <div class="imagess xl:w-4/12">
+                <div class="input xl:w-5/12 md:w-10/12 lg:w-10/12 flex items-center">
+                 <div class="imagess w-4/12">
                     <label class="mb-2 inline-block" for="name">aftor images</label>
                     <n-upload
                     v-model:file-list="data.aftor_img"
@@ -63,8 +63,8 @@
                     <label class="mb-2 inline-block" for="name">Description</label>
                     <n-input id="name" class="rounded" size="large" v-model:value="data.description" type="textarea" />
                 </div>
-                <div class="extraa w-5/12 xl:flex justify-around" v-if="selectCategory !== 'About us'">
-                <div class="selec xl:mr-10">
+                <div class="extraa xl:w-5/12 lg:w-full md:w-full flex xl:justify-around md:justify-between lg:justify-between" v-if="selectCategory !== 'About us'">
+                <div class="selec mr-10">
                     <label class="mb-2 inline-block" for="name">Cart</label>
                     <n-input id="name" class="rounded" size="large" v-model:value="data.cart" type="text" />
                 </div>
@@ -87,19 +87,19 @@
                     <n-input id="name" class="rounded" size="large" v-model:value="data.extra_description" type="textarea" />
                 </div>
             </div>
-            <div class="form_top xl:flex xl:flex-col xl:justify-center xl:my-3">
-                <div class="urls_content xl:flex xl:justify-between xl:items-center bg-gray-400 p-4 xl:rounded-tr-lg xl:rounded-bl-lg text-white">
+            <div class="form_top flex flex-col justify-center my-3">
+                <div class="urls_content flex justify-between items-center bg-gray-400 p-4 rounded-tr-lg rounded-bl-lg text-white">
                     <label class="mb-2 inline-block text-2xl font-sans" for="name">Fact</label>
-                    <div class="button_fact xl:w-1/12 rounded">
-                        <n-button @click="FactAdd" type="success" class="xl:bg-blue-700 rounded-md">
+                    <div class="button_fact rounded">
+                        <n-button @click="FactAdd" type="success" class="bg-blue-700 rounded-md">
                             Add
                         </n-button>
                     </div>
                 </div>
                 <div class="selec xl:w-10/12">
-                    <div class="facts xl:my-3 xl:flex xl:justify-between xl:items-center" v-for="(item,index) in data.Facts" :key="index">
-                        <n-input class="xl:w-11/12" id="name" size="large" v-model:value="item.text" type="textarea" />
-                        <div class="w-11 h-11 bg-white rounded-full flex justify-center items-center xl:ml-4">
+                    <div class="facts my-3 flex justify-between items-center" v-for="(item,index) in data.Facts" :key="index">
+                        <n-input class="xl:w-10/12" id="name" size="large" v-model:value="item.text" type="textarea" />
+                        <div class="w-11 h-11 bg-white rounded-full flex justify-center items-center ml-4">
                             <n-icon class="cursor-pointer" size="20" @click="DeleteFact(index)">
                                 <TrashAltRegular />
                             </n-icon>
@@ -107,30 +107,30 @@
                     </div>
                 </div>
             </div>
-            <div class="form_top xl:flex xl:flex-col xl:my-3">
-                <div class="urls_content xl:flex xl:justify-between xl:items-center xl:rounded-tr-lg xl:rounded-bl-lg bg-gray-400 p-4 text-white">
+            <div class="form_top flex flex-col my-3">
+                <div class="urls_content flex justify-between items-center rounded-tr-lg rounded-bl-lg bg-gray-400 p-4 text-white">
                     <label class="mb-2 inline-block text-2xl" for="name">Urls</label>
-                    <div class="button_fact xl:w-1/12 rounded">
-                        <n-button @click="UrlAdd" type="success" class="xl:bg-blue-700 rounded-md">
+                    <div class="button_fact rounded">
+                        <n-button @click="UrlAdd" type="success" class="bg-blue-700 rounded-md">
                             Add
                         </n-button>
                     </div>
                 </div>
-                <div class="selec xl:w-full xl:mt-2">
-                    <div class="url_top xl:w-full xl:flex xl:justify-between xl:items-center xl:rounded-tr-lg xl:rounded-bl-lg bg-gray-400 p-3 text-white font-sans">
-                        <div class="url_h xl:w-3/12 text-xl">name</div>
-                        <div class="url_h xl:w-6/12 text-xl">link</div>
-                        <div class="url_h xl:w-3/12 text-xl">social network</div>
-                        <!-- <div class="url_h xl:w-3/12"></div> -->
+                <div class="selec w-full mt-2">
+                    <div class="url_top w-full flex justify-between items-center rounded-tr-lg rounded-bl-lg bg-gray-400 p-3 text-white font-sans">
+                        <div class="url_h w-3/12 xl:text-xl lg:text-base md:text-sm">name</div>
+                        <div class="url_h w-6/12 xl:text-xl lg:text-base md:text-sm">link</div>
+                        <div class="url_h w-3/12 xl:text-xl lg:text-base md:text-sm">social network</div>
+                        <!-- <div class="url_h w-3/12"></div> -->
                     </div>
-                    <div class="facts xl:my-3 xl:flex xl:justify-between xl:items-center" v-for="(item,index) in data.Urls" :key="index">
-                        <div class="name xl:w-3/12">
-                            <n-input class="xl:w-56" placeholder="name is required" id="name" size="large" v-model:value="item.name" type="text" />
+                    <div class="facts my-3 flex justify-between items-center" v-for="(item,index) in data.Urls" :key="index">
+                        <div class="name w-3/12">
+                            <n-input class="w-56" placeholder="name is required" id="name" size="large" v-model:value="item.name" type="text" />
                         </div>
-                        <div class="link xl:w-6/12 xl:mx-2">
-                            <n-input class="xl:w-40" placeholder="link is required" id="name" size="large" v-model:value="item.link" type="text" />
+                        <div class="link w-6/12 mx-2">
+                            <n-input class="w-40" placeholder="link is required" id="name" size="large" v-model:value="item.link" type="text" />
                         </div>
-                        <div class="logo xl:w-3/12">
+                        <div class="logo w-3/12">
                             <n-select 
                                 id="select" 
                                 size="large" 
@@ -144,7 +144,7 @@
                                 clearable
                                 />
                         </div>
-                        <div class="xl:w-11 xl:h-11 bg-white rounded-full flex justify-center items-center xl:ml-3">
+                        <div class="w-11 h-11 bg-white rounded-full flex justify-center items-center ml-3">
                             <n-icon class="cursor-pointer" size="20" @click="DeleteUrl(index)">
                                 <TrashAltRegular />
                             </n-icon>
@@ -168,7 +168,7 @@
             <div class="form_top xl:flex xl:justify-center xl:my-3">
                 
             </div>
-            <n-button @click="Saqlash" class="xl:bg-blue-600" type="success">
+            <n-button @click="Saqlash" class="bg-blue-600" type="success">
                 Save
             </n-button>
             <n-button @click="Cancel" type="error" class="bg-red-500 mt-10 ml-4">Cancel</n-button>
