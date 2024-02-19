@@ -24,7 +24,7 @@ AOS.init()
 import {useVuelidate} from "@vuelidate/core"
 app.use(useVuelidate)
 const Bearer = "Bearer ";
-let BASE_URL = "http://164.90.232.255:3000/api/v1/admin-app/";
+let BASE_URL = "http://157.230.127.240:3001/api/v1/admin-app/";
 // let BASE_URL = "http://localhost:3010/api/v1/admin-app/";
 let FILE_URL = BASE_URL
 axios.interceptors.request.use(
