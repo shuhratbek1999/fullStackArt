@@ -216,47 +216,47 @@ export default {
       {
         id: 1,
         label: 'Projects',
-        routes: 'project_all'
+        routes: '/project_all'
       },
       {
         id: 2,
         label: 'Visual Arts',
-        routes: 'visual_all'
+        routes: '/visual_all'
       },
       {
         id: 3,
         label: 'Live Arts',
-        routes: 'live_all'
+        routes: '/live_all'
       },
       {
         id: 4,
         label: 'Education',
-        routes: 'education_all'
+        routes: '/education_all'
       },
       {
         id: 5,
         label: 'Screenings',
-        routes: 'screenings_all'
+        routes: '/screenings_all'
       },
       {
         id: 6,
         label: 'Publications',
-        routes: 'publication_all'
+        routes: '/publication_all'
       },
       {
         id: 7,
         label: 'Media',
-        routes: 'media_all'
+        routes: '/media_all'
       },
       {
         id: 8,
         label: 'News',
-        routes: 'news_all'
+        routes: '/news_all'
       },
       {
         id: 9,
         label: 'About us',
-        routes: 'about_all'
+        routes: '/about_all'
       }
     ])
     // close on click outside
