@@ -32,7 +32,9 @@
                     >
                  </div>
                  <div class="text w-full xx:my-2 xs:my-2 text-justify xx:text-xx xs:text-xs xl:text-xl md:text-base">
-                     {{city.description}}
+                     <div class="desc" v-for="(info,index) in city.description" :key="index">
+                           {{info}}
+                     </div>
                  </div>
               </div>
               <div v-if="city.Fact.length > 0" class="city_ul pb-3">

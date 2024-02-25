@@ -37,9 +37,12 @@ const OneProject = () => {
       ProjectsProp(res.data.data)
    })
 }
-const ProjectsProp = (arr) => {
+const ProjectsProp = async(arr) => {
    if(arr.length > 0){
-      arr.map(res => {
+     await arr.map(res => {
+         res.project.map(item => {
+           item.description = item.description.split(";")
+            })
             CategoryImg.value = res
             AllArray.value = res.project
             store.cityAll = res.project
