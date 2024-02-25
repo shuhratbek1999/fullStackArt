@@ -38,6 +38,9 @@ const OneProject = () => {
 const ProjectsProp = (arr) => {
    if(arr.length > 0){
       arr.map(res => {
+         res.project.map(item => {
+           item.description = item.description.split(";")
+            })
             CategoryImg.value = res
             AllArray.value = res.project
             store.cityAll = res.project

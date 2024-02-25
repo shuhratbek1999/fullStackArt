@@ -26,7 +26,9 @@
                   "
                   >
                     <a href="#" class="texts text-justify xl:w-full font-Atyp xl:text-base lg:text-base md:text-base xx:text-xs xs:text-xs">
-                        {{info.description}}
+                     <div class="desc" v-for="(info,index) in info.description" :key="index">
+                           {{info}}
+                     </div>
                     </a>
                   </div>
                   <div 

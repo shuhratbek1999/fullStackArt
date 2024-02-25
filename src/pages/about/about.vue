@@ -45,11 +45,15 @@ const allAbout = () => {
    axios.get('category/categoryAll/' + route.name)
    .then(res => {
       if(!res.data.data.error){
-         AllAbout.value = res.data.data
          for(let key of res.data.data){
+            key.project.map(item => {
+               item.description = item.description.split(";")
+               // console.log(item);
+            })
             AllProject.value.push(key)
             catImg.value = FILE_URL + 'images/' + key.img
          }
+          AllAbout.value = res.data.data
       }
    })
 }
