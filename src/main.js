@@ -32,7 +32,7 @@ axios.interceptors.request.use(
       config.headers["Authorization"] = Bearer + localStorage.getItem("token");
       return config;
     },
-    function (error) {
+    function (error) { 
       return Promise.reject(error);
     }
   )

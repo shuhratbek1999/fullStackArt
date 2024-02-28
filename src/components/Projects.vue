@@ -12,9 +12,6 @@
                 {{ props.Img.title }}
             </h1>
          </div>
-         <!-- <div class="img absolute right-16 bottom-10 z-30">
-             <img src="../assets/images/Ellipse.png" alt="">
-         </div> -->
      </div>
      </slot>
 </template>
@@ -50,57 +47,6 @@ watch(() => props.Img, () => {
 </script>
 
 <style scoped>
-
-@media(min-width: 1200px){
-.projectss img:nth-child(1){
-    width: 78px;
-    height: 78px;
-}  
-.projectss{
-    min-width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-origin: border-box;
-    display: flex;
-    position: relative;
-    z-index: 10;
-}
-.img_content{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    opacity: 0.8;
-    z-index: 20;
-}
-}
-@media(min-width: 961px){
-.projectss img:nth-child(1){
-    width: 78px;
-    height: 78px;
-}  
-.projectss{
-    min-width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-origin: border-box;
-    display: flex;
-    position: relative;
-    z-index: 10;
-}
-.img_content{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    opacity: 0.8;
-    z-index: 20;
-}
-}
 @media(min-width: 360px){ 
 .projectss{
     min-width: 100%;
@@ -118,10 +64,84 @@ watch(() => props.Img, () => {
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.6;
     z-index: 20;
 }
 }
+@media(min-width: 960px){
+.projectss img:nth-child(1){
+    width: 78px;
+    height: 78px;
+}  
+.projectss{
+    min-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: border-box;
+    display: flex;
+    position: relative;
+    /* object-fit: contain; */
+    z-index: 10;
+}
+.img_content{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 20;
+}
+}
+@media(min-width: 1024px){
+.projectss img:nth-child(1){
+    width: 78px;
+    height: 78px;
+}  
+.projectss{
+    min-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    display: flex;
+    position: relative;
+    z-index: 10;
+}
+.img_content{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 20;
+}
+}
+@media(min-width: 1280px){
+.projectss{
+    min-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    background-attachment: scroll;
+    display: flex;
+    position: relative;
+    z-index: 10;
+}
+.img_content{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 20;
+}
+}
+
 
 /* @media(min-width: 480px){
 .route h1{

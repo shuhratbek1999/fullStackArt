@@ -13,13 +13,14 @@
           >
         </div>
         <div class="footer_right text-eeee mr-8 absolute z-40 right-10"
-             v-if="props.AllAbout"
+             v-if="AllAbouts"
             >
             <div 
                 class="icon flex items-center cursor-pointer"
-                v-for="(all,index) in props.AllAbout" :key="index"
+                v-for="(all,index) in AllAbouts" :key="index"
                 >
-                  <div class="all" v-for="(pro,index) in all.project" :key="index">
+                  <div class="eng" v-if="all.project">
+                    <div class="all" v-for="(pro,index) in all.project" :key="index">
                       <div class="itemss my-2" v-for="(item,index) in pro.Url" :key="index">
                         <div v-if="item.type == 'instagramm'" class="icon flex items-center">
                         <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
@@ -63,6 +64,53 @@
                         </div>
                       </div>
                   </div>
+                  </div>
+                  <div class="bol" v-else>
+                     <div class="all" v-for="(pro,index) in all.projects" :key="index">
+                      <div class="itemss my-2" v-for="(item,index) in pro.Urlss" :key="index">
+                        <div v-if="item.type == 'instagramm'" class="icon flex items-center">
+                        <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
+                            <n-icon class="xx:text-sm xl:text-xl">
+                               <LogoInstagram />
+                            </n-icon>
+                        </div>
+                        <div class="link">
+                            <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
+                        </div>
+                        </div>
+                        <div v-if="item.type == 'facebook'" class="icon flex items-center">
+                            <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
+                                <n-icon class="xx:text-sm xl:text-xl">
+                                  <FacebookF />
+                                </n-icon>
+                            </div>
+                            <div class="link">
+                                <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
+                            </div>
+                        </div>
+                        <div v-if="item.type == 'you tube'" class="icon flex items-center">
+                            <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
+                                <n-icon class="xx:text-sm xl:text-xl">
+                                  <Youtube />
+                                </n-icon>
+                            </div>
+                            <div class="link">
+                                <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
+                            </div>
+                        </div>
+                        <div v-if="item.type == 'Site'" class="icon flex items-center">
+                            <div class="xl:mr-2 xl:w-12 bg-black xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
+                                <n-icon class="xx:text-sm xl:text-xl">
+                                  <Google />
+                                </n-icon>
+                            </div>
+                            <div class="link">
+                                <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
             </div>
          </div>
          <div style="height: 2px; background-color: white" class="absolute w-11/12 bottom-6"></div>
@@ -72,7 +120,7 @@
 <script setup>
 import {FacebookF,Instagram, Youtube,InstagramSquare,Google} from "@vicons/fa"
 import {LogoInstagram} from "@vicons/ionicons5"
-import { watch } from "vue"
+import { watch,computed } from "vue"
 import {useI18n} from "vue-i18n"
 const {t} = useI18n()
 const props = defineProps({
@@ -85,6 +133,7 @@ const props = defineProps({
     required: true
   }
 })
+const AllAbouts = computed(() => props.AllAbout)
 </script>
 
 <style scoped>

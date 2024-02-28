@@ -152,6 +152,7 @@
                     </div>
                 </div>
             </div>
+            <ProjectBol @projectbol="projectbol" :ProjectBol="data.ProjectBols" :selectCategory="selectCategory" />
             <div class="form_top xl:flex xl:justify-between xl:my-3">
                 <div class="selec xl:w-11/12">
                     <label class="mb-2 inline-block text-2xl font-bold" for="name">Images</label>
@@ -178,6 +179,7 @@
 
 <script setup>
 import {onMounted, ref, inject,computed} from "vue"
+import ProjectBol from "./projectBol.vue"
 import axios from "axios"
 import {TrashAltRegular} from "@vicons/fa"
 import {useMessage} from "naive-ui"
@@ -205,8 +207,12 @@ let data = ref({
     user_id: user_id,
     Images: [],
     Facts: [],
-    Urls: []
+    Urls: [],
+    ProjectBols: []
 })
+const projectbol = (datas) => {
+    data.value.ProjectBols.push(datas)
+}
 const SelectUpdate = (id) => {
     let index = Category.value.findIndex(ids => ids.id == id)
     selectCategory.value = Category.value[index].name
@@ -235,6 +241,7 @@ const Saqlash = () => {
     formData.append("user_id", data.value.user_id)
     formData.append("Facts", JSON.stringify(data.value.Facts))
     formData.append("Urls", JSON.stringify(data.value.Urls))
+    formData.append("ProjectBols", JSON.stringify(data.value.ProjectBols))
     for (let i = 0; i < data.value.Images.length; i++) {
         formData.append(`images`, data.value.Images[i].file);
     }
@@ -361,7 +368,8 @@ const UpdateProject = (model) => {
         Facts: model.Fact,
         Urls: model.Url,
         cart: model.cart,
-        date_time: model.date_time
+        date_time: model.date_time,
+        ProjectBols: model.ProjectBols
     }
     selectCategory.value = model.category.page.name
 }

@@ -10,20 +10,20 @@
                 </ul>
                 <ul class="flex justify-between w-10/12">
                     <li v-for="item in Menus" :key="item.id" class="cursor-pointer h-full">
-                        <span 
+                        <a href="#page"
                             v-if="item.label != 'eng'" 
                             @click="MenuItem(item.label)" 
                             class="text-menuColor font-sans xl:text-sm xs:text-xs" 
                             :class="[{'border-b-gray-400 border-b-2 pb-2 font-medium': route.name == item.label},{'text-sm': locale == 'de'}]"
-                            >
+                        >
                             {{ $t(`menu.${item.label.toLowerCase()}`) }}
-                        </span>
-                        <select v-else v-model="lang" class="custom-select" @change="handleChange">
+                        </a>
+                    </li>
+                        <select  v-model="lang" class="custom-select" @change="handleChange">
                             <option v-for="lang in Options" :key="lang" :value="lang.value">
                                 {{lang.label}}
                             </option>
                         </select>
-                    </li>
                 </ul>
             </div>
             <div 
@@ -50,8 +50,20 @@
                     <n-drawer-content title="Menu" class="shadow-sm" closable>
                     <ul class="flex flex-col justify-center items-left">
                         <li v-for="item in Menus" :key="item.id" class="px-4 cursor-pointer navbar_list py-2">
-                            <span @click="MenuItem(item.label)" class="text-menuColor xl:text-base xs:text-xs xx:text-xs" :class="{'border-b-gray-400 border-b-2 pb-2': route.name == item.label}">{{item.label}}</span>
+                            <a href="#page"
+                            v-if="item.label != 'eng'" 
+                            @click="MenuItem(item.label)" 
+                            class="text-menuColor font-sans xl:text-sm xs:text-xs" 
+                            :class="[{'border-b-gray-400 border-b-2 pb-2 font-medium': route.name == item.label},{'text-sm': locale == 'de'}]"
+                        >
+                            {{ $t(`menu.${item.label.toLowerCase()}`) }}
+                        </a>
                         </li>
+                        <select  v-model="lang" class="custom-select" @change="handleChange">
+                            <option v-for="lang in Options" :key="lang" :value="lang.value">
+                                {{lang.label}}
+                            </option>
+                        </select>
                     </ul>
                     </n-drawer-content>
                     </n-drawer>
@@ -66,6 +78,8 @@ import {Menu} from "@vicons/ionicons5"
 import {onMounted, ref,watch, watchEffect} from "vue";
 import {useRouter, useRoute} from "vue-router";
 import { useI18n } from "vue-i18n";
+import {City} from "../stores/index"
+const Langes = City()
 const { t,locale } = useI18n();
 const router = useRouter();
 const route = useRoute()
@@ -110,16 +124,12 @@ const Menus = ref([
     {
         id: 9,
         label: 'News'
-    },
-    {
-        id: 10,
-        label: 'eng'
     }
 ])
 const Options = ref([
      {
         label: 'English',
-        value: 'en'
+        value: `${lang.value}`
     },
     {
         label: 'Bulgaria',
@@ -163,15 +173,18 @@ const About = () => {
     router.push('/')
 }
 const handleChange = (event) => {
-    // console.log(event.target.value);
     if(event){
+        Langes.lang = event.target.value
         localStorage.setItem('lang', event.target.value)
         const locales = `${event.target.value}` === 'en' ? "en" : "de"
         locale.value = locales
     }
 }
+watch(() => Langes.lang, () => {
+    lang.value = Langes.lang
+})
 onMounted(() => {
-    handleChange()
+    lang.value = Langes.lang
 })
 </script>
 <style scoped>

@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import {ref,inject} from "vue"
+import {ref,inject,watch} from "vue"
 import topMenu from "../../components/TopMenu.vue"
 import ProjectLabel from "../../components/Projects.vue"
 import AboutInfo from "../../components/aboutInfo.vue"
@@ -34,6 +34,8 @@ import {useRouter, useRoute} from "vue-router"
 import {useI18n} from "vue-i18n"
 import { onMounted } from "vue"
 import axios from "axios"
+import  {City} from "../../stores/index"
+const store = City()
 const {t} = useI18n()
 const router = useRouter()
 const route = useRoute()
@@ -42,21 +44,41 @@ const AllProject = ref([])
 const FILE_URL = inject("FILE_URL")
 let catImg = ref("")
 const allAbout = () => {
-   axios.get('category/categoryAll/' + route.name)
-   .then(res => {
-      if(!res.data.data.error){
-         for(let key of res.data.data){
-            key.project.map(item => {
-               item.description = item.description.split(";")
-               // console.log(item);
-            })
-            AllProject.value.push(key)
-            catImg.value = FILE_URL + 'images/' + key.img
+   if(store.lang == 'en'){
+      axios.get('category/categoryAll/' + route.name)
+      .then(res => {
+         if(!res.data.data.error){
+            for(let key of res.data.data){
+               key.project.map(item => {
+                  item.description = item.description.split(";")
+                  // console.log(item);
+               }) 
+               AllProject.value.push(key)
+               catImg.value = FILE_URL + 'images/' + key.img
+            }
+            AllAbout.value = res.data.data
          }
-          AllAbout.value = res.data.data
-      }
-   })
+      })
+   }else{
+      axios.get('category/categoryBol/' + route.name)
+      .then(res => {
+         if(!res.data.data.error){
+            for(let key of res.data.data){
+               key.projects.map(item => {
+                  item.description = item.description.split(";")
+                  // console.log(item);
+               }) 
+               AllProject.value.push(key)
+               catImg.value = FILE_URL + 'images/' + key.img
+            }
+            AllAbout.value = res.data.data
+         }
+      })
+   }
 }
+watch(()=> store.lang, () => {
+   allAbout()
+})
 onMounted(() => {
    allAbout()
 })

@@ -9,6 +9,10 @@ import CategoryAdd from './pages/Category/categoryAdd.vue'
 import CategoryUpdate from './pages/Category/updateCategory.vue'
 import CategoryAll from './pages/Category/categoryAll.vue'
 
+import FooterAll from './pages/footer/footerAll.vue'
+import FooterAdd from './pages/footer/footerAdd.vue'
+import FooterUpdate from './pages/footer/footerUpdate.vue'
+
 import UserAll from './pages/user/userAll.vue'
 import UserUpdate from './pages/user/userUpdate.vue'
 
@@ -166,6 +170,21 @@ const router = createRouter({
       path: "/user_all",
       name: "UserAll",
       component: UserAll
+    },
+    {
+      path: "/footer_all",
+      name: "FooterAll",
+      component: FooterAll
+    },
+    {
+      path: "/footer_add",
+      name: "FooterAdd",
+      component: FooterAdd
+    },
+    {
+      path: "/footer_update/:id",
+      name: "FooterUpdate",
+      component: FooterUpdate
     },
     {
       path: "/user_update/:id",

@@ -94,10 +94,10 @@ const columns = ref([
             },
             onClick: (e) => {
               dialog.warning({
-                title: "Ogohlantirish",
-                content: "Ma'lumot o'chirilsinmi",
-                positiveText: "O'chirish",
-                negativeText: "Bekor qilish",
+                title: "Caution",
+                content: "Delete information",
+                positiveText: "Delete",
+                negativeText: "Cancel",
                 class: 'bg-gray-100',
                 onPositiveClick: () => {
                      message.success(`${row.name}`)
@@ -106,10 +106,10 @@ const columns = ref([
                       allCategory();
                     }
                   });
-                  message.success("O'chirildi");
+                  message.success("Deleted");
                 },
                 onNegativeClick: () => {
-                  message.error("Bekor qilindi");
+                  message.error("Cancel");
                 },
               });
             },

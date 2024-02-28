@@ -103,10 +103,10 @@ const columns = ref([
             },
             onClick: (e) => {
               dialog.warning({
-                title: "Ogohlantirish",
-                content: "Ma'lumot o'chirilsinmi",
-                positiveText: "O'chirish",
-                negativeText: "Bekor qilish",
+                 title: "Caution",
+                content: "Delete information",
+                positiveText: "Delete",
+                negativeText: "Cancel",
                 class: 'bg-gray-100',
                 onPositiveClick: () => {
                      message.success(`${row.id}`)
@@ -115,10 +115,10 @@ const columns = ref([
                       allProject();
                     }
                   });
-                  message.success("O'chirildi");
+                  message.success("Deleted");
                 },
                 onNegativeClick: () => {
-                  message.error("Bekor qilindi");
+                  message.error("Cancel");
                 },
               });
             },
@@ -155,7 +155,6 @@ const allProject = () => {
     axios.get('category/categoryAll/' + names).then(res => {
         if(!res.error){
            if(res.data.data){
-            console.log(res.data.data[0]);
              Projects.value = res.data.data[0].project
            }
         }
