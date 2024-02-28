@@ -11,7 +11,7 @@
                 > 
            <div 
                 class="
-                item xl:w-1/4 xl:h-97 lg:w-1/4 lg:h-97 lg:px-2 border-r-2 border-r-gray-500 xl:px-2 xl:my-6 lg:my-6
+                item xl:w-1/4 xl:h-95 lg:w-1/4 lg:h-97 lg:px-2 border-r-2 border-r-gray-500 xl:px-2 xl:my-6 lg:my-6
                 cards aos-init font-Atyp
                 xx:w-4/12 xx:h-44 xs:w-4/12 xs:h-44 box-border xx:my-2 xs:my-2 xx:px-2
                 md:w-1/3 md:h-80
@@ -26,7 +26,7 @@
                     "info_name relative xl:text-xl lg:text-lg xx:text-xx xs:text-xs xl:w-60 xl:h-48 lg:h-48 md:h-48 xx:h-24 xs:h-24 hover:cursor-pointer md:text-base"
                     >
                   <a class="font-sans font-medium xx:text-xx xs:text-xs xl:text-xl md:text-xl lg:text-lg" :href="'#' +'city_info' + index">{{t('city.name', {city: city.name})}}</a>
-                <div class="circle_info xl:flex xx:flex xx:items-center xs:flex xs:items-center xl:items-center lg:flex lg:items-center md:flex md:items-center absolute bottom-1">
+                <div class="circle_info xl:flex xx:flex xx:items-center xs:flex xs:items-center xl:items-center lg:flex lg:items-center md:flex md:items-center absolute xl:bottom-4 lg:bottom-0">
                     <div class="circle mr-2">
                         <img class="xl:w-11 xl:h-11 lg:w-11 lg:h-11 xx:w-5 xx:h-5 md:w-9 md:h-9 rounded-full cursor-pointer" :src="FILE_URL + 'images/' + city.aftor_img" alt="">
                     </div>
@@ -37,13 +37,13 @@
                 </div>
                </div>
                <div class="absolute bottom-0 overflow-hidden md:pr-0 lg:pr-0 xl:p-0 xx:pr-2 xl:pr-0 md:p-0
-               xl:w-11/12 xl:h-44 xx:w-11/12 xs:w-11/12 lg:w-11/12 md:w-11/12
+               xl:w-11/12 xx:w-11/12 xs:w-11/12 lg:w-11/12 md:w-11/12
                ">
                    <a :href="'#' +'city_info' + index">
                     <img 
                     :src="FILE_URL + 'images/' + city.Images[0].url" 
                     alt=""
-                    class="hover:scale-105 duration-500 cursor-pointer w-full xl:h-44 lg:h-44 md:h-32 sm:h-36 xs:h-20 xx:h-20"
+                    class="hover:scale-105 duration-500 cursor-pointer w-full xl:h-23 lg:h-21 md:h-32 sm:h-36 xs:h-22 xx:h-20"
                     >
                    </a>
                </div>

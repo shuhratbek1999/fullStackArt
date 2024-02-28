@@ -6,10 +6,15 @@
          <div class="img_content xl:h-64 lg:h-64 md:h-40 xx:h-24">
          </div>
          <div class="route absolute z-30 w-full">
-             <h1 class="text-eeee text-center font-normal xl:text-9xl xx:font-bold lg:text-8xl md:text-7xl"
+             <h1 v-if="store.lang === 'en'" class="text-eeee text-center font-normal xl:text-9xl xx:font-bold lg:text-8xl md:text-7xl"
               :class="[getLength(props.Img.title) ? 'xx:text-4xl' : 'text-5xl']"
              >
                 {{ props.Img.title }}
+            </h1>
+            <h1 v-else class="text-eeee text-center font-normal xl:text-9xl xx:font-bold lg:text-8xl md:text-7xl"
+              :class="[getLength(props.Img.titles) ? 'xx:text-4xl' : 'text-5xl']"
+             >
+                {{ props.Img.titles }}
             </h1>
          </div>
      </div>
@@ -19,6 +24,8 @@
 <script setup>
 import {inject, onMounted, ref, watch} from "vue"
 import {useRoute} from "vue-router"
+import {City} from "../stores/index"
+const store = City()
 const FILE_URL = inject('FILE_URL')
 const route = useRoute()
 const textCss = ref("")

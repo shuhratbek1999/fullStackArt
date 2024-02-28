@@ -29,6 +29,10 @@
                         <label class="mb-4 inline-block" for="">Page title</label>
                         <n-input v-model:value="title" size="large"  type="text" placeholder="title is required" />
                      </div>
+                     <div class="item">
+                        <label class="mb-4 inline-block" for="">Page title болгарский</label>
+                        <n-input v-model:value="titles" size="large"  type="text" placeholder="title is required" />
+                     </div>
                      <!-- <div class="item" v-if="selectPages == 'Live Arts'">
                         <label class="mb-4 inline-block" for="">Music</label>
                         <n-input v-model:value="music_type" size="large"  type="text" placeholder="music is required" />
@@ -102,6 +106,7 @@ let selectPages = ref("")
 let page_id = ref(null),
 img = ref([]),
 title = ref(""),
+titles = ref(""),
 image = ref(null),
 music_type = ref("")
 let Errors = ref(null)
@@ -117,6 +122,7 @@ const Saqlash = () => {
   let fileDate = new FormData()
   fileDate.append('page_id', page_id.value)
   fileDate.append('title', title.value)
+  fileDate.append('titles', titles.value)
   fileDate.append('music_type', music_type.value)
   for(let key of img.value){
     fileDate.append('cat_img', key.file)
@@ -180,6 +186,7 @@ const OneCategory = () => {
       if(res){
         page_id.value = res.data.data.page_id
         title.value = res.data.data.title
+        titles.value = res.data.data.titles
         music_type.value = res.data.data.music_type
         selectPages.value = res.data.data.page.name
         image = FILE_URL + "images/" + res.data.data.img
