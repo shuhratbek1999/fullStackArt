@@ -19,7 +19,7 @@
                 class="icon flex items-center cursor-pointer"
                 v-for="(all,index) in AllAbouts" :key="index"
                 >
-                  <div class="eng" v-if="all.project">
+                  <div class="eng" v-if="all.project && store.lang == 'en'">
                     <div class="all" v-for="(pro,index) in all.project" :key="index">
                       <div class="itemss my-2" v-for="(item,index) in pro.Url" :key="index">
                         <div v-if="item.type == 'instagramm'" class="icon flex items-center">
@@ -65,7 +65,7 @@
                       </div>
                   </div>
                   </div>
-                  <div class="bol" v-else>
+                  <div class="bol" v-else-if="all.projects && store.lang == 'de'">
                      <div class="all" v-for="(pro,index) in all.projects" :key="index">
                       <div class="itemss my-2" v-for="(item,index) in pro.Urlss" :key="index">
                         <div v-if="item.type == 'instagramm'" class="icon flex items-center">
@@ -123,6 +123,8 @@ import {LogoInstagram} from "@vicons/ionicons5"
 import { watch,computed } from "vue"
 import {useI18n} from "vue-i18n"
 const {t} = useI18n()
+import {City} from "../stores/index"
+const store = City()
 const props = defineProps({
   AllAbout:{
     type: Array,

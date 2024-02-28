@@ -275,7 +275,7 @@ const Saqlash = () => {
             if(!res.data.error){
                 message.success(`${res.data.message}`)
                 setTimeout(() => {
-                    router.push('/project_all')
+                    router.go(-1)
                 }, 2000);
             }else{
                 message.error(`error`)
@@ -291,7 +291,7 @@ const Saqlash = () => {
            if(!res.data.error){
                 message.success(`${res.data.message}`)
                 setTimeout(() => {
-                    router.push('/project_all')
+                    router.go(-1)
                 }, 2000);
             }else{
                 message.error(`error`)
@@ -394,7 +394,7 @@ const UpdateProject = (model) => {
     selectCategory.value = model.category.page.name
 }
 const Cancel = () => {
-    router.push('/project_all')
+    router.go(-1)
 }
 const Categorys = () => {
     axios.get('category/alls').then(res => {
