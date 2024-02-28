@@ -20,6 +20,7 @@ module.exports = {
       },
       fontSize: {
         xz: ['0.56rem',{lineHeight: '1'}],
+        xy: ['0.5rem',{lineHeight: '1'}],
         xx: ['0.62rem', {lineHeight: '1.5'}],
         xs: ['0.75rem', { lineHeight: '1.5' }],
         sm: ['0.875rem', { lineHeight: '1.5715' }],

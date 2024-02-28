@@ -1,14 +1,14 @@
 {
     "menu": {
-        "about us": "Über uns",
-        "projects": "Projekte",
-        "visual arts": "Bildende Kunst",
-        "live arts": "Live-Kunst",
-        "education": "Ausbildung",
-        "screenings": "Vorführungen",
-        "publications": "Veröffentlichungen",
-        "media": "Medien",
-        "news": "Nachricht"
+        "about us": "За нас",
+        "projects": "проекти",
+        "visual arts": "Визуални изкуства",
+        "live arts": "Изкуства на живо",
+        "education": "образование",
+        "screenings": "Прожекции",
+        "publications": "Публикация",
+        "media": "Медия",
+        "news": "Новини"
     },
     "city": {
         "name": "{city}"

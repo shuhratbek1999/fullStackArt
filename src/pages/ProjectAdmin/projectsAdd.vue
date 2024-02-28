@@ -163,11 +163,20 @@
                     >
                         Click to Upload 
                     </n-upload>
-                    <!-- <div class="delete absolute top-0 left-0">{{data.Images}}</div> -->
+                    <div class="delete w-full flex" v-if="UpdateImages.length > 0">
+                        <div 
+                            class="imgs relative w-24 h-24 m-2" 
+                            v-for="(item,index) in UpdateImages" 
+                            :key="index"
+                            @click="DeleteImg(item.id)"
+                            >
+                            <img :src="item.url" alt="">
+                            <div class="line absolute top-0 z-10 w-24 h-16 border-gray-400">
+                                <div class="x z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-3xl cursor-pointer text-white">X</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form_top xl:flex xl:justify-center xl:my-3">
-                
             </div>
             <n-button @click="Saqlash" class="bg-blue-600" type="success">
                 Save
@@ -210,8 +219,17 @@ let data = ref({
     Urls: [],
     ProjectBols: []
 })
+let UpdateImages = ref([])
 const projectbol = (datas) => {
     data.value.ProjectBols.push(datas)
+}
+const DeleteImg = (id) => {
+    axios.delete('category/imgdelete/' + id)
+    .then(res => {
+        if(res.data){
+            ProjectOne()
+        }
+    })
 }
 const SelectUpdate = (id) => {
     let index = Category.value.findIndex(ids => ids.id == id)
@@ -354,7 +372,9 @@ const ProjectOne = () => {
     })
 }
 const UpdateProject = (model) => {
+    console.log(model);
     image = FILE_URL + 'images/' + model.aftor_img
+    UpdateImages.value = model.Images
     model.date_time = model.date_time * 1000
     data.value = {
         category_id: model.category_id,
@@ -364,7 +384,7 @@ const UpdateProject = (model) => {
         description: model.description,
         extra_description: model.extra_description,
         user_id: model.user_id,
-        Images: model.Images,
+        Images: [],
         Facts: model.Fact,
         Urls: model.Url,
         cart: model.cart,
