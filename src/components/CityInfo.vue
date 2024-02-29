@@ -12,7 +12,6 @@
            :id="'city_info' + index"
            data-aos="fade-up"
             >
-            {{city}}
            <div 
            class="
            infoo

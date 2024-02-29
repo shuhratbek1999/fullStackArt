@@ -40,6 +40,7 @@ const OneProject = () => {
    }else{
       axios.get('category/categoryBol/' + route.name)
       .then(res => {
+         console.log(res.data.data);
          ProjectsProp(res.data.data)
       })
    }
