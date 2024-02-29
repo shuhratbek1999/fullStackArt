@@ -9,13 +9,29 @@
             size="huge"
             :segmented="segmented"
         >
-            <div class="content min-h-64 overflow-y-scroll" v-if="InfoAll">
+            <div class="content min-h-64 overflow-y-scroll" v-if="InfoAll.Images">
                 <div class="images xl:flex-row xx:flex xx:justify-center" v-if="InfoAll.Images.length > 0">
                     <!-- <div class="img p-1" v-for="(item,index) in InfoAll.Images" :key="item.Id">
                         <img @click="Images(index)" class="xl:w-56 xl:h-56 xx:w-60 xx:h-60" :src="FILE_URL + 'images/' + item.url" alt="rasm">
                     </div> -->
                      <n-carousel show-arrow :dot-placement="placement" :dot-type="type">
                         <div class="images" v-for="(item,index) in InfoAll.Images" :key="index">
+                            <img 
+                                :src="FILE_URL + 'images/' + item.url"  
+                                alt="img"
+                                class="carousel-img"
+                            >
+                        </div>
+                    </n-carousel>
+                </div>
+            </div>
+              <div class="content min-h-64 overflow-y-scroll" v-if="InfoAll.Imagess">
+                <div class="images xl:flex-row xx:flex xx:justify-center" v-if="InfoAll.Imagess.length > 0">
+                    <!-- <div class="img p-1" v-for="(item,index) in InfoAll.Images" :key="item.Id">
+                        <img @click="Images(index)" class="xl:w-56 xl:h-56 xx:w-60 xx:h-60" :src="FILE_URL + 'images/' + item.url" alt="rasm">
+                    </div> -->
+                     <n-carousel show-arrow :dot-placement="placement" :dot-type="type">
+                        <div class="images" v-for="(item,index) in InfoAll.Imagess" :key="index">
                             <img 
                                 :src="FILE_URL + 'images/' + item.url"  
                                 alt="img"
