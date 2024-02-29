@@ -16,7 +16,7 @@
                 <n-input id="name" size="large"  v-model:value="data.description" type="textarea" placeholder="името е задължително" />
             </div>
             <div class="input xl:w-5/12" v-if="Selected != 'About us'">
-                <label class="mb-2 inline-block" for="name">количка</label>
+                <label class="mb-2 inline-block" for="name">картс</label>
                 <n-input id="name" size="large" v-model:value="data.cart" type="text" placeholder="името е задължително" />
             </div>
             <div class="input xl:w-5/12" v-else>

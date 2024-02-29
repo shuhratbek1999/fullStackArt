@@ -11,7 +11,7 @@
                 > 
            <div 
                 class="
-                item xl:w-1/4 xl:h-26 lg:w-1/4 lg:h-97 lg:px-2 border-r-2 border-r-gray-500 xl:px-2 xl:my-6 lg:my-6
+                item xl:w-1/4 xl:h-26 ll:h-90 lg:w-1/4 lg:h-97 lg:px-2 border-r-2 border-r-gray-500 xl:px-2 xl:my-6 lg:my-6
                 cards aos-init font-Atyp
                 xx:w-4/12 xx:h-44 xs:w-4/12 xs:h-44 box-border xx:my-2 xs:my-2 xx:px-2
                 md:w-1/3 md:h-80
@@ -43,7 +43,7 @@
                     <img 
                     :src="FILE_URL + 'images/' + city.Images[0].url" 
                     alt=""
-                    class="hover:scale-105 duration-500 cursor-pointer w-full xl:h-18 lg:h-21 md:h-32 sm:h-36 xs:h-22 xx:h-20"
+                    class="hover:scale-105 duration-500 cursor-pointer w-full ll:h-19 xl:h-18 lg:h-21 md:h-32 sm:h-36 xs:h-22 xx:h-20"
                     >
                    </a>
                </div>

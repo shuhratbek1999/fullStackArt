@@ -52,10 +52,20 @@
                                 <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
                             </div>
                         </div>
-                        <div v-if="item.type == 'Site'" class="icon flex items-center">
+                        <div v-if="item.type == 'Google'" class="icon flex items-center">
                             <div class="xl:mr-2 xl:w-12 bg-black xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
                                 <n-icon class="xx:text-sm xl:text-xl">
                                   <Google />
+                                </n-icon>
+                            </div>
+                            <div class="link">
+                                <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
+                            </div>
+                        </div>
+                        <div v-if="item.type == 'Twitter'" class="icon flex items-center">
+                            <div class="xl:mr-2 xl:w-12 bg-black xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
+                                <n-icon class="xx:text-sm xl:text-xl">
+                                  <LogoTwitter />
                                 </n-icon>
                             </div>
                             <div class="link">
@@ -98,10 +108,20 @@
                                 <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
                             </div>
                         </div>
-                        <div v-if="item.type == 'Site'" class="icon flex items-center">
+                        <div v-if="item.type == 'Google'" class="icon flex items-center">
                             <div class="xl:mr-2 xl:w-12 bg-black xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
                                 <n-icon class="xx:text-sm xl:text-xl">
                                   <Google />
+                                </n-icon>
+                            </div>
+                            <div class="link">
+                                <a target="_blank" :href="item.link" class="xl:text-2xl xx:text-xs xs:text-xs">{{item.name}}</a>
+                            </div>
+                        </div>
+                        <div v-if="item.type == 'Twitter'" class="icon flex items-center">
+                            <div class="xl:mr-2 xl:w-12 bg-black xl:h-12 xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center">
+                                <n-icon class="xx:text-sm xl:text-xl">
+                                  <LogoTwitter />
                                 </n-icon>
                             </div>
                             <div class="link">
@@ -119,7 +139,7 @@
 
 <script setup>
 import {FacebookF,Instagram, Youtube,InstagramSquare,Google} from "@vicons/fa"
-import {LogoInstagram} from "@vicons/ionicons5"
+import {LogoInstagram,LogoTwitter} from "@vicons/ionicons5"
 import { watch,computed } from "vue"
 import {useI18n} from "vue-i18n"
 const {t} = useI18n()

@@ -37,7 +37,16 @@
                     Click to Upload
                     </n-upload>
                  </div>
-                 <div class="upload_img xl:w-4/12">
+                 <div class="upload_img xl:w-4/12 pt-4">
+                    <n-avatar
+                      v-if="route.params.id"
+                      :src="image"
+                      style="
+                        border: 1px solid #dcdcdc;
+                        width: 96px;
+                        height: 96px;
+                      "
+                    />
                     <n-checkbox
                       v-if="route.params.id"
                       size="large"
@@ -45,30 +54,21 @@
                       v-model:checked="change_image"
                       class="mr-4"
                     />
-                    <n-avatar
-                      v-if="route.params.id"
-                      :src="image"
-                      style="
-                        border: 1px solid #dcdcdc;
-                        width: 96px;
-                        position: absolute;
-                        height: 96px;
-                      "
-                    />
                  </div>
                 </div>
             </div>
             <div class="form_top xl:flex xl:justify-between xl:my-10">
-                <div class="selec xl:w-5/12">
-                    <label class="mb-2 inline-block" for="name">Description</label>
-                    <n-input id="name" class="rounded" size="large" v-model:value="data.description" type="textarea" />
+                <div class="carts w-5/12">
+                    <div class="selec mr-10 w-full">
+                        <label class="mb-2 inline-block" for="name">Cart</label>
+                        <n-input id="name" class="rounded" size="large" v-model:value="data.cart" type="text" />
+                    </div>
+                    <div class="selec xl:w-full">
+                        <label class="mb-2 inline-block" for="name">Description</label>
+                        <n-input id="name" class="rounded" size="large" v-model:value="data.description" type="textarea" />
+                    </div>
                 </div>
-                <div class="extraa xl:w-5/12 lg:w-full md:w-full flex xl:justify-around md:justify-between lg:justify-between" v-if="selectCategory !== 'About us'">
-                <div class="selec mr-10">
-                    <label class="mb-2 inline-block" for="name">Cart</label>
-                    <n-input id="name" class="rounded" size="large" v-model:value="data.cart" type="text" />
-                </div>
-                <div class="input">
+                <div class="extraa xl:w-5/12" v-if="selectCategory !== 'About us'">
                     <label class="mb-2 inline-block" for="name">date time</label>
                      <n-date-picker
                         v-model:value="data.date_time"
@@ -80,7 +80,6 @@
                         style="width: 250px"
                         :on-update:value="change2"
                     />
-                </div> 
                 </div>
                 <div class="extra_text w-5/12" v-else>
                     <label class="mb-2 inline-block" for="name">extra text</label>
@@ -372,7 +371,6 @@ const ProjectOne = () => {
     })
 }
 const UpdateProject = (model) => {
-    console.log(model);
     image = FILE_URL + 'images/' + model.aftor_img
     UpdateImages.value = model.Images
     model.date_time = model.date_time * 1000
