@@ -39,9 +39,16 @@
                <div class="absolute bottom-0 overflow-hidden md:pr-0 lg:pr-0 xl:p-0 xx:pr-2 xl:pr-0 md:p-0
                xl:w-11/12 xx:w-11/12 xs:w-11/12 lg:w-11/12 md:w-11/12
                ">
-                   <a :href="'#' +'city_info' + index">
+                   <a :href="'#' +'city_info' + index" v-if="city.Images && city.Images.length > 0">
                     <img 
                     :src="FILE_URL + 'images/' + city.Images[0].url" 
+                    alt=""
+                    class="hover:scale-105 duration-500 cursor-pointer w-full ll:h-19 xl:h-18 lg:h-21 md:h-32 sm:h-36 xs:h-22 xx:h-20"
+                    >
+                   </a>
+                   <a :href="'#' +'city_info' + index" v-if="city.Imagess && city.Imagess.length > 0">
+                    <img 
+                    :src="FILE_URL + 'images/' + city.Imagess[0].url" 
                     alt=""
                     class="hover:scale-105 duration-500 cursor-pointer w-full ll:h-19 xl:h-18 lg:h-21 md:h-32 sm:h-36 xs:h-22 xx:h-20"
                     >

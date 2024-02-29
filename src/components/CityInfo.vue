@@ -25,7 +25,16 @@
                  <div class="images w-full flex justify-start">
                     <img 
                         @click="ModalShow(city,index)" 
+                        v-if="city.Images && city.Images.length > 0"
                         :src="FILE_URL + 'images/' + city.Images[0].url" 
+                        class="xl:w-101 xl:h-93 lg:w-99 lg:h-92 md:w-98 md:h-91 xx:w-80 xx:h-17 xs:w-97 xs:h-89 
+                        rounded cursor-pointer" 
+                        alt=""
+                    >
+                    <img 
+                        @click="ModalShow(city,index)" 
+                        v-if="city.Imagess && city.Imagess.length > 0"
+                        :src="FILE_URL + 'images/' + city.Imagess[0].url" 
                         class="xl:w-101 xl:h-93 lg:w-99 lg:h-92 md:w-98 md:h-91 xx:w-80 xx:h-17 xs:w-97 xs:h-89 
                         rounded cursor-pointer" 
                         alt=""
