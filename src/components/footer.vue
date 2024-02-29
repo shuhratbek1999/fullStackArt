@@ -188,7 +188,7 @@ const AllAbouts = computed(() => props.AllAbout)
 }
 .footer_right{
   right: 60px;
-  top: 100px;
+  top: 40px;
   position: absolute;
   z-index: 100;
 }
@@ -230,6 +230,41 @@ const AllAbouts = computed(() => props.AllAbout)
   z-index: 100;
 }
 }
+@media(min-width: 1024px){
+.footer{
+    height: 300px;
+    background-image: url('../assets/images/Rectangle3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 10;
+}
+.footer_content{
+    width: 100%;
+    height: 330px;
+    position: absolute;
+    top: 0;
+    left: 20;
+    background-color: black;
+    opacity: 0.5;
+    padding: 0px 60px;
+    z-index: 20;
+}
+.footer_left{
+  position: absolute;
+  z-index: 100;
+  left: 60px;
+  top: 80px;
+  border-right: 1px solid white;
+  width: 50%;
+}
+.footer_right{
+  right: 60px;
+  top: 50px;
+  position: absolute;
+  z-index: 100;
+}
+}
 @media(min-width: 1280px){
 .footer{
     height: 330px;
@@ -260,7 +295,7 @@ const AllAbouts = computed(() => props.AllAbout)
 }
 .footer_right{
   right: 60px;
-  top: 100px;
+  top: 50px;
   position: absolute;
   z-index: 100;
 }
