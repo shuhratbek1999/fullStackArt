@@ -70,7 +70,7 @@
                     class="city_footer item xl:h-15 xl:px-3 xl:flex xl:justify-center xl:items-center xl:mr-12 lg:h-15 lg:px-3 lg:flex lg:justify-center lg:items-center lg:mr-12 md:h-15 md:px-3 md:flex md:justify-center md:items-center md:mr-12 xx:h-10 xx:flex xx:justify-center xx:items-center xx:mr-4 xs:h-15 xs:flex xs:justify-center xs:items-center xs:mr-12"
                     v-for="item in city.Url" :key="item.id"
                     >
-                    <div v-if="item.type == 'instagramm'" class="icon flex xl:items-center lg:items-center md:items-center">
+                    <div v-if="item.type == 'instagram'" class="icon flex xl:items-center lg:items-center md:items-center">
                         <div class="xl:mr-2 lg:mr-2 md:mr-2 xx:mr-1 xs:mr-1">
                             <img src="../assets/images/ins.png" class="xx:w-6 xx:h-6 xl:w-8 xl:h-8 lg:w-8 lg:h-8 md:w-8 md:h-8" alt="">
                         </div>
@@ -123,7 +123,7 @@
                     class="city_footer item xl:h-15 xl:px-3 xl:flex xl:justify-center xl:items-center xl:mr-12 lg:h-15 lg:px-3 lg:flex lg:justify-center lg:items-center lg:mr-12 md:h-15 md:px-3 md:flex md:justify-center md:items-center md:mr-12 xx:h-10 xx:flex xx:justify-center xx:items-center xx:mr-4 xs:h-15 xs:flex xs:justify-center xs:items-center xs:mr-12"
                     v-for="item in city.Urlss" :key="item.id"
                     >
-                    <div v-if="item.type == 'instagramm'" class="icon flex xl:items-center lg:items-center md:items-center">
+                    <div v-if="item.type == 'instagram'" class="icon flex xl:items-center lg:items-center md:items-center">
                         <div class="xl:mr-2 lg:mr-2 md:mr-2 xx:mr-1 xs:mr-1">
                             <img src="../assets/images/ins.png" class="xx:w-6 xx:h-6 xl:w-8 xl:h-8 lg:w-8 lg:h-8 md:w-8 md:h-8" alt="">
                         </div>

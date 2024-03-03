@@ -26,7 +26,7 @@
                     "info_name relative xl:text-xl lg:text-lg xx:text-xx xs:text-xs xl:w-60 xl:h-48 lg:h-48 md:h-48 xx:h-24 xs:h-24 hover:cursor-pointer md:text-base"
                     >
                   <a class="font-sans font-medium xx:text-xx xs:text-xs xl:text-xl md:text-xl lg:text-lg" :href="'#' +'city_info' + index">{{t('city.name', {city: city.name})}}</a>
-                <div class="circle_info xl:flex xx:flex xx:items-center xs:flex xs:items-center xl:items-center lg:flex lg:items-center md:flex md:items-center absolute bottom-1">
+                <div class="circle_info w-full xl:flex xx:flex xx:items-center xs:flex xs:items-center xl:items-center lg:flex lg:items-center md:flex md:items-center absolute bottom-1">
                     <div class="circle mr-2">
                         <img class="xl:w-11 xl:h-11 lg:w-11 lg:h-11 xx:w-5 xx:h-5 md:w-9 md:h-9 rounded-full cursor-pointer" :src="FILE_URL + 'images/' + city.aftor_img" alt="">
                     </div>

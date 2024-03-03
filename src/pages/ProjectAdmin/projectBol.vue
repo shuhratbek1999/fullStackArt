@@ -118,7 +118,7 @@ let data = ref({
 const Logos = ref([
     {
         id: 1,
-        name: "instagramm"
+        name: "instagram"
     },
     {
         id: 2,
@@ -141,7 +141,7 @@ const UrlAdd = () => {
     let url = {
         name: "",
         link: "",
-        type: "instagramm",
+        type: "instagram",
         color: "black"
     }
     data.value.Urlss.push(url)

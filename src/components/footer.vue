@@ -22,7 +22,7 @@
                   <div class="eng" v-if="all.project && store.lang == 'en'">
                     <div class="all" v-for="(pro,index) in all.project" :key="index">
                       <div class="itemss my-2" v-for="(item,index) in pro.Url" :key="index">
-                        <div v-if="item.type == 'instagramm'" class="icon flex items-center">
+                        <div v-if="item.type == 'instagram'" class="icon flex items-center">
                         <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
                             <n-icon class="xx:text-sm xl:text-xl">
                                <LogoInstagram />
@@ -78,7 +78,7 @@
                   <div class="bol" v-else-if="all.projects && store.lang == 'de'">
                      <div class="all" v-for="(pro,index) in all.projects" :key="index">
                       <div class="itemss my-2" v-for="(item,index) in pro.Urlss" :key="index">
-                        <div v-if="item.type == 'instagramm'" class="icon flex items-center">
+                        <div v-if="item.type == 'instagram'" class="icon flex items-center">
                         <div class="mr-2 xl:w-12 xl:h-12 bg-black xx:w-7 xx:h-7 xs:w-8 xs:h-8 rounded-full flex justify-center items-center" :style="{'backgroundColor': item.color}">
                             <n-icon class="xx:text-sm xl:text-xl">
                                <LogoInstagram />
