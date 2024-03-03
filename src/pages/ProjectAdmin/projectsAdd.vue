@@ -12,6 +12,7 @@
                       @update:value="SelectUpdate"
                       label-field="name"
                       value-field="id"
+                      placeholder="page is required"
                       filterable
                       clearable
                       />
@@ -23,12 +24,12 @@
             </div>
             <div class="form_top xl:flex xl:justify-between xl:my-3" v-if="selectCategory !== 'About us'">
                 <div class="selec xl:w-5/12">
-                    <label class="mb-2 inline-block" for="name">Aftor name</label>
+                    <label class="mb-2 inline-block" for="name">Author name</label>
                     <n-input id="name" size="large" v-model:value="data.aftor_name" type="text" placeholder="aftor name is required" />
                 </div>
                 <div class="input xl:w-5/12 md:w-10/12 lg:w-10/12 flex items-center">
                  <div class="imagess w-4/12">
-                    <label class="mb-2 inline-block" for="name">aftor images</label>
+                    <label class="mb-2 inline-block" for="name">Author images</label>
                     <n-upload
                     v-model:file-list="data.aftor_img"
                     list-type="image-card"
@@ -282,6 +283,7 @@ const Saqlash = () => {
         })
       }else{
         formData.append('change_img', change_image.value)
+        formData.append('updateImage', JSON.stringify(UpdateImages.value))
         axios.patch('project/update/' + route.params.id, formData, {
             headers:{
                 'Content-Type': 'multipart/form-data'

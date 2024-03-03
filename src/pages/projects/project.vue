@@ -35,11 +35,13 @@ const OneProject = () => {
    if(store.lang == 'en'){
       axios.get('category/categoryAll/' + route.name)
    .then(res => {
+      console.log(res.data.data);
       ProjectsProp(res.data.data)
    })
    }else{
       axios.get('category/categoryBol/' + route.name)
       .then(res => {
+         console.log(res.data.data);
          ProjectsProp(res.data.data)
       })
    }

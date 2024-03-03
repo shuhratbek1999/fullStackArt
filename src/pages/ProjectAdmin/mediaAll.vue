@@ -65,7 +65,7 @@ const columns = ref([
         key: "name",
     },
     {
-        title: "Aftor name",
+        title: "Author name",
         key: "aftor_name",
     },
     {
