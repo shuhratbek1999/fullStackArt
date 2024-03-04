@@ -96,7 +96,10 @@
                 </div>
              </div>
         </div>
-        <div class="footer_bottom w-full justify-center h-12">
+        <div class="footer_bottom w-full justify-center h-14">
+            <div class="footer_b_text pt-2 flex justify-center text-ffff xx:text-xx xs:text-xs xl:text-base">
+                {{t('footer.titles')}}
+             </div>
              <div class="footer_b_text flex justify-center text-ffff xx:text-xx xs:text-xs xl:text-base">
                 {{t('footer.title')}}
              </div>
