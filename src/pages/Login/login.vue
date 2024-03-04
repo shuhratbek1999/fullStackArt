@@ -22,7 +22,6 @@
                     type="password"
                     show-password-on="mousedown"
                     placeholder="Password"
-                    :maxlength="8"
                     v-model:value="data.password"
                     />
                     <template #password-visible-icon>
