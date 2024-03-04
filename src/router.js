@@ -36,6 +36,8 @@ import PublicationAll from "./pages/ProjectAdmin/publicationAll.vue"
 import MediaAll from "./pages/ProjectAdmin/mediaAll.vue"
 import NewsAll from "./pages/ProjectAdmin/newsAll.vue"
 import AboutAll from "./pages/ProjectAdmin/aboutAll.vue"
+
+import TestUchun from "./pages/test/testVue.vue"
 const routerHistory = createWebHistory()
 
 const router = createRouter({
@@ -190,6 +192,11 @@ const router = createRouter({
       path: "/user_update/:id",
       name: "UserUpdate",
       component: UserUpdate
+    },
+    {
+      path: "/test",
+      name: "testUchun",
+      component: TestUchun
     },
   ]
 })
